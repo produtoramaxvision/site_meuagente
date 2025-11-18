@@ -1,13 +1,32 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import HeroSection from "@/components/sections/HeroSection";
+import LogosSection from "@/components/sections/LogosSection";
+import WhySection from "@/components/sections/WhySection";
+import HowItWorksSection from "@/components/sections/HowItWorksSection";
+import AgentsSection from "@/components/sections/AgentsSection";
+import ExamplesSection from "@/components/sections/ExamplesSection";
+import PricingSection from "@/components/sections/PricingSection";
+import FeaturesSection from "@/components/sections/FeaturesSection";
+import SecuritySection from "@/components/sections/SecuritySection";
+import TestimonialsSection from "@/components/sections/TestimonialsSection";
+import FaqSection from "@/components/sections/FaqSection";
+import FinalCTASection from "@/components/sections/FinalCTASection";
 
 const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
-    </div>
+    <main className="relative">
+      <HeroSection />
+      <LogosSection />
+      <WhySection />
+      <HowItWorksSection />
+      <AgentsSection />
+      <ExamplesSection />
+      <PricingSection />
+      <FeaturesSection />
+      <SecuritySection />
+      <TestimonialsSection />
+      <FaqSection />
+      <FinalCTASection />
+    </main>
   );
 };
 

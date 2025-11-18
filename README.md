@@ -1,73 +1,111 @@
-# Welcome to your Lovable project
+# Meu Agente - Landing Page
 
-## Project info
+Site de vendas completo para o **Meu Agente**, um micro SaaS que disponibiliza uma equipe de Agentes de IA operando diretamente no WhatsApp para executar tarefas de atendimento, operações e automação empresarial.
 
-**URL**: https://lovable.dev/projects/46c8cc9d-0870-4e8b-a870-4ab9f66839d3
+## 🚀 Tecnologias
 
-## How can I edit this code?
+- **React 18** com TypeScript
+- **Vite** para build otimizado
+- **Tailwind CSS** para estilização
+- **shadcn/ui** para componentes
+- **Lucide React** para ícones
+- **React Router DOM** para navegação
 
-There are several ways of editing your application.
+## 📁 Estrutura do Projeto
 
-**Use Lovable**
+```
+src/
+├── components/
+│   ├── layout/
+│   │   ├── Header.tsx
+│   │   └── Footer.tsx
+│   ├── sections/
+│   │   ├── HeroSection.tsx
+│   │   ├── AgentsSection.tsx
+│   │   ├── PricingSection.tsx
+│   │   └── ...
+│   └── ui/ (shadcn components)
+├── pages/
+│   ├── Index.tsx (Landing page)
+│   ├── Planos.tsx
+│   ├── FAQ.tsx
+│   ├── Contato.tsx
+│   └── NotFound.tsx
+├── index.css (Design system)
+└── App.tsx
+```
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/46c8cc9d-0870-4e8b-a870-4ab9f66839d3) and start prompting.
+## 🎨 Design System
 
-Changes made via Lovable will be committed automatically to this repo.
+O projeto utiliza um design system monocromático baseado em HSL com:
+- **Paleta**: Preto/Cinza com gradientes brand-900 → brand-700
+- **Fonte**: Inter via Google Fonts
+- **Animações**: Fade-in, scale, glassmorphism, hover effects
+- **Componentes**: Customizados do shadcn/ui
 
-**Use your preferred IDE**
+## 🚀 Como Executar
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Pré-requisitos
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- Node.js 18+ e npm
 
-Follow these steps:
+### Instalação
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
+```bash
+# Clone o repositório
 git clone <YOUR_GIT_URL>
 
-# Step 2: Navigate to the project directory.
+# Navegue até o diretório
 cd <YOUR_PROJECT_NAME>
 
-# Step 3: Install the necessary dependencies.
-npm i
+# Instale as dependências
+npm install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Inicie o servidor de desenvolvimento
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+O projeto estará disponível em `http://localhost:8080`
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 📦 Build para Produção
 
-**Use GitHub Codespaces**
+```bash
+npm run build
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+Os arquivos otimizados serão gerados na pasta `dist/`
 
-## What technologies are used for this project?
+## 🌐 Deploy
 
-This project is built with:
+Para fazer deploy via Lovable:
+1. Acesse https://lovable.dev/projects/46c8cc9d-0870-4e8b-a870-4ab9f66839d3
+2. Clique em "Publish" no canto superior direito
+3. Clique em "Update" para publicar as alterações
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## 📄 Páginas
 
-## How can I deploy this project?
+- **/** - Landing page completa com todas as seções
+- **/planos** - Página detalhada de planos com calculadora de ROI
+- **/faq** - Perguntas frequentes organizadas por categoria
+- **/contato** - Formulário de contato e informações
 
-Simply open [Lovable](https://lovable.dev/projects/46c8cc9d-0870-4e8b-a870-4ab9f66839d3) and click on Share -> Publish.
+## 🎯 SEO
 
-## Can I connect a custom domain to my Lovable project?
+O projeto inclui:
+- Meta tags completas (title, description, keywords)
+- Open Graph tags para redes sociais
+- Twitter Card tags
+- JSON-LD schemas (Product, FAQ, Article)
+- Sitemap.xml
+- Robots.txt otimizado
+- URLs amigáveis
 
-Yes, you can!
+## 📝 Licença
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+© 2025 Meu Agente. Todos os direitos reservados.
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+## 🤝 Suporte
+
+Para dúvidas ou suporte:
+- Email: contato@meuagente.com
+- WhatsApp: (11) 99999-9999
