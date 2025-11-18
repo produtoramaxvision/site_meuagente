@@ -16,7 +16,7 @@ const ChatWidget = () => {
       {/* Floating button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-6 right-6 z-50 w-16 h-16 rounded-full bg-gradient-to-br from-brand-900 to-brand-700 text-white shadow-2xl hover:shadow-brand-900/50 hover:scale-110 transition-all duration-300 flex items-center justify-center group"
+        className="fixed bottom-6 right-6 z-50 w-16 h-16 rounded-full bg-gradient-to-br from-brand-900 to-brand-700 text-white shadow-2xl hover:shadow-brand-900/50 hover:scale-110 transition-all duration-300 flex items-center justify-center group animate-float hover:animate-none"
         aria-label="Abrir chat"
       >
         {isOpen ? (
