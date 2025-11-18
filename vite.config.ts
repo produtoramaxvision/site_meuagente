@@ -88,10 +88,7 @@ export default defineConfig(({ mode }) => {
             supabase: ["@supabase/supabase-js"],
 
             // TanStack Query (separado para melhor cache)
-            tanstack: [
-              "@tanstack/react-query",
-              "@tanstack/react-query-persist-client",
-            ],
+            tanstack: ["@tanstack/react-query"],
 
             // UI Components (Radix UI + Shadcn)
             ui: [
