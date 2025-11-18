@@ -2,28 +2,51 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Mail, Phone, MapPin, Clock, MessageSquare, Send } from "lucide-react";
-import { useState } from "react";
+import { Mail, Phone, MapPin, Clock, MessageSquare, Send, Facebook, Instagram, Linkedin, Youtube } from "lucide-react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import * as z from "zod";
 import { useToast } from "@/hooks/use-toast";
+
+const contactFormSchema = z.object({
+  name: z.string().min(2, "Nome deve ter pelo menos 2 caracteres"),
+  email: z.string().email("Email inválido"),
+  phone: z.string().optional(),
+  type: z.enum(["duvida", "orcamento", "suporte", "parceria"], {
+    required_error: "Selecione o tipo de solicitação",
+  }),
+  message: z.string().min(10, "Mensagem deve ter pelo menos 10 caracteres"),
+});
+
+type ContactFormData = z.infer<typeof contactFormSchema>;
 
 const Contato = () => {
   const { toast } = useToast();
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+    reset,
+    setValue,
+  } = useForm<ContactFormData>({
+    resolver: zodResolver(contactFormSchema),
+  });
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
+  const onSubmit = async (data: ContactFormData) => {
+    console.log("Formulário enviado:", data);
+    
     // Simulate form submission
-    setTimeout(() => {
-      toast({
-        title: "Mensagem enviada!",
-        description: "Entraremos em contato em breve.",
-      });
-      setIsSubmitting(false);
-      (e.target as HTMLFormElement).reset();
-    }, 1500);
+    await new Promise(resolve => setTimeout(resolve, 1500));
+    
+    toast({
+      title: "Mensagem enviada!",
+      description: "Entraremos em contato em breve.",
+    });
+    
+    reset();
   };
 
   const contactInfo = [
@@ -74,54 +97,58 @@ const Contato = () => {
                   Envie sua Mensagem
                 </h2>
 
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                   <div className="grid gap-6 md:grid-cols-2">
                     <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-text mb-2">
+                      <Label htmlFor="name" className="text-sm font-medium text-text mb-2">
                         Nome *
-                      </label>
+                      </Label>
                       <Input
                         id="name"
-                        name="name"
-                        required
+                        {...register("name")}
                         placeholder="Seu nome completo"
-                        className="w-full"
+                        className={`w-full ${errors.name ? "border-error animate-shake" : ""}`}
                       />
+                      {errors.name && (
+                        <p className="text-xs text-error mt-1">{errors.name.message}</p>
+                      )}
                     </div>
                     <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-text mb-2">
+                      <Label htmlFor="email" className="text-sm font-medium text-text mb-2">
                         Email *
-                      </label>
+                      </Label>
                       <Input
                         id="email"
-                        name="email"
                         type="email"
-                        required
+                        {...register("email")}
                         placeholder="seu@email.com"
-                        className="w-full"
+                        className={`w-full ${errors.email ? "border-error animate-shake" : ""}`}
                       />
+                      {errors.email && (
+                        <p className="text-xs text-error mt-1">{errors.email.message}</p>
+                      )}
                     </div>
                   </div>
 
                   <div className="grid gap-6 md:grid-cols-2">
                     <div>
-                      <label htmlFor="phone" className="block text-sm font-medium text-text mb-2">
-                        Telefone
-                      </label>
+                      <Label htmlFor="phone" className="text-sm font-medium text-text mb-2">
+                        Telefone (opcional)
+                      </Label>
                       <Input
                         id="phone"
-                        name="phone"
                         type="tel"
+                        {...register("phone")}
                         placeholder="(11) 99999-9999"
                         className="w-full"
                       />
                     </div>
                     <div>
-                      <label htmlFor="type" className="block text-sm font-medium text-text mb-2">
+                      <Label htmlFor="type" className="text-sm font-medium text-text mb-2">
                         Tipo de Solicitação *
-                      </label>
-                      <Select name="type" required>
-                        <SelectTrigger className="w-full">
+                      </Label>
+                      <Select onValueChange={(value) => setValue("type", value as any)}>
+                        <SelectTrigger className={`w-full ${errors.type ? "border-error animate-shake" : ""}`}>
                           <SelectValue placeholder="Selecione..." />
                         </SelectTrigger>
                         <SelectContent>
@@ -131,27 +158,32 @@ const Contato = () => {
                           <SelectItem value="parceria">Parceria</SelectItem>
                         </SelectContent>
                       </Select>
+                      {errors.type && (
+                        <p className="text-xs text-error mt-1">{errors.type.message}</p>
+                      )}
                     </div>
                   </div>
 
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-text mb-2">
+                    <Label htmlFor="message" className="text-sm font-medium text-text mb-2">
                       Mensagem *
-                    </label>
+                    </Label>
                     <Textarea
                       id="message"
-                      name="message"
-                      required
+                      {...register("message")}
                       placeholder="Conte-nos como podemos ajudar..."
-                      className="w-full min-h-[150px]"
+                      className={`w-full min-h-[150px] ${errors.message ? "border-error animate-shake" : ""}`}
                     />
+                    {errors.message && (
+                      <p className="text-xs text-error mt-1">{errors.message.message}</p>
+                    )}
                   </div>
 
                   <Button
                     type="submit"
                     size="lg"
                     disabled={isSubmitting}
-                    className="w-full bg-gradient-to-r from-brand-900 to-brand-700 hover:from-brand-800 hover:to-brand-600 text-white"
+                    className="w-full"
                   >
                     {isSubmitting ? (
                       "Enviando..."
@@ -195,13 +227,55 @@ const Contato = () => {
                   <div className="w-16 h-16 rounded-full bg-success/20 flex items-center justify-center mx-auto mb-4">
                     <MessageSquare className="w-8 h-8 text-success" />
                   </div>
-                  <h3 className="font-bold text-text mb-2">Preferir WhatsApp?</h3>
+                  <h3 className="font-bold text-text mb-2">Prefere WhatsApp?</h3>
                   <p className="text-sm text-text-muted mb-4">
                     Fale conosco diretamente pelo WhatsApp
                   </p>
-                  <Button className="w-full bg-success hover:bg-success/90 text-white">
+                  <Button 
+                    className="w-full bg-success hover:bg-success/90 text-white"
+                    onClick={() => window.open("https://wa.me/5511999999999", "_blank")}
+                  >
                     <MessageSquare className="mr-2 h-5 w-5" />
                     Abrir WhatsApp
+                  </Button>
+                </div>
+              </Card>
+
+              {/* Redes sociais */}
+              <Card className="p-6 bg-background/80 backdrop-blur-sm border-border/50">
+                <h3 className="font-semibold text-text mb-4 text-center">Siga-nos</h3>
+                <div className="grid grid-cols-4 gap-3">
+                  <Button
+                    variant="outline"
+                    size="icon"
+                    className="w-full h-12 hover:scale-110 hover:border-brand-900/50 transition-all"
+                    onClick={() => window.open("https://facebook.com/meuagente", "_blank")}
+                  >
+                    <Facebook className="w-5 h-5" />
+                  </Button>
+                  <Button
+                    variant="outline"
+                    size="icon"
+                    className="w-full h-12 hover:scale-110 hover:border-brand-900/50 transition-all"
+                    onClick={() => window.open("https://instagram.com/meuagente", "_blank")}
+                  >
+                    <Instagram className="w-5 h-5" />
+                  </Button>
+                  <Button
+                    variant="outline"
+                    size="icon"
+                    className="w-full h-12 hover:scale-110 hover:border-brand-900/50 transition-all"
+                    onClick={() => window.open("https://linkedin.com/company/meuagente", "_blank")}
+                  >
+                    <Linkedin className="w-5 h-5" />
+                  </Button>
+                  <Button
+                    variant="outline"
+                    size="icon"
+                    className="w-full h-12 hover:scale-110 hover:border-brand-900/50 transition-all"
+                    onClick={() => window.open("https://youtube.com/@meuagente", "_blank")}
+                  >
+                    <Youtube className="w-5 h-5" />
                   </Button>
                 </div>
               </Card>

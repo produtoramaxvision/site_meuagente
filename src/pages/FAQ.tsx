@@ -8,6 +8,8 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { MessageSquare, Mail } from "lucide-react";
+import SEO from "@/components/SEO";
+import { createFAQPageSchema } from "@/lib/seo";
 
 const FAQ = () => {
   const faqCategories = {
@@ -24,6 +26,14 @@ const FAQ = () => {
         question: "Posso usar sem número próprio?",
         answer: "Sim. No plano Free e Básico, você opera manualmente via app. Nos planos Business e Premium, oferecemos número WhatsApp dedicado com infraestrutura completa e implantação inclusa."
       },
+      {
+        question: "O Meu Agente funciona em qualquer dispositivo?",
+        answer: "Sim! Como opera via WhatsApp, funciona em qualquer dispositivo com WhatsApp instalado (Android, iOS, desktop). O app web também é totalmente responsivo e funciona em tablets, laptops e desktops."
+      },
+      {
+        question: "Há limite de usuários por conta?",
+        answer: "No Free e Básico, apenas 1 usuário. No Business, até 5 usuários. No Premium, usuários ilimitados. Cada usuário tem seu próprio acesso ao app e pode interagir com os agentes."
+      },
     ],
     planos: [
       {
@@ -38,6 +48,18 @@ const FAQ = () => {
         question: "Posso cancelar a qualquer momento?",
         answer: "Sim! Não há fidelidade. Você pode cancelar sua assinatura a qualquer momento via configurações do app ou entrando em contato com o suporte."
       },
+      {
+        question: "O que muda entre Business e Premium?",
+        answer: "Premium inclui 4 agentes exclusivos (Confirmação, Resumo de Grupos, Remarketing, Follow-up), pesquisa/extração avançada, backups diários off-site, cota maior de vídeo e governança ampliada de dados."
+      },
+      {
+        question: "Posso fazer upgrade ou downgrade?",
+        answer: "Sim! Upgrades são aplicados imediatamente. Downgrades entram em vigor no próximo ciclo de cobrança. Entre em contato com suporte para solicitar mudança de plano."
+      },
+      {
+        question: "O que está incluído na implantação?",
+        answer: "Nos planos Business/Premium, a implantação inclui configuração do número WhatsApp, setup inicial dos agentes, treinamento da equipe e customizações básicas. Integrações Google são opcionais com custo adicional."
+      },
     ],
     uso: [
       {
@@ -51,6 +73,18 @@ const FAQ = () => {
       {
         question: "Os agentes funcionam 24/7?",
         answer: "Sim! Nos planos Business e Premium, os agentes operam 24 horas por dia, 7 dias por semana, respondendo instantaneamente às suas solicitações."
+      },
+      {
+        question: "Posso criar categorias financeiras personalizadas?",
+        answer: "Sim! Nos planos pagos, você pode criar categorias customizadas além das 12 categorias padrão (Alimentação, Transporte, Moradia, Vestuário, Saúde, Educação, Lazer, Tecnologia, Marketing, Operação, Investimento, Outros)."
+      },
+      {
+        question: "Como marco uma transação como paga/recebida?",
+        answer: "Envie mensagem ao Agente Financeiro: 'Marcar transação [descrição] como paga' ou clique diretamente na transação no app web e altere o status."
+      },
+      {
+        question: "Posso agendar compromissos recorrentes?",
+        answer: "Sim! Com o Agente de Agendamento (Business/Premium), você pode criar eventos recorrentes (diários, semanais, mensais) integrados ao Google Calendar."
       },
     ],
     segurança: [
@@ -84,12 +118,35 @@ const FAQ = () => {
         question: "Quais integrações estão disponíveis?",
         answer: "Integrações com Google Workspace (Calendar, Drive, Tasks, Gmail) estão disponíveis nos planos Business/Premium mediante implantação opcional com custo adicional."
       },
+      {
+        question: "O sistema detecta transações duplicadas?",
+        answer: "Sim! O Agente Financeiro compara valor, data, descrição e categoria de cada lançamento e te alerta se detectar possível duplicata, evitando lançamentos acidentais."
+      },
+      {
+        question: "Qual o prazo para suporte responder?",
+        answer: "Planos Free e Básico não incluem suporte. Business e Premium têm suporte prioritário 24/7 com SLA de 2 horas para primeira resposta. Premium tem prioridade máxima na fila."
+      },
+      {
+        question: "Consigo importar dados de outro sistema?",
+        answer: "Sim! Nos planos pagos, você pode importar dados via CSV ou API. Entre em contato com suporte para solicitar importação guiada de sistemas legados."
+      },
     ],
   };
 
+  // Flatten all FAQs for JSON-LD
+  const allFAQs = Object.values(faqCategories).flat();
+
   return (
-    <div className="min-h-screen bg-background">
-      {/* Hero section */}
+    <>
+      <SEO
+        title="Perguntas Frequentes (FAQ) – Meu Agente | Dúvidas sobre Agentes de IA"
+        description="Respostas para as principais dúvidas sobre Meu Agente: como funciona, planos, segurança, exportação, integrações e muito mais."
+        keywords={["faq meu agente", "perguntas agentes ia", "dúvidas whatsapp business", "como funciona meu agente", "segurança lgpd"]}
+        canonicalUrl="/faq"
+        structuredData={createFAQPageSchema(allFAQs)}
+      />
+      <div className="min-h-screen bg-background">
+        {/* Hero section */}
       <section className="py-20 bg-gradient-to-br from-surface via-background to-surface">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl sm:text-6xl font-extrabold text-gradient mb-6">
@@ -171,6 +228,7 @@ const FAQ = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
 

@@ -1,8 +1,11 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Check, X, Calculator } from "lucide-react";
 import { useState } from "react";
+import SEO from "@/components/SEO";
+import { createSoftwareApplicationSchema } from "@/lib/seo";
 
 const Planos = () => {
   const [hoursPerMonth, setHoursPerMonth] = useState(40);
@@ -114,9 +117,17 @@ const Planos = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
-      {/* Hero section */}
-      <section className="py-20 bg-gradient-to-br from-surface via-background to-surface">
+    <>
+      <SEO
+        title="Planos e Preços – Meu Agente | A partir de R$ 497/mês"
+        description="Escolha o plano ideal: Free (gratuito), Básico (R$ 497/mês), Business (R$ 997/mês) ou Premium (R$ 1.497/mês). Compare recursos, calcule ROI e contrate online."
+        keywords={["planos meu agente", "preços automação whatsapp", "quanto custa agente ia", "sdr virtual preço", "whatsapp business preço"]}
+        canonicalUrl="/planos"
+        structuredData={createSoftwareApplicationSchema()}
+      />
+      <div className="min-h-screen bg-background">
+        {/* Hero section */}
+        <section className="py-20 bg-gradient-to-br from-surface via-background to-surface">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl sm:text-6xl font-extrabold text-gradient mb-6">
             Planos e Preços
@@ -332,12 +343,201 @@ const Planos = () => {
                   <td className="px-6 py-4 text-center bg-brand-900/5"><Check className="w-5 h-5 text-success mx-auto" /></td>
                   <td className="px-6 py-4 text-center"><Check className="w-5 h-5 text-success mx-auto" /></td>
                 </tr>
+                <tr>
+                  <td className="px-6 py-4 text-sm text-text">Agente Financeiro</td>
+                  <td className="px-6 py-4 text-center"><Check className="w-5 h-5 text-success mx-auto" /></td>
+                  <td className="px-6 py-4 text-center"><Check className="w-5 h-5 text-success mx-auto" /></td>
+                  <td className="px-6 py-4 text-center bg-brand-900/5"><Check className="w-5 h-5 text-success mx-auto" /></td>
+                  <td className="px-6 py-4 text-center"><Check className="w-5 h-5 text-success mx-auto" /></td>
+                </tr>
+                <tr>
+                  <td className="px-6 py-4 text-sm text-text">Exportação CSV/PDF</td>
+                  <td className="px-6 py-4 text-center"><X className="w-5 h-5 text-text-muted mx-auto" /></td>
+                  <td className="px-6 py-4 text-center"><Check className="w-5 h-5 text-success mx-auto" /></td>
+                  <td className="px-6 py-4 text-center bg-brand-900/5"><Check className="w-5 h-5 text-success mx-auto" /></td>
+                  <td className="px-6 py-4 text-center"><Check className="w-5 h-5 text-success mx-auto" /></td>
+                </tr>
+                <tr>
+                  <td className="px-6 py-4 text-sm text-text">Agente Web Search</td>
+                  <td className="px-6 py-4 text-center text-xs">Básico</td>
+                  <td className="px-6 py-4 text-center text-xs">Básico</td>
+                  <td className="px-6 py-4 text-center bg-brand-900/5 text-xs">Básico</td>
+                  <td className="px-6 py-4 text-center text-xs font-semibold text-success">Avançado</td>
+                </tr>
+                <tr>
+                  <td className="px-6 py-4 text-sm text-text">Agente de Scrape</td>
+                  <td className="px-6 py-4 text-center text-xs">Básico</td>
+                  <td className="px-6 py-4 text-center text-xs">Básico</td>
+                  <td className="px-6 py-4 text-center bg-brand-900/5 text-xs">Intermediário</td>
+                  <td className="px-6 py-4 text-center text-xs font-semibold text-success">Avançado</td>
+                </tr>
+                <tr>
+                  <td className="px-6 py-4 text-sm text-text">Implantação (setup inicial) inclusa</td>
+                  <td className="px-6 py-4 text-center"><X className="w-5 h-5 text-text-muted mx-auto" /></td>
+                  <td className="px-6 py-4 text-center"><X className="w-5 h-5 text-text-muted mx-auto" /></td>
+                  <td className="px-6 py-4 text-center bg-brand-900/5"><Check className="w-5 h-5 text-success mx-auto" /></td>
+                  <td className="px-6 py-4 text-center"><Check className="w-5 h-5 text-success mx-auto" /></td>
+                </tr>
+                <tr>
+                  <td className="px-6 py-4 text-sm text-text">Agente SDR (qualificação de leads)</td>
+                  <td className="px-6 py-4 text-center"><X className="w-5 h-5 text-text-muted mx-auto" /></td>
+                  <td className="px-6 py-4 text-center"><X className="w-5 h-5 text-text-muted mx-auto" /></td>
+                  <td className="px-6 py-4 text-center bg-brand-900/5"><Check className="w-5 h-5 text-success mx-auto" /></td>
+                  <td className="px-6 py-4 text-center"><Check className="w-5 h-5 text-success mx-auto" /></td>
+                </tr>
+                <tr>
+                  <td className="px-6 py-4 text-sm text-text">Agente de Marketing (Google Ads)</td>
+                  <td className="px-6 py-4 text-center"><X className="w-5 h-5 text-text-muted mx-auto" /></td>
+                  <td className="px-6 py-4 text-center"><X className="w-5 h-5 text-text-muted mx-auto" /></td>
+                  <td className="px-6 py-4 text-center bg-brand-900/5"><Check className="w-5 h-5 text-success mx-auto" /></td>
+                  <td className="px-6 py-4 text-center"><Check className="w-5 h-5 text-success mx-auto" /></td>
+                </tr>
+                <tr>
+                  <td className="px-6 py-4 text-sm text-text">Agente de Agendamento (Calendar/Drive/Tasks)</td>
+                  <td className="px-6 py-4 text-center"><X className="w-5 h-5 text-text-muted mx-auto" /></td>
+                  <td className="px-6 py-4 text-center"><X className="w-5 h-5 text-text-muted mx-auto" /></td>
+                  <td className="px-6 py-4 text-center bg-brand-900/5"><Check className="w-5 h-5 text-success mx-auto" /></td>
+                  <td className="px-6 py-4 text-center"><Check className="w-5 h-5 text-success mx-auto" /></td>
+                </tr>
+                <tr>
+                  <td className="px-6 py-4 text-sm text-text">Agente de Dev (programação e debugging)</td>
+                  <td className="px-6 py-4 text-center"><X className="w-5 h-5 text-text-muted mx-auto" /></td>
+                  <td className="px-6 py-4 text-center"><X className="w-5 h-5 text-text-muted mx-auto" /></td>
+                  <td className="px-6 py-4 text-center bg-brand-900/5"><Check className="w-5 h-5 text-success mx-auto" /></td>
+                  <td className="px-6 py-4 text-center"><Check className="w-5 h-5 text-success mx-auto" /></td>
+                </tr>
+                <tr>
+                  <td className="px-6 py-4 text-sm text-text">Agente de Vídeo (Google Veo 3)</td>
+                  <td className="px-6 py-4 text-center"><X className="w-5 h-5 text-text-muted mx-auto" /></td>
+                  <td className="px-6 py-4 text-center"><X className="w-5 h-5 text-text-muted mx-auto" /></td>
+                  <td className="px-6 py-4 text-center bg-brand-900/5"><Check className="w-5 h-5 text-success mx-auto" /></td>
+                  <td className="px-6 py-4 text-center text-xs font-semibold text-success">Cota maior</td>
+                </tr>
+                <tr>
+                  <td className="px-6 py-4 text-sm text-text">Agente de Confirmação</td>
+                  <td className="px-6 py-4 text-center"><X className="w-5 h-5 text-text-muted mx-auto" /></td>
+                  <td className="px-6 py-4 text-center"><X className="w-5 h-5 text-text-muted mx-auto" /></td>
+                  <td className="px-6 py-4 text-center bg-brand-900/5"><X className="w-5 h-5 text-text-muted mx-auto" /></td>
+                  <td className="px-6 py-4 text-center"><Check className="w-5 h-5 text-success mx-auto" /></td>
+                </tr>
+                <tr>
+                  <td className="px-6 py-4 text-sm text-text">Agente de Resumo de Grupos</td>
+                  <td className="px-6 py-4 text-center"><X className="w-5 h-5 text-text-muted mx-auto" /></td>
+                  <td className="px-6 py-4 text-center"><X className="w-5 h-5 text-text-muted mx-auto" /></td>
+                  <td className="px-6 py-4 text-center bg-brand-900/5"><X className="w-5 h-5 text-text-muted mx-auto" /></td>
+                  <td className="px-6 py-4 text-center"><Check className="w-5 h-5 text-success mx-auto" /></td>
+                </tr>
+                <tr>
+                  <td className="px-6 py-4 text-sm text-text">Agente de Remarketing</td>
+                  <td className="px-6 py-4 text-center"><X className="w-5 h-5 text-text-muted mx-auto" /></td>
+                  <td className="px-6 py-4 text-center"><X className="w-5 h-5 text-text-muted mx-auto" /></td>
+                  <td className="px-6 py-4 text-center bg-brand-900/5"><X className="w-5 h-5 text-text-muted mx-auto" /></td>
+                  <td className="px-6 py-4 text-center"><Check className="w-5 h-5 text-success mx-auto" /></td>
+                </tr>
+                <tr>
+                  <td className="px-6 py-4 text-sm text-text">Agente de Follow-up</td>
+                  <td className="px-6 py-4 text-center"><X className="w-5 h-5 text-text-muted mx-auto" /></td>
+                  <td className="px-6 py-4 text-center"><X className="w-5 h-5 text-text-muted mx-auto" /></td>
+                  <td className="px-6 py-4 text-center bg-brand-900/5"><X className="w-5 h-5 text-text-muted mx-auto" /></td>
+                  <td className="px-6 py-4 text-center"><Check className="w-5 h-5 text-success mx-auto" /></td>
+                </tr>
+                <tr>
+                  <td className="px-6 py-4 text-sm text-text">Governança de dados / auditoria</td>
+                  <td className="px-6 py-4 text-center"><X className="w-5 h-5 text-text-muted mx-auto" /></td>
+                  <td className="px-6 py-4 text-center text-xs">Básico</td>
+                  <td className="px-6 py-4 text-center bg-brand-900/5 text-xs">Intermediário</td>
+                  <td className="px-6 py-4 text-center text-xs font-semibold text-success">Avançado</td>
+                </tr>
               </tbody>
             </table>
           </div>
         </div>
       </section>
+
+      {/* FAQ Section */}
+      <section className="py-16">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-text text-center mb-12">
+            Perguntas Frequentes sobre Planos
+          </h2>
+          
+          <Accordion type="single" collapsible className="space-y-4">
+            <AccordionItem value="item-1" className="bg-background border border-border/50 rounded-lg px-6">
+              <AccordionTrigger className="text-left font-semibold">
+                Posso usar o Meu Agente sem número próprio?
+              </AccordionTrigger>
+              <AccordionContent className="text-text-muted">
+                Sim, no <strong>Free</strong> e no <strong>Básico</strong> o atendimento ocorre na infraestrutura do Meu Agente. Nos planos Business e Premium você tem um número WhatsApp dedicado.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-2" className="bg-background border border-border/50 rounded-lg px-6">
+              <AccordionTrigger className="text-left font-semibold">
+                O que muda entre os planos Business e Premium?
+              </AccordionTrigger>
+              <AccordionContent className="text-text-muted">
+                O Premium inclui 4 agentes exclusivos (Confirmação, Resumo de Grupos, Remarketing e Follow-up), pesquisa/extração avançada, backups diários off-site, cota maior de vídeo e governança ampliada de dados.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-3" className="bg-background border border-border/50 rounded-lg px-6">
+              <AccordionTrigger className="text-left font-semibold">
+                Como funcionam as mensagens proativas?
+              </AccordionTrigger>
+              <AccordionContent className="text-text-muted">
+                Fora da janela de 24h, somente com <strong>template aprovado</strong> e opt-in do contato. Dentro da janela de 24h, mensagens livres são permitidas seguindo as políticas do WhatsApp Business.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-4" className="bg-background border border-border/50 rounded-lg px-6">
+              <AccordionTrigger className="text-left font-semibold">
+                Há taxa de manutenção adicional?
+              </AccordionTrigger>
+              <AccordionContent className="text-text-muted">
+                Sim, nos planos <strong>Business</strong> e <strong>Premium</strong> há uma taxa de <strong>R$ 149,00/h</strong> quando solicitada para ajustes de modelos, reconfigurações e treinamentos pontuais. Não é cobrada mensalmente, apenas sob demanda.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-5" className="bg-background border border-border/50 rounded-lg px-6">
+              <AccordionTrigger className="text-left font-semibold">
+                Vocês fazem scraping de sites que proíbem?
+              </AccordionTrigger>
+              <AccordionContent className="text-text-muted">
+                Não. Trabalhamos apenas com <strong>APIs oficiais</strong> e <strong>fontes permitidas</strong> que autorizam extração de dados. Respeitamos os termos de uso de todos os sites.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-6" className="bg-background border border-border/50 rounded-lg px-6">
+              <AccordionTrigger className="text-left font-semibold">
+                Posso mudar de plano depois?
+              </AccordionTrigger>
+              <AccordionContent className="text-text-muted">
+                Sim! Você pode fazer upgrade ou downgrade a qualquer momento. Upgrades são aplicados imediatamente, downgrades entram em vigor no próximo ciclo de cobrança. Entre em contato com nosso suporte para solicitar a mudança.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-7" className="bg-background border border-border/50 rounded-lg px-6">
+              <AccordionTrigger className="text-left font-semibold">
+                O que está incluído na implantação?
+              </AccordionTrigger>
+              <AccordionContent className="text-text-muted">
+                Nos planos <strong>Business</strong> e <strong>Premium</strong>, a implantação inclui configuração do número WhatsApp, setup inicial dos agentes, treinamento da equipe e customizações básicas. Integrações com Google Workspace são opcionais com custo adicional.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-8" className="bg-background border border-border/50 rounded-lg px-6">
+              <AccordionTrigger className="text-left font-semibold">
+                Como funciona o suporte prioritário 24/7?
+              </AccordionTrigger>
+              <AccordionContent className="text-text-muted">
+                Clientes <strong>Business</strong> e <strong>Premium</strong> têm acesso a suporte via WhatsApp, email e telefone 24 horas por dia, 7 dias por semana, com SLA de resposta de 2 horas. Premium tem prioridade máxima na fila.
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
+        </div>
+      </section>
     </div>
+    </>
   );
 };
 

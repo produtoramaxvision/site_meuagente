@@ -34,6 +34,20 @@ const ExamplesSection = () => {
       ]
     },
     {
+      category: "Scrape",
+      color: "from-purple-500/10 to-pink-500/10",
+      examples: [
+        {
+          message: '"Faça o scrape do site exemplo.com e me envie os contatos comerciais (nome, e-mail e telefone) em CSV."',
+          response: "📊 Scraping concluído! 47 contatos extraídos em CSV."
+        },
+        {
+          message: '"Busque no portal de dados abertos de Curitiba o dataset de aluguel residencial de 2024 e me mande um CSV filtrado por bairro."',
+          response: "📁 Dataset processado e filtrado por bairro!"
+        }
+      ]
+    },
+    {
       category: "SDR",
       color: "from-orange-500/10 to-red-500/10",
       examples: [
@@ -120,7 +134,7 @@ const ExamplesSection = () => {
 
         {/* Examples tabs */}
         <Tabs defaultValue={examples[0].category} className="w-full">
-          <TabsList className="grid grid-cols-3 lg:grid-cols-7 gap-2 h-auto p-2 bg-background/80 backdrop-blur-sm mb-8">
+          <TabsList className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-2 h-auto p-2 bg-background/80 backdrop-blur-sm mb-8">
             {examples.map((item, index) => (
               <TabsTrigger 
                 key={index} 
