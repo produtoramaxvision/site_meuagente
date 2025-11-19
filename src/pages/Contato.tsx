@@ -141,25 +141,24 @@ const Contato = () => {
 
       <main className="relative z-10">
         {/* HERO + resumo */}
-        <section className="border-b border-border/60 bg-gradient-to-b from-brand-950 via-background to-background pt-20 pb-16 sm:pt-24 sm:pb-20">
-          <div className="mx-auto flex max-w-7xl flex-col gap-10 px-4 sm:px-6 lg:flex-row lg:items-center lg:px-8">
-            <div className="max-w-xl space-y-6">
-              <Badge className="inline-flex items-center gap-2 bg-emerald-500/10 text-emerald-400 border-emerald-500/40 px-3 py-1 text-xs font-semibold uppercase tracking-wide">
+        <section className="relative overflow-hidden border-b border-border/60 bg-gradient-to-b from-brand-950 via-background to-background py-20 sm:py-24">
+          <div className="pointer-events-none absolute inset-0 z-0 bg-[linear-gradient(to_right,#8080800b_1px,transparent_1px),linear-gradient(to_bottom,#8080800b_1px,transparent_1px)] bg-[size:14px_24px]" />
+          <div className="relative z-10 mx-auto flex max-w-7xl flex-col gap-10 px-4 sm:px-6 lg:flex-row lg:items-start lg:px-8">
+            <div className="max-w-xl">
+              <Badge className="inline-flex items-center gap-2 bg-emerald-500/10 text-emerald-400 border-emerald-500/40 px-3 py-1 text-xs font-semibold uppercase tracking-wide mb-3">
                 <Sparkles className="h-3.5 w-3.5" />
                 Fale com quem constrói o Meu Agente
               </Badge>
 
-              <div>
-                <h1 className="text-balance text-4xl font-semibold tracking-tight text-gradient sm:text-5xl lg:text-6xl">
-                  Vamos desenhar o próximo passo da sua operação com IA.
-                </h1>
-                <p className="mt-4 text-base text-text-muted sm:text-lg">
-                  Use esta página para falar com nosso time sobre planos, parcerias, suporte técnico ou dúvidas
-                  estratégicas sobre como os Agentes de IA podem funcionar no seu negócio.
-                </p>
-              </div>
+              <h1 className="text-balance text-4xl font-semibold tracking-tight leading-normal pb-2 text-gradient sm:text-5xl lg:text-6xl">
+                Vamos desenhar o próximo passo da sua operação com IA.
+              </h1>
+              <p className="mt-4 text-base text-text-muted sm:text-lg">
+                Use esta página para falar com nosso time sobre planos, parcerias, suporte técnico ou dúvidas
+                estratégicas sobre como os Agentes de IA podem funcionar no seu negócio.
+              </p>
 
-              <div className="grid gap-4 text-sm text-text-muted sm:grid-cols-3">
+              <div className="mt-6 grid gap-4 text-sm text-text-muted sm:grid-cols-3">
                 <Card className="border-border/60 bg-background/80 p-4">
                   <p className="text-xs uppercase tracking-wide text-text-muted/80">Ponto de partida</p>
                   <p className="mt-2 text-sm font-semibold text-text">
@@ -180,7 +179,7 @@ const Contato = () => {
                 </Card>
               </div>
 
-              <div className="flex flex-wrap items-center gap-3 text-xs text-text-muted">
+              <div className="mt-4 flex flex-wrap items-center gap-3 text-xs text-text-muted">
                 <span className="rounded-full bg-surface/60 px-3 py-1">
                   Mais de 8 agentes de IA prontos para o seu WhatsApp.
                 </span>

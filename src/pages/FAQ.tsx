@@ -219,12 +219,13 @@ const FAQ = () => {
 
       <div className="min-h-screen bg-background">
         {/* Hero */}
-        <section className="relative overflow-hidden bg-gradient-to-br from-surface via-background to-surface/80 py-16 sm:py-20">
+        <section className="relative overflow-hidden bg-gradient-to-br from-surface via-background to-surface/80 py-20 sm:py-24">
+          <div className="pointer-events-none absolute inset-0 z-0 bg-[linear-gradient(to_right,#8080800b_1px,transparent_1px),linear-gradient(to_bottom,#8080800b_1px,transparent_1px)] bg-[size:14px_24px]" />
           <div className="pointer-events-none absolute inset-0 opacity-40 mix-blend-screen">
             <div className="bg-[radial-gradient(circle_at_top,_rgba(125,211,252,0.10),_transparent_60%)]" />
           </div>
 
-          <div className="relative mx-auto flex max-w-6xl flex-col gap-10 px-4 sm:px-6 lg:px-8 lg:flex-row lg:items-center lg:justify-between">
+          <div className="relative z-10 mx-auto flex max-w-7xl flex-col gap-10 px-4 sm:px-6 lg:px-8 lg:flex-row lg:items-center lg:justify-between">
             <div className="max-w-2xl space-y-6 text-left">
               <Badge
                 variant="outline"
@@ -234,7 +235,7 @@ const FAQ = () => {
               </Badge>
 
               <div className="space-y-3">
-                <h1 className="text-balance text-4xl font-extrabold leading-tight text-gradient sm:text-5xl lg:text-6xl">
+                <h1 className="text-balance text-4xl font-extrabold leading-normal pb-2 text-gradient sm:text-5xl lg:text-6xl">
                   Tire suas dúvidas sobre o Meu Agente.
                 </h1>
                 <p className="text-balance text-base text-text-muted sm:text-lg">
@@ -349,8 +350,8 @@ const FAQ = () => {
         </section>
 
         {/* FAQ layout */}
-        <section className="py-16 sm:py-20">
-          <div className="mx-auto flex max-w-6xl flex-col gap-10 px-4 sm:px-6 lg:px-8 lg:flex-row">
+        <section className="py-20 sm:py-24">
+          <div className="mx-auto flex max-w-7xl flex-col gap-10 px-4 sm:px-6 lg:px-8 lg:flex-row">
             {/* Coluna principal: categorias + perguntas */}
             <div className="flex-1 space-y-6">
               <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">

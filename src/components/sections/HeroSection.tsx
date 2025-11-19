@@ -5,7 +5,7 @@ const HeroSection = () => {
   return (
     <section className="relative min-h-[90vh] flex items-center justify-center bg-gradient-to-br from-background via-surface to-background overflow-hidden">
       {/* Background pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:14px_24px]"></div>
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800b_1px,transparent_1px),linear-gradient(to_bottom,#8080800b_1px,transparent_1px)] bg-[size:14px_24px]"></div>
       
       {/* Floating elements */}
       <div className="absolute top-20 left-10 w-72 h-72 bg-brand-900/5 rounded-full blur-3xl animate-float"></div>

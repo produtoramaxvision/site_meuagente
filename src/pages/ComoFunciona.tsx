@@ -362,6 +362,7 @@ No plano Premium, você tem cota maior de minutos de geração, permitindo escal
     <div className="min-h-screen bg-background">
       {/* HERO */}
       <section className="relative overflow-hidden border-b bg-gradient-to-b from-brand-950 via-background to-background">
+        <div className="pointer-events-none absolute inset-0 z-0 bg-[linear-gradient(to_right,#8080800b_1px,transparent_1px),linear-gradient(to_bottom,#8080800b_1px,transparent_1px)] bg-[size:14px_24px]" />
         <div className="pointer-events-none absolute inset-0 opacity-40">
           <div className="bg-[radial-gradient(circle_at_top,_rgba(56,189,248,0.25)_0,_transparent_55%),_radial-gradient(circle_at_bottom,_rgba(244,244,245,0.1)_0,_transparent_55%)] h-full w-full" />
         </div>
@@ -372,7 +373,7 @@ No plano Premium, você tem cota maior de minutos de geração, permitindo escal
               Como Funciona na Prática
             </Badge>
 
-            <h1 className="text-balance text-4xl font-semibold tracking-tight text-gradient sm:text-5xl lg:text-6xl">
+            <h1 className="text-balance text-4xl font-semibold tracking-tight leading-normal pb-2 text-gradient sm:text-5xl lg:text-6xl">
               Do WhatsApp ao resultado,
               <span className="block">em uma orquestra de Agentes de IA.</span>
             </h1>
@@ -577,12 +578,12 @@ No plano Premium, você tem cota maior de minutos de geração, permitindo escal
 
           <Tabs defaultValue="financeiro" className="space-y-8">
             <ScrollArea className="-mx-4 w-[calc(100%+2rem)] sm:mx-0 sm:w-full">
-              <TabsList className="mx-4 inline-flex h-auto flex-nowrap gap-2 rounded-full bg-surface/80 p-1 sm:mx-0 sm:flex-wrap">
+              <TabsList className="mx-4 inline-flex h-auto flex-nowrap gap-2 rounded-full border border-border/60 bg-surface/80/80 p-1 shadow-sm backdrop-blur-sm sm:mx-0 sm:flex-wrap">
                 {agents.map((agent) => (
                   <TabsTrigger
                     key={agent.id}
                     value={agent.id}
-                    className="data-[state=active]:bg-background data-[state=active]:text-text flex items-center gap-2 rounded-full px-4 py-2 text-xs sm:text-sm"
+                    className="group relative flex items-center gap-2 rounded-full border border-transparent px-4 py-2 text-xs sm:text-sm font-medium text-text-muted transition-colors data-[state=active]:border-border data-[state=active]:bg-background data-[state=active]:text-text data-[state=active]:shadow-sm hover:bg-surface-2 hover:text-text focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-900/40 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                   >
                     <agent.icon className={`h-4 w-4 ${agent.iconColor}`} />
                     <span>{agent.name}</span>
@@ -692,7 +693,7 @@ No plano Premium, você tem cota maior de minutos de geração, permitindo escal
       </section>
 
       {/* SDR FLOW – TIMELINE */}
-      <section className="border-b bg-surface/40 py-16 sm:py-20">
+      <section className="border-b bg-surface/40 py-20 sm:py-24">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="mb-10 text-center">
             <Badge variant="outline" className="border-border/70 bg-background/60 px-3 py-1 text-xs uppercase tracking-wide">
@@ -749,7 +750,7 @@ No plano Premium, você tem cota maior de minutos de geração, permitindo escal
       </section>
 
       {/* APP WEB */}
-      <section className="border-b bg-background py-16 sm:py-20">
+      <section className="border-b bg-background py-20 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-10 grid gap-10 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] lg:items-center">
             <div className="space-y-4">
@@ -857,7 +858,7 @@ No plano Premium, você tem cota maior de minutos de geração, permitindo escal
       </section>
 
       {/* FINAL CTA */}
-      <section className="bg-gradient-to-br from-brand-900 via-brand-800 to-brand-700 py-16 sm:py-20">
+      <section className="bg-gradient-to-br from-brand-900 via-brand-800 to-brand-700 py-20 sm:py-24">
         <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
           <h2 className="text-balance text-3xl font-semibold tracking-tight text-white sm:text-4xl">
             Pronto para ver esses agentes trabalhando pelo seu negócio?

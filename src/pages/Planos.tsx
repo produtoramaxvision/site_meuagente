@@ -134,18 +134,19 @@ const Planos = () => {
       <div className="min-h-screen bg-background">
         {/* Hero section */}
         <section className="relative overflow-hidden py-20 sm:py-24 bg-gradient-to-br from-brand-900/15 via-background to-surface">
+          <div className="pointer-events-none absolute inset-0 z-0 bg-[linear-gradient(to_right,#8080800b_1px,transparent_1px),linear-gradient(to_bottom,#8080800b_1px,transparent_1px)] bg-[size:14px_24px]" />
           <div className="pointer-events-none absolute inset-0 opacity-60 mix-blend-soft-light">
             <div className="absolute -left-40 top-0 h-80 w-80 rounded-full bg-brand-900/10 blur-3xl" />
             <div className="absolute right-0 bottom-0 h-80 w-80 rounded-full bg-brand-700/10 blur-3xl" />
           </div>
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid gap-12 lg:grid-cols-[minmax(0,1.2fr),minmax(0,1fr)] items-center lg:items-stretch">
               <div className="flex flex-col gap-8 lg:h-full lg:justify-between">
                 <div className="inline-flex items-center gap-2 rounded-full border border-border/50 bg-background/70 px-3 py-1 text-xs font-medium text-text-muted mb-4">
                   <Sparkles className="h-3 w-3 text-brand-900" />
                   <span>Planos pensados para operação em escala</span>
                 </div>
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gradient mb-6 leading-tight">
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gradient mb-6 pb-2 leading-normal">
                   Planos e preços que acompanham o crescimento do seu negócio
                 </h1>
                 <p className="text-lg sm:text-xl text-text-muted max-w-xl">
@@ -223,8 +224,8 @@ const Planos = () => {
         </section>
 
         {/* ROI Calculator */}
-        <section className="py-16 bg-surface/30">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="py-20 sm:py-24 bg-surface/30">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <Card className="p-8 md:p-10 bg-gradient-to-br from-brand-900/5 to-brand-700/5 border-brand-900/25 shadow-lg">
               <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-8">
                 <div className="flex items-center gap-3">
@@ -368,7 +369,7 @@ const Planos = () => {
         </section>
 
         {/* Pricing & comparison */}
-        <section className="py-20 bg-gradient-to-b from-background via-surface/30 to-background">
+        <section className="py-20 sm:py-24 bg-gradient-to-b from-background via-surface/30 to-background">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col items-center text-center mb-10">
               <Badge variant="outline" className="mb-3 uppercase tracking-[0.18em] text-xs">
@@ -837,7 +838,7 @@ const Planos = () => {
         </section>
 
       {/* FAQ Section */}
-      <section className="py-16">
+      <section className="py-20 sm:py-24">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-text text-center mb-12 pb-2 leading-normal">
             Perguntas Frequentes sobre Planos

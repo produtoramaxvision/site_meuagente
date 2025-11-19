@@ -318,12 +318,12 @@ const ProductShowcaseSection = () => {
         >
           {/* Coluna esquerda – menu de casos de uso */}
           <div className="lg:col-span-4 space-y-4">
-            <TabsList className="w-full justify-start gap-2 overflow-x-auto rounded-full bg-surface/80 p-1 sm:rounded-xl sm:p-1.5 lg:flex lg:h-auto lg:flex-col lg:items-stretch lg:space-y-2 lg:rounded-2xl lg:bg-transparent lg:p-0">
+            <TabsList className="w-full justify-start gap-2 overflow-x-auto rounded-full border border-border/60 bg-surface/80/80 p-1 shadow-sm backdrop-blur-sm sm:rounded-xl sm:p-1.5 lg:flex lg:h-auto lg:flex-col lg:items-stretch lg:space-y-2 lg:rounded-2xl lg:border-0 lg:bg-transparent lg:p-0">
               {useCases.map((useCase) => (
                 <TabsTrigger
                   key={useCase.id}
                   value={useCase.id}
-                  className="flex min-w-[140px] flex-1 items-center justify-start gap-3 rounded-full px-3 py-2 text-xs sm:text-sm font-medium data-[state=active]:bg-surface-2 data-[state=active]:text-text data-[state=active]:shadow-sm lg:rounded-xl lg:px-4 lg:py-3"
+                  className="group relative flex min-w-[140px] flex-1 items-center justify-start gap-3 rounded-full border border-transparent px-3 py-2 text-xs sm:text-sm font-medium text-text-muted transition-colors data-[state=active]:border-border data-[state=active]:bg-surface-2 data-[state=active]:text-text data-[state=active]:shadow-sm lg:rounded-xl lg:px-4 lg:py-3 hover:bg-surface-2 hover:text-text focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-900/40 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                 >
                   <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-surface-2">
                     <useCase.icon className="w-4 h-4 text-brand-900" />

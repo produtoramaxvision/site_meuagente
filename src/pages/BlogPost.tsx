@@ -93,8 +93,9 @@ const BlogPost = () => {
       />
       <div className="min-h-screen bg-background">
       {/* Hero section */}
-      <section className="py-12 bg-gradient-to-br from-surface via-background to-surface border-b border-border/50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative overflow-hidden py-12 bg-gradient-to-br from-surface via-background to-surface border-b border-border/50">
+        <div className="pointer-events-none absolute inset-0 z-0 bg-[linear-gradient(to_right,#8080800b_1px,transparent_1px),linear-gradient(to_bottom,#8080800b_1px,transparent_1px)] bg-[size:14px_24px]" />
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Breadcrumb */}
           <nav className="flex items-center gap-2 text-sm text-text-muted mb-6">
             <Link to="/" className="hover:text-brand-900 transition-colors">

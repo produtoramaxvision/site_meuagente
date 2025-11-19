@@ -65,14 +65,15 @@ const Blog = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero editorial com destaques */}
-      <section className="border-b border-border/40 bg-gradient-to-br from-surface via-background to-surface pb-16 pt-20">
-        <div className="mx-auto max-w-7xl px-4 text-left sm:px-6 lg:px-8">
+      <section className="relative overflow-hidden border-b border-border/40 bg-gradient-to-br from-surface via-background to-surface py-20 sm:py-24">
+        <div className="pointer-events-none absolute inset-0 z-0 bg-[linear-gradient(to_right,#8080800b_1px,transparent_1px),linear-gradient(to_bottom,#8080800b_1px,transparent_1px)] bg-[size:14px_24px]" />
+        <div className="relative z-10 mx-auto max-w-7xl px-4 text-left sm:px-6 lg:px-8">
           <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
             <div>
               <p className="mb-3 text-sm font-medium uppercase tracking-[0.2em] text-brand-700">
                 Insights em Agentes de IA
               </p>
-              <h1 className="text-balance text-4xl font-extrabold leading-tight text-gradient sm:text-5xl lg:text-6xl">
+              <h1 className="text-balance text-4xl font-extrabold leading-normal pb-2 text-gradient sm:text-5xl lg:text-6xl">
                 Blog Meu Agente
               </h1>
               <p className="mt-4 max-w-2xl text-base text-text-muted sm:text-lg">
