@@ -105,7 +105,7 @@ export const createOrganizationSchema = () => ({
   },
   "sameAs": [
     "https://facebook.com/meuagente",
-    "https://instagram.com/meuagente",
+    "https://www.instagram.com/meu_agente",
     "https://linkedin.com/company/meuagente",
     "https://youtube.com/@meuagente",
   ],

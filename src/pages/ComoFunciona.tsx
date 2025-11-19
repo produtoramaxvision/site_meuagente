@@ -707,28 +707,25 @@ No plano Premium, você tem cota maior de minutos de geração, permitindo escal
             </p>
           </div>
 
-          <ScrollArea className="w-full">
-            <div className="flex min-w-[720px] gap-6 pb-4 md:min-w-full md:grid md:grid-cols-3 md:gap-6">
-              {sdrFlow.map((item, index) => (
-                <Card
-                  key={item.step}
-                  className="relative flex-1 border-border/70 bg-background/80 p-5 shadow-sm transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg"
-                >
-                  <div className="absolute -top-4 left-4 flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-brand-900 to-brand-700 text-xs font-semibold text-white shadow-lg">
-                    {item.step}
-                  </div>
-                  {index < sdrFlow.length - 1 && (
-                    <div className="pointer-events-none absolute right-[-18px] top-1/2 hidden h-[1px] w-10 -translate-y-1/2 bg-gradient-to-r from-brand-900/40 to-transparent md:block" />
-                  )}
-                  <div className="mt-4 space-y-2">
-                    <h3 className="text-sm font-semibold text-text">{item.title}</h3>
-                    <p className="text-xs text-text-muted">{item.description}</p>
-                  </div>
-                </Card>
-              ))}
-            </div>
-            <ScrollBar orientation="horizontal" />
-          </ScrollArea>
+          <div className="grid gap-6 md:grid-cols-3">
+            {sdrFlow.map((item, index) => (
+              <Card
+                key={item.step}
+                className="relative flex-1 border-border/70 bg-background/80 p-5 shadow-sm transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg"
+              >
+                <div className="absolute -top-4 left-4 flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-brand-900 to-brand-700 text-xs font-semibold text-white shadow-lg">
+                  {item.step}
+                </div>
+                {index < sdrFlow.length - 1 && (
+                  <div className="pointer-events-none absolute right-[-18px] top-1/2 hidden h-[1px] w-10 -translate-y-1/2 bg-gradient-to-r from-brand-900/40 to-transparent md:block" />
+                )}
+                <div className="mt-4 space-y-2">
+                  <h3 className="text-sm font-semibold text-text">{item.title}</h3>
+                  <p className="text-xs text-text-muted">{item.description}</p>
+                </div>
+              </Card>
+            ))}
+          </div>
 
           <div className="mt-8 flex flex-col items-center justify-between gap-4 text-xs text-text-muted sm:flex-row">
             <div className="inline-flex items-center gap-2 rounded-full bg-background/70 px-4 py-2">

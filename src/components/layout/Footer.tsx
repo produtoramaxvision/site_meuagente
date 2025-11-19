@@ -30,10 +30,10 @@ const Footer = () => {
   };
 
   const socialLinks = [
-    { icon: Facebook, href: "#", label: "Facebook" },
-    { icon: Instagram, href: "#", label: "Instagram" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
-    { icon: Youtube, href: "#", label: "YouTube" },
+    { icon: Facebook, href: "https://facebook.com/meuagente", label: "Facebook" },
+    { icon: Instagram, href: "https://www.instagram.com/meu_agente", label: "Instagram" },
+    { icon: Linkedin, href: "https://linkedin.com/company/meuagente", label: "LinkedIn" },
+    { icon: Youtube, href: "https://youtube.com/@meuagente", label: "YouTube" },
   ];
 
   return (
@@ -184,8 +184,6 @@ const Footer = () => {
               © 2025 Meu Agente. Todos os direitos reservados.
             </p>
             <div className="flex items-center gap-6 text-sm text-text-muted">
-              <span>CNPJ: 00.000.000/0001-00</span>
-              <span>•</span>
               <span>Made with ❤️ in Brasil</span>
             </div>
           </div>
