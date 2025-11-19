@@ -1,4 +1,14 @@
-import { Shield, Award, Zap } from "lucide-react";
+import {
+  Shield,
+  Award,
+  Zap,
+  Cpu,
+  HeartPulse,
+  BookOpen,
+  ShoppingBag,
+  BarChart3,
+  Handshake,
+} from "lucide-react";
 
 const LogosSection = () => {
   const badges = [
@@ -8,12 +18,12 @@ const LogosSection = () => {
   ];
 
   const sectors = [
-    "Tecnologia",
-    "Saúde",
-    "Educação",
-    "Varejo",
-    "Finanças",
-    "Consultoria",
+    { label: "Tecnologia", icon: Cpu },
+    { label: "Saúde", icon: HeartPulse },
+    { label: "Educação", icon: BookOpen },
+    { label: "Varejo", icon: ShoppingBag },
+    { label: "Finanças", icon: BarChart3 },
+    { label: "Consultoria", icon: Handshake },
   ];
 
   return (
@@ -37,15 +47,21 @@ const LogosSection = () => {
           <p className="text-sm text-text-muted mb-6 font-medium">
             Confiança de empresas dos setores:
           </p>
-          <div className="flex flex-wrap justify-center items-center gap-6">
-            {sectors.map((sector, index) => (
-              <div
-                key={index}
-                className="px-6 py-2 text-text-muted hover:text-text transition-colors duration-300"
-              >
-                <span className="font-medium">{sector}</span>
-              </div>
-            ))}
+          <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-6">
+            {sectors.map((sector, index) => {
+              const Icon = sector.icon;
+              return (
+                <div
+                  key={index}
+                  className="group inline-flex items-center gap-3 rounded-full border border-border/60 bg-background/70 px-4 py-2 text-xs sm:text-sm text-text-muted shadow-sm transition-all duration-300 hover:border-brand-900/40 hover:bg-surface/80 hover:text-text"
+                >
+                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-surface/70 text-brand-900 group-hover:bg-brand-900 group-hover:text-background transition-colors duration-300">
+                    <Icon className="h-4 w-4" />
+                  </span>
+                  <span className="font-medium">{sector.label}</span>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
