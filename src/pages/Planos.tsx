@@ -130,7 +130,7 @@ const Planos = () => {
 
   const onPlanClick = (planId: string) => {
     if (planId === "free") {
-      window.open("https://app.meuagente.api.br/auth?plan=free", "_blank");
+      window.open("https://app.meuagente.api.br/?plan=free", "_blank");
     } else {
       handleSubscribe(planId);
     }
@@ -483,7 +483,7 @@ const Planos = () => {
                         ) : null}
                         {plan.cta}
                         {!loading && (
-                          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                         )}
                       </Button>
                     </Card>

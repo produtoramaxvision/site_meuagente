@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
 
-// URL do app principal para redirecionamento
+// URL base do app principal para redirecionamento
 const APP_URL = 'https://app.meuagente.api.br';
 
 export const useSubscription = () => {
@@ -12,21 +12,20 @@ export const useSubscription = () => {
     setLoading(true);
     try {
       // 1. Verificar se o usuário está logado no site
-      const { data: { session } } = await supabase.auth.getSession();
+      const {
+        data: { session },
+      } = await supabase.auth.getSession();
 
       if (!session) {
-        // Se não estiver logado, redirecionar para o login do app principal
-        // Passando o plano e a intenção de checkout
-        const redirectUrl = encodeURIComponent(`${window.location.origin}/sucesso`); // Onde o usuário volta após pagar (se o checkout fosse direto)
-        // Mas como vai pro app, talvez o app deva gerenciar o sucesso.
-        // Vamos seguir o guia: mandar pro login com param plan.
-        
-        window.location.href = `${APP_URL}/auth?redirect=checkout&plan=${planId}`;
+        // Usuário não logado no site: redireciona para o APP na raiz,
+        // passando intenção de checkout e o plano escolhido.
+        // O APP já foi configurado para ler ?redirect=checkout&plan=...
+        window.location.href = `${APP_URL}/?redirect=checkout&plan=${planId}`;
         return;
       }
 
       // 2. Se estiver logado (cenário onde o site compartilha auth ou usuário logou aqui),
-      // invocar a Edge Function para criar a sessão de checkout.
+      // invocar a Edge Function para criar a sessão de checkout diretamente.
       const { data, error } = await supabase.functions.invoke('create-checkout-session', {
         body: {
           plan_id: planId,
@@ -44,11 +43,10 @@ export const useSubscription = () => {
       } else {
         throw new Error('URL de checkout não retornada');
       }
-
     } catch (error: any) {
       console.error('Erro ao iniciar checkout:', error);
       toast.error('Erro ao iniciar assinatura', {
-        description: error.message || 'Tente novamente mais tarde.'
+        description: error.message || 'Tente novamente mais tarde.',
       });
     } finally {
       setLoading(false);
@@ -57,7 +55,6 @@ export const useSubscription = () => {
 
   return {
     handleSubscribe,
-    loading
+    loading,
   };
 };
-

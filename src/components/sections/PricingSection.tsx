@@ -94,7 +94,7 @@ const PricingSection = () => {
 
   const onPlanClick = (planId: string) => {
     if (planId === "free") {
-      window.open("https://app.meuagente.api.br/auth?plan=free", "_blank");
+      window.open("https://app.meuagente.api.br/?plan=free", "_blank");
     } else {
       handleSubscribe(planId);
     }
