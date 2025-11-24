@@ -6,12 +6,14 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Input } from "@/components/ui/input";
 import { Slider } from "@/components/ui/slider";
 import { Label } from "@/components/ui/label";
-import { Check, X, Calculator, ArrowRight, Sparkles } from "lucide-react";
+import { Check, X, Calculator, ArrowRight, Sparkles, Loader2 } from "lucide-react";
 import { useState } from "react";
 import SEO from "@/components/SEO";
 import { createSoftwareApplicationSchema } from "@/lib/seo";
+import { useSubscription } from "@/hooks/use-subscription";
 
 const Planos = () => {
+  const { handleSubscribe, loading } = useSubscription();
   const [hoursPerMonth, setHoursPerMonth] = useState(40);
   const [costPerHour, setCostPerHour] = useState(50);
   const [leadsLost, setLeadsLost] = useState(10);
@@ -33,6 +35,7 @@ const Planos = () => {
 
   const plans = [
     {
+      id: "free",
       name: "Free",
       price: "R$ 0",
       period: "gratuito",
@@ -54,6 +57,7 @@ const Planos = () => {
       popular: false,
     },
     {
+      id: "basic",
       name: "Básico",
       price: "R$ 497",
       period: "/mês",
@@ -75,6 +79,7 @@ const Planos = () => {
       popular: false,
     },
     {
+      id: "business",
       name: "Business",
       price: "R$ 997",
       period: "/mês",
@@ -97,6 +102,7 @@ const Planos = () => {
       popular: true,
     },
     {
+      id: "premium",
       name: "Premium",
       price: "R$ 1.497",
       period: "/mês",
@@ -121,6 +127,14 @@ const Planos = () => {
   ];
 
   const popularPlan = plans.find((plan) => plan.popular) ?? plans[2];
+
+  const onPlanClick = (planId: string) => {
+    if (planId === "free") {
+      window.open("https://app.meuagente.api.br/auth?plan=free", "_blank");
+    } else {
+      handleSubscribe(planId);
+    }
+  };
 
   return (
     <>
@@ -207,8 +221,12 @@ const Planos = () => {
 
                   <Button
                     className="mt-2 w-full group relative overflow-hidden bg-gradient-to-r from-brand-900 to-brand-700 hover:from-brand-800 hover:to-brand-600 text-white shadow-lg"
-                    onClick={() => window.open("https://app.meuagente.api.br", "_blank")}
+                    onClick={() => onPlanClick(popularPlan.id)}
+                    disabled={loading}
                   >
+                    {loading ? (
+                      <Loader2 className="w-4 h-4 animate-spin mr-2" />
+                    ) : null}
                     Começar com o plano Business
                     <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
                     <span className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/10 to-transparent group-hover:translate-x-full transition-transform duration-700" />
@@ -457,10 +475,16 @@ const Planos = () => {
                             : ""
                         }`}
                         variant={plan.popular ? "default" : "outline"}
-                        onClick={() => window.open("https://app.meuagente.api.br", "_blank")}
+                        onClick={() => onPlanClick(plan.id)}
+                        disabled={loading}
                       >
+                        {loading ? (
+                          <Loader2 className="w-4 h-4 animate-spin mr-2" />
+                        ) : null}
                         {plan.cta}
-                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+                        {!loading && (
+                          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+                        )}
                       </Button>
                     </Card>
                   ))}

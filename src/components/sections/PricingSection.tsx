@@ -1,11 +1,15 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Check, X } from "lucide-react";
+import { Check, X, Loader2 } from "lucide-react";
+import { useSubscription } from "@/hooks/use-subscription";
 
 const PricingSection = () => {
+  const { handleSubscribe, loading } = useSubscription();
+
   const plans = [
     {
+      id: "free",
       name: "Free",
       price: "R$ 0",
       period: "gratuito",
@@ -25,6 +29,7 @@ const PricingSection = () => {
       popular: false,
     },
     {
+      id: "basic",
       name: "Básico",
       price: "R$ 497",
       period: "/mês",
@@ -44,6 +49,7 @@ const PricingSection = () => {
       popular: false,
     },
     {
+      id: "business",
       name: "Business",
       price: "R$ 997",
       period: "/mês",
@@ -64,6 +70,7 @@ const PricingSection = () => {
       popular: true,
     },
     {
+      id: "premium",
       name: "Premium",
       price: "R$ 1.497",
       period: "/mês",
@@ -84,6 +91,14 @@ const PricingSection = () => {
       popular: false,
     },
   ];
+
+  const onPlanClick = (planId: string) => {
+    if (planId === "free") {
+      window.open("https://app.meuagente.api.br/auth?plan=free", "_blank");
+    } else {
+      handleSubscribe(planId);
+    }
+  };
 
   return (
     <section className="py-24 bg-background">
@@ -152,10 +167,16 @@ const PricingSection = () => {
                     : ""
                 }`}
                 variant={plan.popular ? "default" : "outline"}
-                onClick={() => window.open("https://app.meuagente.api.br", "_blank")}
+                onClick={() => onPlanClick(plan.id)}
+                disabled={loading}
               >
+                {loading ? (
+                  <Loader2 className="w-4 h-4 animate-spin mr-2" />
+                ) : null}
                 {plan.cta}
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+                {!loading && (
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+                )}
               </Button>
             </Card>
           ))}
