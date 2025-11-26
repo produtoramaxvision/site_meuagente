@@ -11,12 +11,16 @@ import { useState } from "react";
 import SEO from "@/components/SEO";
 import { createSoftwareApplicationSchema } from "@/lib/seo";
 import { useSubscription } from "@/hooks/use-subscription";
+import { cn } from "@/lib/utils";
 
 const Planos = () => {
   const { handleSubscribe, loading } = useSubscription();
   const [hoursPerMonth, setHoursPerMonth] = useState(40);
   const [costPerHour, setCostPerHour] = useState(50);
   const [leadsLost, setLeadsLost] = useState(10);
+  
+  // Estado para controlar o plano selecionado no Hero
+  const [heroPlanId, setHeroPlanId] = useState("business");
 
   const calculateROI = () => {
     const timeSavings = hoursPerMonth * costPerHour;
@@ -48,7 +52,7 @@ const Planos = () => {
         { text: "Agente de Scrape (básico)", included: true },
         { text: "Automação via WhatsApp", included: false },
         { text: "Exportação CSV/PDF", included: false },
-        { text: "Número WhatsApp dedicado", included: false },
+        { text: "Número de WhatsApp próprio", included: false },
         { text: "Backups", included: false },
         { text: "Suporte", included: false },
         { text: "Sub-agentes Business/Premium", included: false },
@@ -69,7 +73,7 @@ const Planos = () => {
         { text: "Exportação CSV/PDF", included: true },
         { text: "Agente Scrape intermediário", included: true },
         { text: "Infraestrutura em nuvem Meu Agente", included: true },
-        { text: "Número WhatsApp dedicado", included: false },
+        { text: "Número de WhatsApp próprio", included: false },
         { text: "Implantação inclusa", included: false },
         { text: "Suporte prioritário", included: false },
         { text: "Sub-agentes Business", included: false },
@@ -87,7 +91,7 @@ const Planos = () => {
       badge: "MAIS POPULAR",
       features: [
         { text: "Tudo do Básico +", included: true },
-        { text: "Número WhatsApp dedicado", included: true },
+        { text: "Número de WhatsApp próprio", included: true },
         { text: "Implantação inclusa", included: true },
         { text: "Suporte prioritário 24/7 (SLA 2h)", included: true },
         { text: "Agente SDR (qualificação + agendamento)", included: true },
@@ -127,6 +131,12 @@ const Planos = () => {
   ];
 
   const popularPlan = plans.find((plan) => plan.popular) ?? plans[2];
+  
+  // Plano ativo no Hero
+  const heroPlan = plans.find((plan) => plan.id === heroPlanId) ?? plans[2];
+  const heroPlanIncludedFeatures = heroPlan.features.filter((feature) => feature.included);
+  const heroPlanExtraIncludedCount = Math.max(heroPlanIncludedFeatures.length - 7, 0);
+  const heroPlanMissingAdvancedCount = heroPlan.features.filter((feature) => !feature.included).length;
 
   const onPlanClick = (planId: string) => {
     if (planId === "free") {
@@ -182,58 +192,139 @@ const Planos = () => {
                 </div>
               </div>
 
-              <Card className="relative overflow-hidden border-brand-900/30 bg-background/80 backdrop-blur-xl p-8 shadow-2xl">
+              <Card className="relative overflow-hidden border-brand-900/30 bg-background/80 backdrop-blur-xl p-8 shadow-2xl transition-all duration-300">
                 <div className="absolute inset-x-0 -top-32 h-40 bg-gradient-to-b from-brand-900/20 via-brand-900/5 to-transparent pointer-events-none" />
+                
                 <div className="relative flex flex-col gap-6">
-                  <div className="flex items-center justify-between gap-3">
-                    <div>
-                      <p className="text-xs font-medium uppercase tracking-[0.18em] text-brand-900/80 mb-1">
-                        Plano recomendado
-                      </p>
-                      <h2 className="text-2xl font-bold text-text">{popularPlan.name}</h2>
-                      <p className="text-sm text-text-muted max-w-xs">{popularPlan.description}</p>
+                  {/* Seletor de Planos */}
+                  <div className="flex justify-center mb-2">
+                    <div className="flex p-1 bg-surface/50 rounded-full border border-border/50 backdrop-blur-md">
+                      {plans.map((plan) => (
+                        <button
+                          key={plan.id}
+                          onClick={() => setHeroPlanId(plan.id)}
+                          className={cn(
+                            "px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-200",
+                            heroPlanId === plan.id
+                              ? "bg-brand-900 text-white shadow-md"
+                              : "text-text-muted hover:text-text hover:bg-white/5"
+                          )}
+                        >
+                          {plan.name}
+                        </button>
+                      ))}
                     </div>
-                    {popularPlan.badge && (
-                      <Badge className="bg-gradient-to-r from-brand-900 to-brand-700 text-white px-4 py-1 font-bold shadow-sm">
-                        {popularPlan.badge}
-                      </Badge>
-                    )}
+                  </div>
+
+                  {/* Header Estável - Altura mínima controlada */}
+                  <div className="flex flex-col gap-2 min-h-[88px]">
+                    <div className="flex items-start justify-between gap-3 relative">
+                      <div className="flex flex-col gap-1 w-full">
+                        {/* Label Recomendado (Business) - Absoluto ou ocupando espaço reservado */}
+                        {heroPlan.id === "business" && (
+                          <span className="absolute -top-6 left-0 text-[10px] font-bold uppercase tracking-wider text-brand-900 bg-brand-100/80 px-2 py-0.5 rounded-sm backdrop-blur-sm border border-brand-200/50 animate-in fade-in slide-in-from-bottom-2">
+                            Recomendado
+                          </span>
+                        )}
+                        
+                        {/* Título com margem superior fixa para acomodar o label em todos os casos (ou manter alinhado se absolute) */}
+                        <div className="flex items-center justify-between w-full mt-2">
+                          <h2 className="text-2xl font-bold text-text transition-all">{heroPlan.name}</h2>
+                          
+                          {/* Badge flutuante à direita */}
+                          <div className="h-6 flex items-center">
+                            {heroPlan.badge && (
+                              <Badge className="bg-gradient-to-r from-brand-900 to-brand-700 text-white px-4 py-1 font-bold shadow-sm animate-in zoom-in-95 whitespace-nowrap">
+                                {heroPlan.badge}
+                              </Badge>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <p className="text-sm text-text-muted max-w-xs h-10 line-clamp-2 leading-relaxed">
+                      {heroPlan.description}
+                    </p>
                   </div>
 
                   <div className="flex items-baseline gap-2">
-                    <span className="text-4xl font-extrabold text-text">{popularPlan.price}</span>
-                    <span className="text-text-muted">{popularPlan.period}</span>
+                    <span className="text-4xl font-extrabold text-text tabular-nums tracking-tight">
+                      {heroPlan.price}
+                    </span>
+                    <span className="text-text-muted">{heroPlan.period}</span>
                   </div>
 
-                  <ul className="space-y-2 text-sm">
-                    {popularPlan.features.slice(0, 7).map((feature, index) => (
-                      <li key={index} className="flex items-center gap-2 text-text">
-                        <Check className="h-4 w-4 text-success" />
-                        <span>{feature.text}</span>
+                  <ul className="space-y-2 text-sm min-h-[200px]">
+                    {heroPlan.features.slice(0, 7).map((feature, index) => (
+                      <li
+                        key={index}
+                        className="flex items-start gap-2 text-text animate-in fade-in slide-in-from-bottom-1 duration-300"
+                        style={{ animationDelay: `${index * 50}ms` }}
+                      >
+                        {feature.included ? (
+                          <Check className="h-4 w-4 text-success flex-shrink-0 mt-0.5" />
+                        ) : (
+                          <X className="h-4 w-4 text-text-muted/50 flex-shrink-0 mt-0.5" />
+                        )}
+                        <span className={cn("leading-tight", feature.included ? "text-text" : "text-text-muted")}>
+                          {feature.text}
+                        </span>
                       </li>
                     ))}
-                    {popularPlan.features.length > 7 && (
-                      <li className="text-xs text-text-muted">
-                        +{popularPlan.features.length - 7} recursos avançados incluídos
-                      </li>
-                    )}
+                    <li className="text-xs text-text-muted pt-1 h-5 flex items-center">
+                      {heroPlan.id === "premium" ? (
+                        <span>
+                          Total de <strong>19</strong> recursos avançados incluídos.
+                        </span>
+                      ) : heroPlan.id === "business" ? (
+                        <span>
+                          Este plano deixa de fora{" "}
+                          <strong>7</strong> recursos avançados que podem turbinar seus
+                          resultados.
+                        </span>
+                      ) : heroPlan.id === "basic" ? (
+                        <span>
+                          Este plano deixa de fora{" "}
+                          <strong>11</strong> recursos avançados que podem turbinar seus
+                          resultados.
+                        </span>
+                      ) : (
+                        <span>
+                          Este plano deixa de fora{" "}
+                          <strong>13</strong> recursos avançados que podem turbinar seus
+                          resultados.
+                        </span>
+                      )}
+                    </li>
                   </ul>
 
                   <Button
-                    className="mt-2 w-full group relative overflow-hidden bg-gradient-to-r from-brand-900 to-brand-700 hover:from-brand-800 hover:to-brand-600 text-white shadow-lg"
-                    onClick={() => onPlanClick(popularPlan.id)}
+                    className={cn(
+                      "mt-2 w-full group relative overflow-hidden text-white shadow-lg transition-all",
+                      heroPlan.popular 
+                        ? "bg-gradient-to-r from-brand-900 to-brand-700 hover:from-brand-800 hover:to-brand-600"
+                        : "bg-brand-900 text-white hover:bg-brand-800"
+                    )}
+                    onClick={() => onPlanClick(heroPlan.id)}
                     disabled={loading}
                   >
                     {loading ? (
                       <Loader2 className="w-4 h-4 animate-spin mr-2" />
                     ) : null}
-                    Começar com o plano Business
-                    <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
-                    <span className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/10 to-transparent group-hover:translate-x-full transition-transform duration-700" />
+                    {heroPlan.cta}
+                    {heroPlan.popular && (
+                      <>
+                        <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
+                        <span className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/10 to-transparent group-hover:translate-x-full transition-transform duration-700" />
+                      </>
+                    )}
                   </Button>
 
-                  <p className="text-xs text-text-muted text-center mt-1">
-                    Dúvida entre planos? Você pode fazer upgrade ou downgrade a qualquer momento.
+                  <p className="text-xs text-text-muted text-center mt-1 h-8 flex items-center justify-center px-2">
+                    {heroPlan.id === "free" 
+                      ? "Teste gratuito, sem necessidade de cartão de crédito."
+                      : "Dúvida entre planos? Você pode fazer upgrade ou downgrade a qualquer momento."}
                   </p>
                 </div>
               </Card>
@@ -608,7 +699,7 @@ const Planos = () => {
 
                         {/* Funcionalidades a partir do Business */}
                         <tr>
-                          <td className="px-4 sm:px-6 py-4 text-sm text-text">Número WhatsApp dedicado</td>
+                          <td className="px-4 sm:px-6 py-4 text-sm text-text">Número de WhatsApp próprio</td>
                           <td className="px-4 sm:px-6 py-4 text-center">
                             <X className="w-5 h-5 text-text-muted mx-auto" />
                           </td>
@@ -640,23 +731,6 @@ const Planos = () => {
                         <tr>
                           <td className="px-4 sm:px-6 py-4 text-sm text-text">
                             Implantação (setup inicial) inclusa
-                          </td>
-                          <td className="px-4 sm:px-6 py-4 text-center">
-                            <X className="w-5 h-5 text-text-muted mx-auto" />
-                          </td>
-                          <td className="px-4 sm:px-6 py-4 text-center">
-                            <X className="w-5 h-5 text-text-muted mx-auto" />
-                          </td>
-                          <td className="px-4 sm:px-6 py-4 text-center bg-brand-900/5">
-                            <Check className="w-5 h-5 text-success mx-auto" />
-                          </td>
-                          <td className="px-4 sm:px-6 py-4 text-center">
-                            <Check className="w-5 h-5 text-success mx-auto" />
-                          </td>
-                        </tr>
-                        <tr>
-                          <td className="px-4 sm:px-6 py-4 text-sm text-text">
-                            Sub-agentes Business (SDR, Marketing, Dev, Vídeo)
                           </td>
                           <td className="px-4 sm:px-6 py-4 text-center">
                             <X className="w-5 h-5 text-text-muted mx-auto" />
@@ -887,7 +961,7 @@ const Planos = () => {
                 Posso usar o Meu Agente sem número próprio?
               </AccordionTrigger>
               <AccordionContent className="text-text-muted">
-                Sim, no <strong>Free</strong> e no <strong>Básico</strong> o atendimento ocorre na infraestrutura do Meu Agente. Nos planos Business e Premium você tem um número WhatsApp dedicado.
+                Sim, no <strong>Free</strong> e no <strong>Básico</strong> o atendimento ocorre na infraestrutura do Meu Agente. Nos planos Business e Premium você tem um número de WhatsApp próprio.
               </AccordionContent>
             </AccordionItem>
 
