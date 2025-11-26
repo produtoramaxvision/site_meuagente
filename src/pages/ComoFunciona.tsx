@@ -20,6 +20,7 @@ import {
   ListChecks,
   Bell,
   Settings,
+  Sparkles
 } from "lucide-react";
 
 const ComoFunciona = () => {
@@ -369,16 +370,17 @@ No plano Premium, você tem cota maior de minutos de geração, permitindo escal
 
         <div className="relative z-10 mx-auto flex max-w-7xl flex-col gap-12 px-4 pb-20 pt-24 sm:px-6 lg:flex-row lg:items-center lg:px-8 lg:pb-28 lg:pt-28">
           <div className="max-w-xl space-y-6">
-            <Badge variant="outline" className="border-brand-500/40 bg-background/80 px-4 py-1 text-xs font-medium uppercase tracking-wide text-brand-500">
-              Como Funciona na Prática
-            </Badge>
+            <div className="inline-flex items-center gap-2 rounded-full border border-border/50 bg-background/70 px-3 py-1 text-xs font-medium text-text-muted mb-4">
+              <Sparkles className="h-3 w-3 text-brand-900" />
+              <span>Como Funciona na Prática</span>
+            </div>
 
-            <h1 className="text-balance text-4xl font-semibold tracking-tight leading-normal pb-2 text-gradient sm:text-5xl lg:text-6xl">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gradient mb-6 pb-2 leading-normal">
               Do WhatsApp ao resultado,
               <span className="block">em uma orquestra de Agentes de IA.</span>
             </h1>
 
-            <p className="text-lg text-text-muted sm:text-xl">
+            <p className="text-lg sm:text-xl text-text-muted max-w-xl">
               O Meu Agente conecta conversas do WhatsApp com agentes especializados e um app web poderoso.
               Em poucos minutos, você tem uma equipe completa de IA trabalhando 24/7 para o seu negócio.
             </p>
@@ -386,11 +388,12 @@ No plano Premium, você tem cota maior de minutos de geração, permitindo escal
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
               <Button
                 size="lg"
-                className="w-full sm:w-auto"
+                className="w-full group relative overflow-hidden bg-brand-900 text-white shadow-lg hover:bg-brand-800 transition-all sm:w-auto"
                 onClick={() => (window.location.href = "/planos")}
               >
                 Ver planos e começar hoje
-                <ArrowRight className="ml-2 h-5 w-5" />
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
+                <span className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/10 to-transparent group-hover:translate-x-full transition-transform duration-700" />
               </Button>
               <Button
                 size="lg"
@@ -402,18 +405,18 @@ No plano Premium, você tem cota maior de minutos de geração, permitindo escal
               </Button>
             </div>
 
-            <div className="grid gap-4 pt-4 text-sm text-text-muted sm:grid-cols-3">
-              <div className="rounded-xl border border-border/60 bg-background/60 p-4">
-                <p className="text-xs uppercase tracking-wide text-text-muted/80">Tempo médio de ativação</p>
-                <p className="mt-2 text-2xl font-semibold text-text">menos de 1 dia</p>
+            <div className="grid gap-4 pt-4 text-sm sm:grid-cols-3">
+              <div className="rounded-xl border border-border/60 bg-background/70 px-4 py-3 shadow-lg hover:shadow-none transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02]">
+                <p className="font-semibold text-text mb-1">Tempo médio de ativação</p>
+                <p className="text-text-muted">Menos de 1 dia</p>
               </div>
-              <div className="rounded-xl border border-border/60 bg-background/60 p-4">
-                <p className="text-xs uppercase tracking-wide text-text-muted/80">Canais</p>
-                <p className="mt-2 text-2xl font-semibold text-text">WhatsApp + Web</p>
+              <div className="rounded-xl border border-border/60 bg-background/70 px-4 py-3 shadow-lg hover:shadow-none transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02]">
+                <p className="font-semibold text-text mb-1">Canais</p>
+                <p className="text-text-muted">WhatsApp + Web</p>
               </div>
-              <div className="rounded-xl border border-border/60 bg-background/60 p-4">
-                <p className="text-xs uppercase tracking-wide text-text-muted/80">Equipe de IA</p>
-                <p className="mt-2 text-2xl font-semibold text-text">8+ agentes prontos</p>
+              <div className="rounded-xl border border-border/60 bg-background/70 px-4 py-3 shadow-lg hover:shadow-none transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02]">
+                <p className="font-semibold text-text mb-1">Equipe de IA</p>
+                <p className="text-text-muted">8+ agentes prontos</p>
               </div>
             </div>
           </div>
