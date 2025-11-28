@@ -100,7 +100,7 @@ const Planos = () => {
         { text: "Agente Dev (debugging + sugestões)", included: true },
         { text: "Agente Vídeo (Veo 3)", included: true },
         { text: "Integrações Google (opcional, custo adicional)", included: true },
-        { text: "Taxa manutenção: R$ 149/h", included: true },
+        { text: "Treinamento da IA e Manutenção R$ 149,00/hr, somente quando solicitado", included: true },
       ],
       cta: "Contratar Business",
       popular: true,
@@ -123,7 +123,7 @@ const Planos = () => {
         { text: "Cota maior Vídeo (Veo 3)", included: true },
         { text: "Prioridade máxima no suporte", included: true },
         { text: "Análises mensais personalizadas", included: true },
-        { text: "Taxa manutenção: R$ 149/h", included: true },
+        { text: "Treinamento da IA e Manutenção R$ 149,00/hr, somente quando solicitado", included: true },
       ],
       cta: "Contratar Premium",
       popular: false,
@@ -301,10 +301,8 @@ const Planos = () => {
 
                   <Button
                     className={cn(
-                      "mt-2 w-full group relative overflow-hidden text-white shadow-lg transition-all",
-                      heroPlan.popular 
-                        ? "bg-gradient-to-r from-brand-900 to-brand-700 hover:from-brand-800 hover:to-brand-600"
-                        : "bg-brand-900 text-white hover:bg-brand-800"
+                      "mt-2 w-full group relative overflow-hidden bg-gradient-to-r from-brand-900 to-brand-700 hover:from-brand-800 hover:to-brand-600 text-white shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105",
+                      heroPlan.popular ? "" : ""
                     )}
                     onClick={() => onPlanClick(heroPlan.id)}
                     disabled={loading}
@@ -367,12 +365,12 @@ const Planos = () => {
               <TabsContent value="plans">
                 <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-4 items-stretch">
                   {plans.map((plan, index) => (
-                    <Card
+                  <Card
                       key={index}
-                      className={`relative flex flex-col h-full p-8 bg-background border-border/60 transition-all duration-300 ${
-                        plan.popular
-                          ? "ring-2 ring-brand-900 shadow-2xl scale-105"
-                          : "hover:border-brand-900/30 hover:shadow-xl"
+                      className={`relative flex flex-col h-full p-8 bg-background border-border/60 shadow-lg backdrop-blur-sm transition-all duration-300 ${
+                      plan.popular
+                          ? "ring-2 ring-brand-900 shadow-2xl scale-105 hover:shadow-none hover:-translate-y-1 hover:scale-[1.08]"
+                          : "hover:shadow-none hover:-translate-y-1 hover:scale-[1.02]"
                       }`}
                     >
                       {plan.badge && (
@@ -410,7 +408,7 @@ const Planos = () => {
                       <Button
                         className={`mt-auto w-full group relative overflow-hidden ${
                           plan.popular
-                            ? "bg-gradient-to-r from-brand-900 to-brand-700 hover:from-brand-800 hover:to-brand-600 text-white shadow-lg"
+                            ? "bg-gradient-to-r from-brand-900 to-brand-700 hover:from-brand-800 hover:to-brand-600 text-white shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
                             : ""
                         }`}
                         variant={plan.popular ? "default" : "outline"}
@@ -432,13 +430,12 @@ const Planos = () => {
                 <div className="mt-14 md:mt-16 text-center">
                   <p className="text-text-muted mb-4">Não sabe qual plano escolher?</p>
                   <Button
-                    variant="outline"
                     size="lg"
-                    className="gap-2"
+                    className="gap-2 group relative overflow-hidden bg-gradient-to-r from-brand-900 to-brand-700 hover:from-brand-800 hover:to-brand-600 text-white shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
                     onClick={() => window.open("https://app.meuagente.api.br", "_blank")}
                   >
                     Falar com Especialista
-                    <ArrowRight className="h-4 w-4" />
+                    <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-200" />
                   </Button>
                 </div>
               </TabsContent>
@@ -975,7 +972,7 @@ const Planos = () => {
                 </div>
 
                 {/* Card de Suporte - Flexível para alinhar o fundo */}
-                <div className="flex-1 flex flex-col justify-between p-6 rounded-2xl border border-brand-900/10 bg-gradient-to-br from-brand-900/5 to-transparent backdrop-blur-sm mt-2">
+                <div className="flex-1 flex flex-col justify-between p-6 rounded-2xl border border-brand-900/10 bg-gradient-to-br from-brand-900/5 to-transparent backdrop-blur-sm mt-2 shadow-lg hover:shadow-none transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02]">
                   <div>
                     <div className="flex items-center gap-3 mb-3">
                       <div className="h-10 w-10 rounded-full bg-brand-900/10 flex items-center justify-center text-brand-900 shadow-sm">
@@ -988,12 +985,11 @@ const Planos = () => {
                     </p>
                   </div>
                   <Button 
-                    variant="outline" 
-                    className="w-full bg-background/50 border-brand-900/20 hover:bg-brand-900/10 hover:text-brand-900 hover:border-brand-900/30 transition-all mt-auto"
+                    className="w-full mt-auto group relative overflow-hidden bg-gradient-to-r from-brand-900 to-brand-700 hover:from-brand-800 hover:to-brand-600 text-white shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
                     onClick={() => window.open("https://app.meuagente.api.br", "_blank")}
                   >
                     Falar com consultor
-                    <ArrowRight className="ml-2 h-4 w-4" />
+                    <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-200" />
                   </Button>
                 </div>
               </div>
@@ -1042,7 +1038,7 @@ const Planos = () => {
                     Há taxa de manutenção adicional?
                   </AccordionTrigger>
                   <AccordionContent className="px-3 pb-3 text-sm text-text-muted leading-relaxed">
-                    Sim, nos planos <strong>Business</strong> e <strong>Premium</strong> há uma taxa de <strong>R$ 149,00/h</strong> quando solicitada para ajustes de modelos, reconfigurações e treinamentos pontuais. Não é cobrada mensalmente, apenas sob demanda.
+                    Sim, nos planos <strong>Business</strong> e <strong>Premium</strong> há uma taxa de <strong>Treinamento da IA e Manutenção R$ 149,00/hr, somente quando solicitado</strong> para ajustes de modelos, reconfigurações e treinamentos pontuais. Não é cobrada mensalmente, apenas sob demanda.
                   </AccordionContent>
                 </AccordionItem>
 

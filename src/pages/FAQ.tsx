@@ -63,7 +63,7 @@ const FAQ = () => {
       {
         question: "Como funciona a cobrança?",
         answer:
-          "Todos os planos são cobrados mensalmente. Planos Business e Premium têm taxa de manutenção de R$ 149/h para suporte técnico avançado e customizações além do escopo padrão.",
+          "Todos os planos são cobrados mensalmente. Planos Business e Premium têm taxa de Treinamento da IA e Manutenção R$ 149,00/hr, somente quando solicitado para suporte técnico avançado e customizações além do escopo padrão.",
       },
       {
         question: "Posso cancelar a qualquer momento?",
