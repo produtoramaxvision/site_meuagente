@@ -974,8 +974,8 @@ const Planos = () => {
                   </p>
                 </div>
 
-                {/* Card de Suporte - altura independente do acordeão */}
-                <div className="flex flex-col justify-between p-6 rounded-2xl border border-brand-900/10 bg-gradient-to-br from-brand-900/5 to-transparent backdrop-blur-sm mt-2">
+                {/* Card de Suporte - Flexível para alinhar o fundo */}
+                <div className="flex-1 flex flex-col justify-between p-6 rounded-2xl border border-brand-900/10 bg-gradient-to-br from-brand-900/5 to-transparent backdrop-blur-sm mt-2">
                   <div>
                     <div className="flex items-center gap-3 mb-3">
                       <div className="h-10 w-10 rounded-full bg-brand-900/10 flex items-center justify-center text-brand-900 shadow-sm">
@@ -1048,6 +1048,15 @@ const Planos = () => {
 
                 <AccordionItem value="item-5" className="group border border-border/60 rounded-lg bg-background/60 px-1 hover:border-brand-900/30 hover:bg-background/80 transition-all duration-300 shadow-sm data-[state=open]:border-brand-900/30 data-[state=open]:bg-background/90 data-[state=open]:shadow-md">
                   <AccordionTrigger className="px-3 text-left font-medium text-sm text-text group-hover:text-brand-900 transition-colors py-3">
+                    Vocês fazem scraping de sites que proíbem?
+                  </AccordionTrigger>
+                  <AccordionContent className="px-3 pb-3 text-sm text-text-muted leading-relaxed">
+                    Não. Trabalhamos apenas com <strong>APIs oficiais</strong> e <strong>fontes permitidas</strong> que autorizam extração de dados. Respeitamos os termos de uso de todos os sites.
+                  </AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="item-6" className="group border border-border/60 rounded-lg bg-background/60 px-1 hover:border-brand-900/30 hover:bg-background/80 transition-all duration-300 shadow-sm data-[state=open]:border-brand-900/30 data-[state=open]:bg-background/90 data-[state=open]:shadow-md">
+                  <AccordionTrigger className="px-3 text-left font-medium text-sm text-text group-hover:text-brand-900 transition-colors py-3">
                     Posso mudar de plano depois?
                   </AccordionTrigger>
                   <AccordionContent className="px-3 pb-3 text-sm text-text-muted leading-relaxed">
@@ -1055,7 +1064,7 @@ const Planos = () => {
                   </AccordionContent>
                 </AccordionItem>
 
-                <AccordionItem value="item-6" className="group border border-border/60 rounded-lg bg-background/60 px-1 hover:border-brand-900/30 hover:bg-background/80 transition-all duration-300 shadow-sm data-[state=open]:border-brand-900/30 data-[state=open]:bg-background/90 data-[state=open]:shadow-md">
+                <AccordionItem value="item-7" className="group border border-border/60 rounded-lg bg-background/60 px-1 hover:border-brand-900/30 hover:bg-background/80 transition-all duration-300 shadow-sm data-[state=open]:border-brand-900/30 data-[state=open]:bg-background/90 data-[state=open]:shadow-md">
                   <AccordionTrigger className="px-3 text-left font-medium text-sm text-text group-hover:text-brand-900 transition-colors py-3">
                     O que está incluído na implantação?
                   </AccordionTrigger>
@@ -1064,7 +1073,7 @@ const Planos = () => {
                   </AccordionContent>
                 </AccordionItem>
 
-                <AccordionItem value="item-7" className="group border border-border/60 rounded-lg bg-background/60 px-1 hover:border-brand-900/30 hover:bg-background/80 transition-all duration-300 shadow-sm data-[state=open]:border-brand-900/30 data-[state=open]:bg-background/90 data-[state=open]:shadow-md">
+                <AccordionItem value="item-8" className="group border border-border/60 rounded-lg bg-background/60 px-1 hover:border-brand-900/30 hover:bg-background/80 transition-all duration-300 shadow-sm data-[state=open]:border-brand-900/30 data-[state=open]:bg-background/90 data-[state=open]:shadow-md">
                   <AccordionTrigger className="px-3 text-left font-medium text-sm text-text group-hover:text-brand-900 transition-colors py-3">
                     Como funciona o suporte prioritário 24/7?
                   </AccordionTrigger>
@@ -1073,17 +1082,6 @@ const Planos = () => {
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
-
-              {/* Link para FAQ completa, mantendo o mesmo layout da home */}
-              <div className="mt-8 text-sm text-text-muted text-center">
-                <span>Quer ver dúvidas mais gerais sobre o Meu Agente? </span>
-                <a
-                  href="/faq"
-                  className="text-brand-900 font-semibold hover:underline transition-all"
-                >
-                  Acesse a central completa de perguntas →
-                </a>
-              </div>
             </div>
           </div>
         </div>

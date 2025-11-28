@@ -155,27 +155,31 @@ const ExamplesSection = () => {
                     className={`p-6 bg-gradient-to-br ${item.color} border-border/50 hover:border-brand-900/30 transition-all duration-300 hover:scale-[1.02] hover:shadow-xl`}
                   >
                     <div className="space-y-4">
-                      {/* User message */}
-                      <div className="flex items-start gap-3">
-                        <div className="w-8 h-8 rounded-full bg-brand-900/10 flex items-center justify-center flex-shrink-0">
-                          <MessageSquare className="w-4 h-4 text-brand-900" />
-                        </div>
-                        <div className="flex-1">
-                          <Badge variant="secondary" className="mb-2 text-xs">
-                            Você
-                          </Badge>
+                      {/* User message (Right) */}
+                      <div className="flex justify-end">
+                        <div className="max-w-[85%] bg-brand-900/10 rounded-2xl rounded-tr-none p-3">
+                          <div className="flex items-center justify-end gap-2 mb-1">
+                            <Badge variant="secondary" className="text-[10px] px-1.5 py-0 h-5">
+                              Você
+                            </Badge>
+                          </div>
                           <p className="text-sm text-text leading-relaxed">
                             {example.message}
                           </p>
                         </div>
                       </div>
 
-                      {/* Agent response */}
-                      <div className="flex items-start gap-3 pl-11">
-                        <div className="flex-1 p-3 rounded-lg bg-background/50 backdrop-blur-sm border border-border/50">
-                          <Badge className="mb-2 text-xs bg-success">
-                            Agente
-                          </Badge>
+                      {/* Agent response (Left) */}
+                      <div className="flex justify-start">
+                        <div className="max-w-[85%] bg-background/60 backdrop-blur-sm border border-border/50 rounded-2xl rounded-tl-none p-3">
+                          <div className="flex items-center gap-2 mb-1">
+                            <div className="w-5 h-5 rounded-full bg-success/20 flex items-center justify-center">
+                              <MessageSquare className="w-3 h-3 text-success" />
+                            </div>
+                            <Badge className="text-[10px] px-1.5 py-0 h-5 bg-success hover:bg-success/90">
+                              Meu Agente
+                            </Badge>
+                          </div>
                           <p className="text-sm text-text-muted">
                             {example.response}
                           </p>

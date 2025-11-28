@@ -116,9 +116,9 @@ const FeaturesSection = () => {
         <div className="relative grid gap-12 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)] items-start">
           {/* Dashboard preview – inspired by modern finance SaaS UIs */}
           <div className="relative">
-            <div className="pointer-events-none absolute -inset-6 rounded-[32px] bg-gradient-to-br from-brand-900/15 via-emerald-500/8 to-purple-500/15 blur-2xl" />
+            <div className="pointer-events-none absolute -inset-6 rounded-[32px] bg-gradient-to-br from-brand-900/15 via-emerald-500/8 to-purple-500/15 blur-2xl -z-10" />
 
-            <Card className="relative overflow-hidden border border-border/60 bg-surface/95 backdrop-blur-xl rounded-3xl shadow-[0_24px_80px_rgba(15,23,42,0.75)]">
+            <Card className="relative overflow-hidden rounded-3xl border border-border/50 hover:border-brand-900/30 bg-surface/95 backdrop-blur-xl text-card-foreground shadow-2xl transition-all duration-300">
               {/* Top bar */}
               <div className="flex items-center justify-between px-6 pt-5 pb-4 border-b border-border/60 bg-gradient-to-r from-background/80 via-surface/80 to-background/80">
                 <div className="flex items-center gap-3">
@@ -356,10 +356,10 @@ const FeaturesSection = () => {
                     type="button"
                     onMouseEnter={() => setActiveFeature(feature)}
                     onFocus={() => setActiveFeature(feature)}
-                    className={`group relative flex items-start gap-3 rounded-2xl border px-4 py-4 text-left transition-all ${
+                    className={`group relative flex items-start gap-3 rounded-2xl border px-4 py-4 text-left transition-all overflow-hidden ${
                       isActive
-                        ? "border-brand-900/60 bg-gradient-to-br from-brand-900/15 via-surface/95 to-emerald-500/10 shadow-[0_18px_40px_rgba(15,23,42,0.55)] scale-[1.02]"
-                        : "border-border/70 bg-surface/80 hover:border-brand-900/40 hover:bg-surface/95"
+                        ? "border-border/50 hover:border-brand-900/30 bg-gradient-to-br from-background/98 via-surface/95 to-emerald-500/6 shadow-[0_18px_40px_rgba(15,23,42,0.55)] scale-[1.02]"
+                        : "border-border/50 bg-surface/80 hover:border-brand-900/30 hover:bg-surface/95"
                     }`}
                   >
                     <div
@@ -383,8 +383,8 @@ const FeaturesSection = () => {
                       </p>
                     </div>
 
-                    <div className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity">
-                      <div className="absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-white/8 to-transparent" />
+                    <div className="pointer-events-none absolute inset-0 rounded-2xl -z-10">
+                      <div className="absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-emerald-400/14 via-emerald-400/0 to-transparent" />
                     </div>
                   </button>
                 );
@@ -395,7 +395,7 @@ const FeaturesSection = () => {
 
         {/* Integration callout – mais elegante e conectado à narrativa */}
         <div className="mt-16">
-          <Card className="relative overflow-hidden rounded-3xl border border-border/70 bg-gradient-to-r from-blue-500/8 via-background/90 to-purple-500/8 px-6 py-7 sm:px-8 sm:py-8">
+          <Card className="relative overflow-hidden rounded-3xl border border-border/70 bg-gradient-to-r from-blue-500/8 via-background/90 to-purple-500/8 px-6 py-7 sm:px-8 sm:py-8 bg-surface text-card-foreground shadow-lg hover:shadow-xl transition-all duration-300 backdrop-blur-sm hover:-translate-y-1 hover:scale-[1.02]">
             <div className="pointer-events-none absolute -right-10 -top-16 h-40 w-40 rounded-full bg-blue-500/15 blur-3xl" />
             <div className="pointer-events-none absolute -left-16 bottom-0 h-40 w-40 rounded-full bg-purple-500/15 blur-3xl" />
 

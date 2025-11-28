@@ -387,7 +387,10 @@ const ProductShowcaseSection = () => {
                           </span>
                           <span>{useCase.kpiLabel}</span>
                         </div>
-                        <Badge className="border-emerald-500/40 bg-emerald-500/10 text-[11px] uppercase tracking-wide text-emerald-300">
+                        <Badge
+                          variant="secondary"
+                          className="mb-2 rounded-full bg-emerald-500/10 text-xs font-semibold text-emerald-500 border border-emerald-500/60 shadow-[0_0_0_1px_rgba(16,185,129,0.9)] animate-badge-pulse"
+                        >
                           Agente ativo
                         </Badge>
                       </div>
@@ -395,29 +398,29 @@ const ProductShowcaseSection = () => {
 
                     <div className="grid gap-4 md:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] items-stretch md:min-h-[420px] lg:min-h-[460px] w-full max-w-full">
                       {/* Conversa em si */}
-                      <ScrollArea className="h-full min-h-[340px] sm:min-h-[400px] rounded-2xl border border-border/60 bg-background/80 p-4 w-full max-w-full">
-                        <div className="space-y-3 text-[13px] leading-relaxed w-full">
+                      <ScrollArea className="h-full min-h-[340px] sm:min-h-[400px] rounded-2xl border border-border/60 bg-[#0b141a] bg-[radial-gradient(circle_at_1px_1px,#202c33_1px,transparent_0)] bg-[length:26px_26px] p-4 w-full max-w-full">
+                        <div className="flex h-full flex-col justify-end space-y-3 text-[13px] leading-relaxed w-full">
                           {messagesByUseCase[useCase.id].map((msg, index) => (
                             <div
                               key={index}
                               className={`flex w-full ${
                                 msg.from === "user"
-                                  ? "justify-start"
-                                  : "justify-end"
+                                  ? "justify-end"
+                                  : "justify-start"
                               }`}
                             >
                               <div
-                                className={`max-w-[85%] sm:max-w-[82%] rounded-2xl px-3.5 py-2.5 shadow-sm break-words overflow-hidden ${
+                                className={`max-w-[85%] sm:max-w-[82%] rounded-2xl px-3.5 py-2.5 shadow-sm break-words overflow-hidden flex flex-col ${
                                   msg.from === "user"
-                                    ? "bg-surface-2 text-text"
-                                    : "bg-gradient-to-br from-brand-900 to-brand-700 text-white"
+                                    ? "bg-[#005c4b] text-white"
+                                    : "bg-[#202c33] text-white"
                                 }`}
                               >
                                 <p className="whitespace-pre-line break-words leading-relaxed">{msg.text}</p>
                                 <span
-                                  className={`mt-1 block text-[10px] ${
+                                  className={`mt-1 block text-[10px] self-end text-right ${
                                     msg.from === "user"
-                                      ? "text-text-muted"
+                                      ? "text-white/70"
                                       : "text-white/70"
                                   }`}
                                 >
@@ -431,7 +434,7 @@ const ProductShowcaseSection = () => {
 
                       {/* Painel lateral com KPIs / destaques */}
                       <div className="flex h-full flex-col space-y-3 md:space-y-4">
-                        <Card className="border-border/60 bg-background/80 p-4 sm:p-5">
+                        <Card className="rounded-xl border border-border/50 hover:border-brand-900/30 bg-background/80 p-4 sm:p-5 text-card-foreground shadow-lg hover:shadow-xl transition-all duration-300 backdrop-blur-sm hover:-translate-y-1 hover:scale-[1.02]">
                           <p className="mb-3 text-xs font-medium uppercase tracking-wide text-text-muted">
                             Destaque deste cenário
                           </p>
@@ -440,7 +443,7 @@ const ProductShowcaseSection = () => {
                           </p>
                         </Card>
 
-                        <Card className="border-border/60 bg-background/80 p-4 sm:p-5 space-y-3 flex-1">
+                        <Card className="rounded-xl border border-border/50 hover:border-brand-900/30 bg-background/80 p-4 sm:p-5 space-y-3 flex-1 text-card-foreground shadow-lg hover:shadow-xl transition-all duration-300 backdrop-blur-sm hover:-translate-y-1 hover:scale-[1.02]">
                           <p className="text-xs font-medium uppercase tracking-wide text-text-muted">
                             Em números
                           </p>
