@@ -1,0 +1,90 @@
+"use client"
+
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { MessageCircle, Bot, LineChart, CalendarClock } from "lucide-react"
+
+export function AboutProduct() {
+  return (
+    <section className="py-20 sm:py-24 bg-surface/40 border-y border-border/60">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid gap-12 lg:grid-cols-[1.1fr,1fr] items-start">
+        <div>
+          <Badge className="mb-3 bg-brand-500/10 text-brand-400 border-brand-500/30">
+            Plataforma de agentes no WhatsApp
+          </Badge>
+          <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight text-text mb-4">
+            O que é o Meu Agente, na prática?
+          </h2>
+          <p className="text-base sm:text-lg text-text-muted leading-relaxed mb-6">
+            O Meu Agente é um micro SaaS que disponibiliza uma equipe de agentes de IA operando diretamente
+            em um número de WhatsApp para cuidar de atendimento, operações e automação do seu negócio —
+            reduzindo tempo operacional, aumentando conversão e padronizando processos.
+          </p>
+          <p className="text-sm sm:text-base text-text-muted leading-relaxed">
+            Nos planos Business e Premium, você conta com número dedicado, implantação inclusa,
+            suporte 24/7 e sub-agentes especializados para finanças, marketing, agendamento, desenvolvimento
+            e muito mais.
+          </p>
+        </div>
+
+        <div className="grid gap-4 sm:gap-5">
+          <Card className="bg-background/90 border-border/70 shadow-lg">
+            <CardHeader className="flex items-start gap-3 pb-3">
+              <div className="h-10 w-10 rounded-xl bg-brand-900/10 border border-brand-900/40 flex items-center justify-center">
+                <MessageCircle className="h-5 w-5 text-brand-500" />
+              </div>
+              <div>
+                <CardTitle className="text-base sm:text-lg">Atendimento 24/7 no WhatsApp</CardTitle>
+                <CardDescription className="text-xs sm:text-sm">
+                  Recepção, triagem e acompanhamento de leads e clientes, seguindo as regras do WhatsApp Business.
+                </CardDescription>
+              </div>
+            </CardHeader>
+            <CardContent className="pt-0 text-xs sm:text-sm text-text-muted leading-relaxed">
+              Sub-agentes como SDR, Confirmação e Follow-up ajudam a diminuir no-show, recuperar oportunidades
+              e manter o relacionamento sempre ativo.
+            </CardContent>
+          </Card>
+
+          <Card className="bg-background/90 border-border/70 shadow-lg">
+            <CardHeader className="flex items-start gap-3 pb-3">
+              <div className="h-10 w-10 rounded-xl bg-emerald-500/10 border border-emerald-500/40 flex items-center justify-center">
+                <LineChart className="h-5 w-5 text-emerald-500" />
+              </div>
+              <div>
+                <CardTitle className="text-base sm:text-lg">Operações e finanças organizadas</CardTitle>
+                <CardDescription className="text-xs sm:text-sm">
+                  Registros de entradas e saídas, categorias e exportações em CSV/PDF nos planos pagos.
+                </CardDescription>
+              </div>
+            </CardHeader>
+            <CardContent className="pt-0 text-xs sm:text-sm text-text-muted leading-relaxed">
+              O Agente Financeiro centraliza o fluxo financeiro e facilita relatórios, sem depender de planilhas
+              manuais espalhadas.
+            </CardContent>
+          </Card>
+
+          <Card className="bg-background/90 border-border/70 shadow-lg">
+            <CardHeader className="flex items-start gap-3 pb-3">
+              <div className="h-10 w-10 rounded-xl bg-sky-500/10 border border-sky-500/40 flex items-center justify-center">
+                <CalendarClock className="h-5 w-5 text-sky-500" />
+              </div>
+              <div>
+                <CardTitle className="text-base sm:text-lg">Integrações com Google & rotina diária</CardTitle>
+                <CardDescription className="text-xs sm:text-sm">
+                  Agendamento, tarefas e arquivos integrados a Google Calendar, Drive e Tasks nos planos Business/Premium.
+                </CardDescription>
+              </div>
+            </CardHeader>
+            <CardContent className="pt-0 text-xs sm:text-sm text-text-muted leading-relaxed">
+              Agentes de Agendamento e de Marketing conectam sua rotina diária aos seus canais digitais, com governança
+              e automações sob medida.
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+

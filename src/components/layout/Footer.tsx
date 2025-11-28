@@ -16,7 +16,7 @@ const Footer = () => {
       { name: "Status do Sistema", href: "/status-do-sistema" },
     ],
     empresa: [
-      { name: "Sobre Nós", href: "#" },
+      { name: "Sobre Nós", href: "/sobre-nos" },
       { name: "Contato", href: "/contato" },
       { name: "Trabalhe Conosco", href: "/trabalhe-conosco" },
       { name: "Parceiros", href: "#" },

@@ -20,6 +20,7 @@ import BlogPost from "./pages/BlogPost";
 import FAQ from "./pages/FAQ";
 import Contato from "./pages/Contato";
 import NotFound from "./pages/NotFound";
+import SobreNos from "./pages/SobreNos";
 import GuiaDoUsuario from "./pages/GuiaDoUsuario";
 
 const queryClient = new QueryClient();
@@ -46,6 +47,7 @@ const App = () => (
               <Route path="/blog/:slug" element={<BlogPost />} />
               <Route path="/guia-do-usuario" element={<GuiaDoUsuario />} />
               <Route path="/faq" element={<FAQ />} />
+              <Route path="/sobre-nos" element={<SobreNos />} />
               <Route path="/trabalhe-conosco" element={<TrabalheConosco />} />
               <Route path="/contato" element={<Contato />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
