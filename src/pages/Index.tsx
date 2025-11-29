@@ -1,6 +1,5 @@
 import HeroSection from "@/components/sections/HeroSection";
 import LogosSection from "@/components/sections/LogosSection";
-import WhySection from "@/components/sections/WhySection";
 import HowItWorksSection from "@/components/sections/HowItWorksSection";
 import AgentsSection from "@/components/sections/AgentsSection";
 import { WhatsappExamples } from "@/components/about/WhatsappExamples";
@@ -13,6 +12,7 @@ import FaqSection from "@/components/sections/FaqSection";
 import FinalCTASection from "@/components/sections/FinalCTASection";
 import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
+import { AboutProduct } from "@/components/about/AboutProduct";
 import {
   createSoftwareApplicationSchema,
   createOrganizationSchema,
@@ -107,11 +107,11 @@ const Index = () => {
           </div>
         </section>
 
-        {/* Capítulo 1 – Por que & Como funciona */}
+        {/* Capítulo 1 – Visão geral da plataforma & Como funciona */}
         <div id="visao-geral" className="relative z-10">
           <ProductShowcaseSection />
-        <WhySection />
-        <HowItWorksSection />
+          <AboutProduct />
+          <HowItWorksSection />
         </div>
 
         {/* Capítulo 2 – Agentes e casos de uso */}

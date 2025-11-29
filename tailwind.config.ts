@@ -165,13 +165,14 @@ export default {
         },
         "badge-pulse": {
           "0%": {
-            boxShadow: "0 0 0 0 rgba(16, 185, 129, 0.7)",
+            // Usa a cor atual do texto (currentColor), permitindo que cada badge pulse na sua própria cor
+            boxShadow: "0 0 0 0 currentColor",
           },
           "70%": {
-            boxShadow: "0 0 0 10px rgba(16, 185, 129, 0)",
+            boxShadow: "0 0 0 10px rgba(15, 23, 42, 0)",
           },
           "100%": {
-            boxShadow: "0 0 0 0 rgba(16, 185, 129, 0)",
+            boxShadow: "0 0 0 0 rgba(15, 23, 42, 0)",
           },
         },
       },

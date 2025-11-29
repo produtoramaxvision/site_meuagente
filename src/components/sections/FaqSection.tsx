@@ -87,14 +87,12 @@ const FaqSection = () => {
                 </p>
               </div>
               <Button
-                variant="outline"
-                className="w-full bg-background/50 border-brand-900/20 hover:bg-brand-900/10 hover:text-brand-900 hover:border-brand-900/30 transition-all mt-auto"
-                onClick={() =>
-                  window.open("https://app.meuagente.api.br", "_blank")
-                }
+                className="w-full mt-auto group relative overflow-hidden bg-gradient-to-r from-brand-900 to-brand-700 hover:from-brand-800 hover:to-brand-600 text-white shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
+                onClick={() => window.open("https://app.meuagente.api.br", "_blank")}
               >
                 Falar com um especialista
-                <ArrowRight className="ml-2 h-4 w-4" />
+                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-200" />
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
               </Button>
             </div>
           </div>

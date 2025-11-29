@@ -229,9 +229,10 @@ const FAQ = () => {
             <div className="max-w-2xl space-y-6 text-left">
               <Badge
                 variant="outline"
-                className="border-brand-900/30 bg-background/80 text-xs font-medium uppercase tracking-[0.18em] text-text-muted"
+                className="inline-flex items-center gap-2 rounded-full border border-border/50 bg-background/80 px-3 py-1 text-xs font-medium text-text-muted"
               >
-                FAQ • Central de ajuda
+                <MessageSquare className="h-3 w-3 text-brand-900" />
+                <span>FAQ • Central de ajuda</span>
               </Badge>
 
               <div className="space-y-3">

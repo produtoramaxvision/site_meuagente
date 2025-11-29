@@ -334,8 +334,12 @@ const Planos = () => {
         <section className="py-20 sm:py-24 bg-gradient-to-b from-background via-surface/30 to-background">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col items-center text-center mb-10">
-              <Badge variant="outline" className="mb-3 uppercase tracking-[0.18em] text-xs">
-                Planos Meu Agente
+              <Badge
+                variant="outline"
+                className="inline-flex items-center gap-2 mb-3 rounded-full border border-border/50 bg-background/70 px-3 py-1 text-xs font-medium text-text-muted"
+              >
+                <Sparkles className="h-3 w-3 text-brand-900" />
+                <span>Planos Meu Agente</span>
               </Badge>
               <h2 className="text-3xl sm:text-4xl font-bold text-text mb-3">
                 Compare planos por valor, recurso e momento do negócio

@@ -1,7 +1,6 @@
 import SEO from "@/components/SEO";
 import { createOrganizationSchema } from "@/lib/seo";
 import { AboutHero } from "@/components/about/AboutHero";
-import { AboutProduct } from "@/components/about/AboutProduct";
 import { CompanyTimeline } from "@/components/about/CompanyTimeline";
 import { ValuesBento } from "@/components/about/ValuesBento";
 import { TeamGrid } from "@/components/about/TeamGrid";
@@ -25,7 +24,6 @@ const SobreNos = () => {
       
       <div className="min-h-screen bg-background flex flex-col">
         <AboutHero />
-        <AboutProduct />
         <ValuesBento />
         <CompanyTimeline />
         <TeamGrid />

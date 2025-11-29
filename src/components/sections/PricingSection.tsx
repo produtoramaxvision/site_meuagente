@@ -113,15 +113,15 @@ const PricingSection = () => {
           </p>
         </div>
 
-        {/* Pricing cards */}
-        <div className="grid gap-8 lg:grid-cols-4 items-stretch">
+        {/* Pricing cards – alinhados com a grade da página de Planos (Tabs “Visão por plano”) */}
+        <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-4 items-stretch">
           {plans.map((plan, index) => (
             <Card
               key={index}
-            className={`relative flex flex-col h-full p-8 bg-background border-border/50 transition-all duration-300 ${
+              className={`relative flex flex-col h-full p-8 bg-background border-border/60 shadow-lg backdrop-blur-sm transition-all duration-300 ${
                 plan.popular
-                  ? "ring-2 ring-brand-900 shadow-2xl scale-105 lg:-mt-4 lg:mb-4"
-                  : "hover:border-brand-900/30 hover:shadow-xl"
+                  ? "ring-2 ring-brand-900 shadow-2xl scale-105 hover:shadow-none hover:-translate-y-1 hover:scale-[1.08]"
+                  : "hover:shadow-none hover:-translate-y-1 hover:scale-[1.02]"
               }`}
             >
               {/* Badge */}
@@ -163,19 +163,17 @@ const PricingSection = () => {
               <Button
                 className={`mt-auto w-full group relative overflow-hidden ${
                   plan.popular
-                    ? "bg-gradient-to-r from-brand-900 to-brand-700 hover:from-brand-800 hover:to-brand-600 text-white shadow-lg"
+                    ? "bg-gradient-to-r from-brand-900 to-brand-700 hover:from-brand-800 hover:to-brand-600 text-white shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
                     : ""
                 }`}
                 variant={plan.popular ? "default" : "outline"}
                 onClick={() => onPlanClick(plan.id)}
                 disabled={loading}
               >
-                {loading ? (
-                  <Loader2 className="w-4 h-4 animate-spin mr-2" />
-                ) : null}
+                {loading ? <Loader2 className="w-4 h-4 animate-spin mr-2" /> : null}
                 {plan.cta}
                 {!loading && (
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                 )}
               </Button>
             </Card>
@@ -187,7 +185,11 @@ const PricingSection = () => {
           <p className="text-text-muted mb-4">
             Não sabe qual plano escolher?
           </p>
-          <Button variant="outline" size="lg">
+          <Button
+            size="lg"
+            className="gap-2 group relative overflow-hidden bg-gradient-to-r from-brand-900 to-brand-700 hover:from-brand-800 hover:to-brand-600 text-white shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
+            onClick={() => window.open("https://app.meuagente.api.br", "_blank")}
+          >
             Falar com Especialista
           </Button>
         </div>

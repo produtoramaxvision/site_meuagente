@@ -167,7 +167,7 @@ const AgentsSection = () => {
             {premiumAgents.map((agent, index) => (
               <div
                 key={index}
-                className="flex items-start gap-3 p-4 rounded-xl bg-background/50 backdrop-blur-sm border border-border/50 hover:border-brand-900/30 transition-all duration-300"
+                className="flex items-start gap-3 rounded-xl border border-border/60 bg-background/70 px-4 py-3 shadow-lg hover:shadow-none transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02]"
               >
                 <div className="w-10 h-10 rounded-lg bg-brand-900/10 flex items-center justify-center flex-shrink-0">
                   <agent.icon className="w-5 h-5 text-brand-900" />

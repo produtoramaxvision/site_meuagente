@@ -6,7 +6,9 @@ import {
   Bell,
   Calendar,
   CheckSquare,
+  Folder,
   LayoutDashboard,
+  Mail,
   Settings,
   Sparkles,
   Target,
@@ -395,7 +397,7 @@ const FeaturesSection = () => {
 
         {/* Integration callout – mais elegante e conectado à narrativa */}
         <div className="mt-16">
-          <Card className="relative overflow-hidden rounded-3xl border border-border/70 bg-gradient-to-r from-blue-500/8 via-background/90 to-purple-500/8 px-6 py-7 sm:px-8 sm:py-8 bg-surface text-card-foreground shadow-lg hover:shadow-xl transition-all duration-300 backdrop-blur-sm hover:-translate-y-1 hover:scale-[1.02]">
+          <Card className="relative overflow-hidden rounded-3xl border border-border/50 hover:border-brand-900/30 bg-gradient-to-r from-blue-500/8 via-background/90 to-purple-500/8 px-6 py-7 sm:px-8 sm:py-8 bg-surface text-card-foreground shadow-lg hover:shadow-xl transition-all duration-300 backdrop-blur-sm hover:-translate-y-1 hover:scale-[1.02]">
             <div className="pointer-events-none absolute -right-10 -top-16 h-40 w-40 rounded-full bg-blue-500/15 blur-3xl" />
             <div className="pointer-events-none absolute -left-16 bottom-0 h-40 w-40 rounded-full bg-purple-500/15 blur-3xl" />
 
@@ -420,16 +422,18 @@ const FeaturesSection = () => {
 
               <div className="flex flex-wrap gap-3 sm:gap-4">
                 {[
-                  "Google Calendar",
-                  "Google Drive",
-                  "Google Tasks",
-                  "Gmail",
-                ].map((name) => (
+                  { name: "Google Calendar", icon: Calendar },
+                  { name: "Google Drive", icon: Folder },
+                  { name: "Google Tasks", icon: CheckSquare },
+                  { name: "Gmail", icon: Mail },
+                ].map(({ name, icon: Icon }) => (
                   <div
                     key={name}
-                    className="px-4 py-2 rounded-xl bg-background/80 backdrop-blur-sm border border-border/70 shadow-sm flex items-center gap-2"
+                    className="flex items-center gap-2 rounded-xl border border-border/60 bg-background/70 px-4 py-3 shadow-lg hover:shadow-none transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02]"
                   >
-                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-400/80" />
+                    <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-surface/80 border border-border/60">
+                      <Icon className="w-3.5 h-3.5 text-emerald-500" />
+                    </div>
                     <span className="text-xs sm:text-sm font-semibold text-text">
                       {name}
                     </span>

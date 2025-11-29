@@ -567,8 +567,12 @@ No plano Premium, você tem cota maior de minutos de geração, permitindo escal
       <section className="border-b bg-background py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-10 flex flex-col gap-4 sm:items-center sm:text-center">
-            <Badge variant="outline" className="border-border/70 bg-surface/60 px-3 py-1 text-xs font-medium uppercase tracking-wide">
-              Orquestração de Agentes
+            <Badge
+              variant="outline"
+              className="inline-flex items-center gap-2 rounded-full border border-border/50 bg-background/70 px-3 py-1 text-xs font-medium text-text-muted"
+            >
+              <Zap className="h-3 w-3 text-brand-900" />
+              <span>Orquestração de agentes</span>
             </Badge>
             <h2 className="text-balance text-3xl font-semibold tracking-tight text-text sm:text-4xl">
               Todos os agentes que compõem a sua equipe de IA.
@@ -699,8 +703,12 @@ No plano Premium, você tem cota maior de minutos de geração, permitindo escal
       <section className="border-b bg-surface/40 py-20 sm:py-24">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="mb-10 text-center">
-            <Badge variant="outline" className="border-border/70 bg-background/60 px-3 py-1 text-xs uppercase tracking-wide">
-              Fluxo SDR Automatizado
+            <Badge
+              variant="outline"
+              className="inline-flex items-center gap-2 rounded-full border border-border/50 bg-background/70 px-3 py-1 text-xs font-medium text-text-muted"
+            >
+              <UserCheck className="h-3 w-3 text-brand-900" />
+              <span>Fluxo SDR automatizado</span>
             </Badge>
             <h2 className="mt-4 text-balance text-3xl font-semibold tracking-tight text-text sm:text-4xl">
               Como o Agente SDR leva cada lead até a reunião marcada.
@@ -757,8 +765,12 @@ No plano Premium, você tem cota maior de minutos de geração, permitindo escal
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-10 grid gap-10 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] lg:items-center">
             <div className="space-y-4">
-              <Badge variant="outline" className="border-border/70 bg-surface/60 px-3 py-1 text-xs uppercase tracking-wide">
-                App web do Meu Agente
+              <Badge
+                variant="outline"
+                className="inline-flex items-center gap-2 rounded-full border border-border/50 bg-background/70 px-3 py-1 text-xs font-medium text-text-muted"
+              >
+                <BarChart className="h-3 w-3 text-brand-900" />
+                <span>App web do Meu Agente</span>
               </Badge>
               <h2 className="text-balance text-3xl font-semibold tracking-tight text-text sm:text-4xl">
                 Painel moderno para enxergar tudo que seus agentes estão fazendo.

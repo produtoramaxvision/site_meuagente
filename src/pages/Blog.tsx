@@ -70,9 +70,13 @@ const Blog = () => {
         <div className="relative z-10 mx-auto max-w-7xl px-4 text-left sm:px-6 lg:px-8">
           <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
             <div>
-              <p className="mb-3 text-sm font-medium uppercase tracking-[0.2em] text-brand-700">
-                Insights em Agentes de IA
-              </p>
+              <Badge
+                variant="outline"
+                className="inline-flex items-center gap-2 mb-3 rounded-full border border-border/50 bg-background/80 px-3 py-1 text-xs font-medium text-text-muted"
+              >
+                <TrendingUp className="h-3 w-3 text-brand-900" />
+                <span>Insights em agentes de IA</span>
+              </Badge>
               <h1 className="text-balance text-4xl font-extrabold leading-normal pb-2 text-gradient sm:text-5xl lg:text-6xl">
                 Blog Meu Agente
               </h1>

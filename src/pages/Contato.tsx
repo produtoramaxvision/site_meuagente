@@ -145,9 +145,12 @@ const Contato = () => {
           <div className="pointer-events-none absolute inset-0 z-0 bg-[linear-gradient(to_right,#8080800b_1px,transparent_1px),linear-gradient(to_bottom,#8080800b_1px,transparent_1px)] bg-[size:14px_24px]" />
           <div className="relative z-10 mx-auto flex max-w-7xl flex-col gap-10 px-4 sm:px-6 lg:flex-row lg:items-start lg:px-8">
             <div className="max-w-xl">
-              <Badge className="inline-flex items-center gap-2 bg-emerald-500/10 text-emerald-400 border-emerald-500/40 px-3 py-1 text-xs font-semibold uppercase tracking-wide mb-3">
-                <Sparkles className="h-3.5 w-3.5" />
-                Fale com quem constrói o Meu Agente
+              <Badge
+                variant="outline"
+                className="inline-flex items-center gap-2 mb-3 rounded-full border border-emerald-500/40 bg-emerald-500/10 px-3 py-1 text-xs font-medium text-emerald-400"
+              >
+                <Sparkles className="h-3.5 w-3.5 text-emerald-400" />
+                <span>Fale com quem constrói o Meu Agente</span>
               </Badge>
 
               <h1 className="text-balance text-4xl font-semibold tracking-tight leading-normal pb-2 text-gradient sm:text-5xl lg:text-6xl">

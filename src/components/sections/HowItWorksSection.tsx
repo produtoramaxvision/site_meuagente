@@ -57,26 +57,28 @@ const HowItWorksSection = () => {
             {steps.map((step, index) => (
               <Card
                 key={index}
-                className="group relative p-6 bg-background/80 backdrop-blur-sm border-border/50 hover:border-brand-900/30 transition-all duration-300 hover:scale-105 hover:-translate-y-2 hover:shadow-xl"
+                className="group relative overflow-hidden rounded-2xl p-6 bg-background/80 backdrop-blur-sm border-border/50 hover:border-brand-900/30 transition-all duration-300 hover:scale-105 hover:-translate-y-2 hover:shadow-xl"
               >
-                {/* Step number */}
-                <div className="absolute -top-4 -right-4 w-12 h-12 rounded-full bg-gradient-to-br from-brand-900 to-brand-700 flex items-center justify-center text-white font-bold text-lg shadow-lg">
-                  {step.number}
-                </div>
-
-                {/* Icon */}
-                <div className="mb-4">
-                  <div className="w-12 h-12 rounded-xl bg-surface-2 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <step.icon className="w-6 h-6 text-brand-900" />
+                <div className="relative z-10 space-y-4">
+                  {/* Step number */}
+                  <div className="absolute -top-4 -right-4 w-12 h-12 rounded-full bg-gradient-to-br from-brand-900 to-brand-700 flex items-center justify-center text-white font-bold text-lg shadow-lg">
+                    {step.number}
                   </div>
+
+                  {/* Icon */}
+                  <div className="mb-4">
+                    <div className="w-12 h-12 rounded-xl bg-surface-2 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                      <step.icon className="w-6 h-6 text-brand-900" />
+                    </div>
+                  </div>
+
+                  {/* Content */}
+                  <h3 className="text-lg font-bold text-text mb-2">{step.title}</h3>
+                  <p className="text-sm text-text-muted">{step.description}</p>
                 </div>
 
-                {/* Content */}
-                <h3 className="text-lg font-bold text-text mb-2">{step.title}</h3>
-                <p className="text-sm text-text-muted">{step.description}</p>
-
-                {/* Hover effect */}
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-brand-900/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 rounded-xl"></div>
+                {/* Hover effect (camada visual, sem capturar clique) */}
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-transparent via-brand-900/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 rounded-xl"></div>
               </Card>
             ))}
           </div>

@@ -35,12 +35,13 @@ const FinalCTASection = () => {
           </Button>
           
           <Button 
-            size="lg" 
-            variant="outline" 
-            className="group border-2 border-white/30 bg-transparent hover:border-white/50 hover:bg-white/10 text-white transition-all duration-300 text-lg px-8 py-6"
+            size="lg"
+            className="group relative overflow-hidden bg-gradient-to-r from-brand-900/80 to-brand-700/80 hover:from-brand-800 hover:to-brand-600 text-white shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 text-lg px-8 py-6 border border-white/30"
+            onClick={() => window.open("https://app.meuagente.api.br", "_blank")}
           >
             <MessageSquare className="mr-2 h-5 w-5" />
             Falar com Especialista
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
           </Button>
         </div>
 
