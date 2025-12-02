@@ -174,11 +174,11 @@ const GuiaDoUsuario = () => {
           <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             {/* Breadcrumb */}
             <nav className="mb-6 flex items-center gap-2 text-xs sm:text-sm text-text-muted">
-              <Link to="/" className="transition-colors hover:text-brand-900">
+              <Link to="/" className="transition-colors hover-accent">
                 <Home className="h-4 w-4" />
               </Link>
               <ChevronRight className="h-4 w-4" />
-              <span className="transition-colors hover:text-brand-900">
+              <span className="transition-colors hover-accent">
                 Documentação
               </span>
               <ChevronRight className="h-4 w-4" />
@@ -208,24 +208,24 @@ const GuiaDoUsuario = () => {
 
                 <div className="flex flex-wrap items-center gap-3 text-xs sm:text-sm text-text-muted">
                   <div className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-surface/80 px-3 py-1">
-                    <BookOpen className="h-4 w-4 text-brand-900" />
+                    <BookOpen className="h-4 w-4 icon-accent" />
                     <span>Conteúdo guiado, passo a passo</span>
                   </div>
                   <div className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-surface/80 px-3 py-1">
-                    <Compass className="h-4 w-4 text-brand-900" />
+                    <Compass className="h-4 w-4 icon-accent" />
                     <span>Organizado por jornadas de uso</span>
                   </div>
                   <div className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-surface/80 px-3 py-1">
-                    <Clock className="h-4 w-4 text-brand-900" />
+                    <Clock className="h-4 w-4 icon-accent" />
                     <span>Atualizado em {updatedAt}</span>
                   </div>
                 </div>
               </div>
 
-              <Card className="border-border/70 bg-background/90 shadow-2xl shadow-black/10 backdrop-blur">
+              <Card className="border-border/70 bg-background/90 shadow-2xl-adaptive backdrop-blur">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2 text-base sm:text-lg">
-                    <ListChecks className="h-5 w-5 text-brand-900" />
+                    <ListChecks className="h-5 w-5 icon-accent" />
                     Comece pelo que importa para você
                   </CardTitle>
                 </CardHeader>
@@ -244,9 +244,9 @@ const GuiaDoUsuario = () => {
                         if (!el) return;
                         el.scrollIntoView({ behavior: "smooth", block: "start" });
                       }}
-                      className="flex items-start gap-3 rounded-2xl border border-border/70 bg-surface/90 px-3 py-3 text-left text-xs sm:text-sm transition-all hover:border-brand-900/60 hover:shadow-md"
+                      className="flex items-start gap-3 rounded-2xl border border-border/70 bg-surface/90 px-3 py-3 text-left text-xs sm:text-sm transition-all hover:border-accent hover:shadow-md"
                     >
-                      <Sparkles className="mt-0.5 h-4 w-4 text-brand-900" />
+                      <Sparkles className="mt-0.5 h-4 w-4 icon-accent" />
                       <div>
                         <p className="font-semibold text-text">
                           Primeiros passos rápidos
@@ -268,9 +268,9 @@ const GuiaDoUsuario = () => {
                         if (!el) return;
                         el.scrollIntoView({ behavior: "smooth", block: "start" });
                       }}
-                      className="flex items-start gap-3 rounded-2xl border border-border/70 bg-surface/90 px-3 py-3 text-left text-xs sm:text-sm transition-all hover:border-brand-900/60 hover:shadow-md"
+                      className="flex items-start gap-3 rounded-2xl border border-border/70 bg-surface/90 px-3 py-3 text-left text-xs sm:text-sm transition-all hover:border-accent hover:shadow-md"
                     >
-                      <BookOpen className="mt-0.5 h-4 w-4 text-brand-900" />
+                      <BookOpen className="mt-0.5 h-4 w-4 icon-accent" />
                       <div>
                         <p className="font-semibold text-text">
                           Entendendo o dashboard
@@ -372,7 +372,7 @@ const GuiaDoUsuario = () => {
                         ),
                         a: ({ children, ...props }) => (
                           <a
-                            className="font-medium text-brand-900 underline-offset-2 hover:underline"
+                            className="font-medium text-accent underline-offset-2 hover:underline"
                             {...props}
                           >
                             {children}
@@ -408,14 +408,14 @@ const GuiaDoUsuario = () => {
                               href={`#${heading.id}`}
                               className={`group flex items-center justify-between rounded-lg border px-3 py-2 text-xs sm:text-sm transition-all ${
                                 isActive
-                                  ? "border-brand-900/60 bg-gradient-to-r from-brand-900/10 to-brand-700/10 text-brand-900 shadow-sm"
-                                  : "border-transparent text-text-muted hover:border-brand-900/40 hover:bg-surface/90 hover:text-text"
+                                  ? "toc-link-active shadow-sm"
+                                  : "border-transparent text-text-muted hover:border-subtle hover:bg-surface/90 hover:text-text"
                               }`}
                             >
                               <span className="flex items-center gap-2 min-w-0">
                                 <span
                                   className={`h-1.5 w-1.5 flex-shrink-0 rounded-full transition-colors ${
-                                    isActive ? "bg-brand-900" : "bg-border"
+                                    isActive ? "dot-active" : "bg-border"
                                   }`}
                                 />
                                 <span className="truncate">{heading.title}</span>
@@ -430,7 +430,7 @@ const GuiaDoUsuario = () => {
                   <Card className="border-border/70 bg-surface/90">
                     <CardHeader className="pb-2">
                       <CardTitle className="flex items-center gap-2 text-base">
-                        <Sparkles className="h-4 w-4 text-brand-900" />
+                        <Sparkles className="h-4 w-4 icon-accent" />
                         Atalhos do guia
                       </CardTitle>
                     </CardHeader>
@@ -459,7 +459,7 @@ const GuiaDoUsuario = () => {
                                   block: "start",
                                 });
                               }}
-                              className="block w-full rounded-md border border-border/60 bg-background/80 px-3 py-2 text-left text-xs hover:border-brand-900/60 hover:text-text"
+                              className="block w-full rounded-md border border-border/60 bg-background/80 px-3 py-2 text-left text-xs hover:border-accent hover:text-text"
                             >
                               Ver seção de Primeiros Passos
                             </button>
@@ -477,7 +477,7 @@ const GuiaDoUsuario = () => {
                                   block: "start",
                                 });
                               }}
-                              className="mt-1 block w-full rounded-md border border-border/60 bg-background/80 px-3 py-2 text-left text-xs hover:border-brand-900/60 hover:text-text"
+                              className="mt-1 block w-full rounded-md border border-border/60 bg-background/80 px-3 py-2 text-left text-xs hover:border-accent hover:text-text"
                             >
                               Lançar receitas e despesas
                             </button>
@@ -502,7 +502,7 @@ const GuiaDoUsuario = () => {
                                   block: "start",
                                 });
                               }}
-                              className="block w-full rounded-md border border-border/60 bg-background/80 px-3 py-2 text-left text-xs hover:border-brand-900/60 hover:text-text"
+                              className="block w-full rounded-md border border-border/60 bg-background/80 px-3 py-2 text-left text-xs hover:border-accent hover:text-text"
                             >
                               Ver seção de Relatórios
                             </button>
@@ -520,7 +520,7 @@ const GuiaDoUsuario = () => {
                                   block: "start",
                                 });
                               }}
-                              className="mt-1 block w-full rounded-md border border-border/60 bg-background/80 px-3 py-2 text-left text-xs hover:border-brand-900/60 hover:text-text"
+                              className="mt-1 block w-full rounded-md border border-border/60 bg-background/80 px-3 py-2 text-left text-xs hover:border-accent hover:text-text"
                             >
                               Dicas e truques avançados
                             </button>
@@ -545,7 +545,7 @@ const GuiaDoUsuario = () => {
                                   block: "start",
                                 });
                               }}
-                              className="block w-full rounded-md border border-border/60 bg-background/80 px-3 py-2 text-left text-xs hover:border-brand-900/60 hover:text-text"
+                              className="block w-full rounded-md border border-border/60 bg-background/80 px-3 py-2 text-left text-xs hover:border-accent hover:text-text"
                             >
                               Acessar Solução de Problemas
                             </button>
@@ -563,7 +563,7 @@ const GuiaDoUsuario = () => {
                                   block: "start",
                                 });
                               }}
-                              className="mt-1 block w-full rounded-md border border-border/60 bg-background/80 px-3 py-2 text-left text-xs hover:border-brand-900/60 hover:text-text"
+                              className="mt-1 block w-full rounded-md border border-border/60 bg-background/80 px-3 py-2 text-left text-xs hover:border-accent hover:text-text"
                             >
                               Ver canais de contato
                             </button>

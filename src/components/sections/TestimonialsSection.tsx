@@ -64,11 +64,11 @@ const TestimonialsSection = () => {
           {testimonials.slice(0, 3).map((testimonial, index) => (
             <Card
               key={index}
-              className="group relative overflow-hidden rounded-2xl p-8 bg-background/80 backdrop-blur-sm border-border/50 hover:border-brand-900/30 transition-all duration-300 hover:scale-105 hover:-translate-y-2 hover:shadow-xl"
+              className="group relative overflow-hidden rounded-2xl p-8 bg-background/80 backdrop-blur-sm border-border/50 hover:border-accent transition-all duration-300 hover:scale-105 hover:-translate-y-2 hover:shadow-xl-adaptive"
             >
               {/* Quote icon */}
               <div className="absolute top-6 right-6 opacity-10 group-hover:opacity-20 transition-opacity">
-                <Quote className="w-12 h-12 text-brand-900" />
+                <Quote className="w-12 h-12 icon-accent" />
               </div>
 
               {/* Content */}
@@ -94,7 +94,7 @@ const TestimonialsSection = () => {
               </div>
 
               {/* Hover effect (camada visual por baixo do conteúdo) */}
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-transparent via-brand-900/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 rounded-2xl"></div>
+              <div className="pointer-events-none absolute inset-0 sweep-hover -translate-x-full group-hover:translate-x-full transition-transform duration-700 rounded-2xl"></div>
             </Card>
           ))}
         </div>
@@ -104,11 +104,11 @@ const TestimonialsSection = () => {
           {testimonials.slice(3).map((testimonial, index) => (
             <Card
               key={index}
-              className="group relative overflow-hidden rounded-2xl p-8 bg-background/80 backdrop-blur-sm border-border/50 hover:border-brand-900/30 transition-all duration-300 hover:scale-105 hover:-translate-y-2 hover:shadow-xl"
+              className="group relative overflow-hidden rounded-2xl p-8 bg-background/80 backdrop-blur-sm border-border/50 hover:border-accent transition-all duration-300 hover:scale-105 hover:-translate-y-2 hover:shadow-xl-adaptive"
             >
               {/* Quote icon */}
               <div className="absolute top-6 right-6 opacity-10 group-hover:opacity-20 transition-opacity">
-                <Quote className="w-12 h-12 text-brand-900" />
+                <Quote className="w-12 h-12 icon-accent" />
               </div>
 
               {/* Content */}
@@ -134,7 +134,7 @@ const TestimonialsSection = () => {
               </div>
 
               {/* Hover effect (camada visual por baixo do conteúdo) */}
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-transparent via-brand-900/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 rounded-2xl"></div>
+              <div className="pointer-events-none absolute inset-0 sweep-hover -translate-x-full group-hover:translate-x-full transition-transform duration-700 rounded-2xl"></div>
             </Card>
           ))}
         </div>

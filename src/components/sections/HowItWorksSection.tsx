@@ -51,24 +51,24 @@ const HowItWorksSection = () => {
         {/* Steps */}
         <div className="relative">
           {/* Connection line */}
-          <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-brand-900/20 via-brand-700/40 to-brand-900/20 -translate-y-1/2"></div>
+          <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 line-decorative -translate-y-1/2"></div>
 
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-5 relative">
             {steps.map((step, index) => (
               <Card
                 key={index}
-                className="group relative overflow-hidden rounded-2xl p-6 bg-background/80 backdrop-blur-sm border-border/50 hover:border-brand-900/30 transition-all duration-300 hover:scale-105 hover:-translate-y-2 hover:shadow-xl"
+                className="group relative overflow-hidden rounded-2xl p-6 bg-background/80 backdrop-blur-sm border-border/50 hover:border-text/20 transition-all duration-300 hover:scale-105 hover:-translate-y-2 hover:shadow-xl-adaptive"
               >
                 <div className="relative z-10 space-y-4">
                   {/* Step number */}
-                  <div className="absolute -top-4 -right-4 w-12 h-12 rounded-full bg-gradient-to-br from-brand-900 to-brand-700 flex items-center justify-center text-white font-bold text-lg shadow-lg">
+                  <div className="absolute -top-4 -right-4 w-12 h-12 rounded-full btn-primary-gradient flex items-center justify-center font-bold text-lg shadow-adaptive">
                     {step.number}
                   </div>
 
                   {/* Icon */}
                   <div className="mb-4">
                     <div className="w-12 h-12 rounded-xl bg-surface-2 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                      <step.icon className="w-6 h-6 text-brand-900" />
+                      <step.icon className="w-6 h-6 text-text" />
                     </div>
                   </div>
 
@@ -78,7 +78,7 @@ const HowItWorksSection = () => {
                 </div>
 
                 {/* Hover effect (camada visual, sem capturar clique) */}
-                <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-transparent via-brand-900/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 rounded-xl"></div>
+                <div className="pointer-events-none absolute inset-0 sweep-hover -translate-x-full group-hover:translate-x-full transition-transform duration-700 rounded-xl"></div>
               </Card>
             ))}
           </div>

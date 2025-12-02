@@ -26,6 +26,7 @@ export default {
           700: "hsl(var(--color-brand-700))",
           800: "hsl(var(--color-brand-800))",
           900: "hsl(var(--color-brand-900))",
+          950: "hsl(var(--color-brand-950))",
         },
         bg: "hsl(var(--color-bg))",
         surface: {

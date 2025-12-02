@@ -16,7 +16,7 @@ const ChatWidget = () => {
       {/* Floating button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-6 right-6 z-50 w-16 h-16 rounded-full bg-gradient-to-br from-brand-900 to-brand-700 text-white shadow-2xl hover:shadow-brand-900/50 hover:scale-110 transition-all duration-600 flex items-center justify-center group animate-pulse-slow"
+        className="fixed bottom-6 right-6 z-50 w-16 h-16 rounded-full btn-primary-gradient shadow-2xl-adaptive hover:shadow-xl-adaptive hover:scale-110 transition-all duration-600 flex items-center justify-center group animate-pulse-slow"
         aria-label="Abrir chat"
       >
         {isOpen ? (
@@ -31,8 +31,8 @@ const ChatWidget = () => {
       {/* Chat card */}
       {isOpen && (
         <div className="fixed bottom-24 right-6 z-50 w-80 sm:w-96 animate-scale-in">
-          <Card className="shadow-2xl border-brand-900/20">
-            <CardHeader className="bg-gradient-to-br from-brand-900 to-brand-700 text-white rounded-t-xl">
+          <Card className="shadow-2xl-adaptive border-border">
+            <CardHeader className="bg-section-dark text-white rounded-t-xl">
               <div className="flex items-center justify-between">
                 <div>
                   <CardTitle className="text-lg">Fale Conosco</CardTitle>

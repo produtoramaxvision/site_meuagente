@@ -315,7 +315,7 @@ const TrabalheConosco = () => {
       <div className="min-h-screen bg-gradient-to-b from-background via-surface/40 to-background relative overflow-hidden">
         {/* Background global sutil */}
         <div className="pointer-events-none absolute inset-0 opacity-60">
-          <div className="absolute -top-40 -left-40 h-80 w-80 rounded-full bg-brand-900/10 blur-3xl" />
+          <div className="absolute -top-40 -left-40 h-80 w-80 rounded-full bg-subtle-10 blur-3xl" />
           <div className="absolute top-1/3 -right-40 h-80 w-80 rounded-full bg-emerald-500/10 blur-3xl" />
           <div className="absolute bottom-0 left-1/4 h-72 w-72 rounded-full bg-brand-700/10 blur-3xl" />
         </div>
@@ -374,8 +374,8 @@ const TrabalheConosco = () => {
 
               {/* Métricas culturais + CTA principal */}
               <div className="w-full max-w-md lg:ml-auto flex flex-col justify-between">
-                <Card className="relative overflow-hidden border-border/70 bg-background/90 shadow-2xl backdrop-blur">
-                  <div className="absolute inset-0 bg-gradient-to-br from-brand-500/10 via-transparent to-emerald-500/10 pointer-events-none" />
+                <Card className="relative overflow-hidden border-border/70 bg-background/90 shadow-2xl-adaptive backdrop-blur">
+                  <div className="absolute inset-0 bg-gradient-subtle pointer-events-none" />
                   <div className="relative p-6 space-y-6">
                     <div className="flex items-center justify-between gap-3">
                       <div>
@@ -387,8 +387,8 @@ const TrabalheConosco = () => {
                           estamos indo).
                         </p>
                       </div>
-                      <div className="h-10 w-10 rounded-full bg-brand-900/10 flex items-center justify-center">
-                        <Users className="h-5 w-5 text-brand-900" />
+                      <div className="h-10 w-10 rounded-full bg-subtle-10 flex items-center justify-center">
+                        <Users className="h-5 w-5 icon-accent" />
                       </div>
                     </div>
 
@@ -430,7 +430,7 @@ const TrabalheConosco = () => {
                 <div className="mt-6 flex flex-col items-start lg:items-end gap-3">
                   <Button
                     size="lg"
-                    className="group relative overflow-hidden bg-gradient-to-r from-brand-900 to-brand-700 hover:from-brand-800 hover:to-brand-600 text-white shadow-lg"
+                    className="group relative overflow-hidden btn-primary-gradient shadow-adaptive"
                     onClick={() => {
                       const el = document.getElementById("vagas");
                       if (!el) return;
@@ -475,11 +475,11 @@ const TrabalheConosco = () => {
                     {BENEFITS.map((item) => (
                       <Card
                         key={item.title}
-                        className="p-5 bg-background/90 backdrop-blur-sm border-border/60 hover:border-brand-900/40 hover:-translate-y-1 transition-all duração-300"
+                        className="p-5 bg-background/90 backdrop-blur-sm border-border/60 hover:border-accent hover:-translate-y-1 transition-all duração-300"
                       >
                         <div className="flex items-start gap-3">
-                          <div className="h-9 w-9 rounded-xl bg-brand-900/10 flex items-center justify-center flex-shrink-0">
-                            <item.icon className="h-5 w-5 text-brand-900" />
+                          <div className="h-9 w-9 rounded-xl bg-subtle-10 flex items-center justify-center flex-shrink-0">
+                            <item.icon className="h-5 w-5 icon-accent" />
                           </div>
                           <div>
                             <p className="text-sm font-semibold text-text">
@@ -497,7 +497,7 @@ const TrabalheConosco = () => {
 
                 <div className="flex flex-col justify-between space-y-8">
                   <div className="inline-flex items-center gap-2 rounded-full bg-background/80 border border-border/60 px-3 py-1 text-[11px] text-text-muted">
-                    <Star className="h-3.5 w-3.5 text-brand-900" />
+                    <Star className="h-3.5 w-3.5 icon-accent" />
                     Nossos princípios em decisões do dia a dia
                   </div>
 
@@ -514,7 +514,7 @@ const TrabalheConosco = () => {
                     </ul>
 
                     <div className="mt-4 rounded-xl bg-surface/80 border border-dashed border-border/60 px-4 py-3 text-[11px] text-text-muted flex items-start gap-2">
-                      <HeartHandshake className="h-4 w-4 text-brand-900 mt-0.5" />
+                      <HeartHandshake className="h-4 w-4 icon-accent mt-0.5" />
                       <p>
                         Quer sentir se faz sentido para você? Durante o
                         processo seletivo incentivamos conversas abertas com
@@ -614,7 +614,7 @@ const TrabalheConosco = () => {
                   filteredJobs.map((job) => (
                     <Card
                       key={job.id}
-                      className="p-5 sm:p-6 bg-background/90 border-border/60 hover:border-brand-900/40 hover:-translate-y-0.5 transition-all duração-300"
+                      className="p-5 sm:p-6 bg-background/90 border-border/60 hover:border-accent hover:-translate-y-0.5 transition-all duração-300"
                     >
                       <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
                         <div className="space-y-2">
@@ -622,7 +622,7 @@ const TrabalheConosco = () => {
                             <Badge variant="outline" className="text-xs">
                               {job.areaLabel}
                             </Badge>
-                            <Badge className="text-xs bg-brand-900 text-white">
+                            <Badge className="text-xs btn-toggle-active">
                               {job.seniorityLabel}
                             </Badge>
                             <span className="text-[11px] text-text-muted">
@@ -637,7 +637,7 @@ const TrabalheConosco = () => {
                           </p>
 
                           <div className="flex flex-wrap items-center gap-2 pt-1 text-xs text-text-muted">
-                            <Globe2 className="h-4 w-4 text-brand-900" />
+                            <Globe2 className="h-4 w-4 icon-accent" />
                             <span>{job.location}</span>
                           </div>
 
@@ -655,7 +655,7 @@ const TrabalheConosco = () => {
 
                         <div className="flex flex-col gap-2 sm:items-end">
                           <Button
-                            className="w-full sm:w-auto bg-gradient-to-r from-brand-900 to-brand-700 hover:from-brand-800 hover:to-brand-600 text-white shadow-md"
+                            className="w-full sm:w-auto btn-primary-gradient shadow-md"
                             onClick={() => handleApply(job)}
                           >
                             Candidatar-se
@@ -709,7 +709,7 @@ const TrabalheConosco = () => {
                         value={`faq-${index}`}
                         className="border border-border/60 rounded-xl bg-background/90 px-4 sm:px-5"
                       >
-                        <AccordionTrigger className="text-left text-sm sm:text-base font-semibold text-text hover:text-brand-900">
+                        <AccordionTrigger className="text-left text-sm sm:text-base font-semibold text-text hover-accent">
                           {faq.question}
                         </AccordionTrigger>
                         <AccordionContent className="text-sm text-text-muted leading-relaxed pt-1">
@@ -721,10 +721,10 @@ const TrabalheConosco = () => {
                 </div>
 
                 <div className="space-y-4">
-                  <Card className="p-5 bg-gradient-to-br from-brand-900/15 via-background to-emerald-500/10 border-brand-900/40">
+                  <Card className="p-5 card-highlight-accent">
                     <div className="flex items-start gap-3">
                       <div className="h-10 w-10 rounded-full bg-background/80 flex items-center justify-center flex-shrink-0">
-                        <Sparkles className="h-5 w-5 text-brand-900" />
+                        <Sparkles className="h-5 w-5 icon-accent" />
                       </div>
                       <div className="space-y-2">
                         <h3 className="text-sm font-semibold text-text">

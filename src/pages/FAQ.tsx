@@ -231,7 +231,7 @@ const FAQ = () => {
                 variant="outline"
                 className="inline-flex items-center gap-2 rounded-full border border-border/50 bg-background/80 px-3 py-1 text-xs font-medium text-text-muted"
               >
-                <MessageSquare className="h-3 w-3 text-brand-900" />
+                <MessageSquare className="h-3 w-3 icon-accent" />
                 <span>FAQ • Central de ajuda</span>
               </Badge>
 
@@ -248,8 +248,8 @@ const FAQ = () => {
               </div>
 
               <div className="grid gap-4 text-sm text-text-muted sm:grid-cols-3">
-                <div className="flex items-center gap-3 rounded-2xl border border-border/60 bg-background/80 px-4 py-3 shadow-sm">
-                  <Clock className="h-5 w-5 text-brand-900" />
+                <div className="flex items-center gap-3 rounded-2xl border border-border/60 bg-background/80 px-4 py-3 shadow-adaptive">
+                  <Clock className="h-5 w-5 icon-accent" />
                   <div>
                     <p className="text-xs font-medium uppercase tracking-wide text-text">
                       Agentes 24/7
@@ -259,8 +259,8 @@ const FAQ = () => {
                     </p>
                   </div>
                 </div>
-                <div className="flex items-center gap-3 rounded-2xl border border-border/60 bg-background/80 px-4 py-3 shadow-sm">
-                  <ShieldCheck className="h-5 w-5 text-brand-900" />
+                <div className="flex items-center gap-3 rounded-2xl border border-border/60 bg-background/80 px-4 py-3 shadow-adaptive">
+                  <ShieldCheck className="h-5 w-5 icon-accent" />
                   <div>
                     <p className="text-xs font-medium uppercase tracking-wide text-text">
                       LGPD 100%
@@ -270,8 +270,8 @@ const FAQ = () => {
                     </p>
                   </div>
                 </div>
-                <div className="flex items-center gap-3 rounded-2xl border border-border/60 bg-background/80 px-4 py-3 shadow-sm">
-                  <MessageSquare className="h-5 w-5 text-brand-900" />
+                <div className="flex items-center gap-3 rounded-2xl border border-border/60 bg-background/80 px-4 py-3 shadow-adaptive">
+                  <MessageSquare className="h-5 w-5 icon-accent" />
                   <div>
                     <p className="text-xs font-medium uppercase tracking-wide text-text">
                       Atendimento guiado
@@ -285,7 +285,7 @@ const FAQ = () => {
             </div>
 
             {/* Search area / quick CTA */}
-            <Card className="w-full max-w-md border-border/60 bg-background/90 shadow-lg shadow-black/5 backdrop-blur sm:rounded-3xl">
+            <Card className="w-full max-w-md border-border/60 bg-background/90 shadow-adaptive backdrop-blur sm:rounded-3xl">
               <div className="space-y-4 p-5 sm:p-6">
                 <div>
                   <p className="text-xs font-medium uppercase tracking-[0.2em] text-text-muted">
@@ -304,7 +304,7 @@ const FAQ = () => {
                   <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-text-muted" />
                   <Input
                     placeholder="Pesquise por qualquer dúvida..."
-                    className="h-11 rounded-xl border-border/70 bg-surface/60 pl-9 text-sm placeholder:text-text-muted focus-visible:ring-brand-900/60"
+                    className="h-11 rounded-xl border-border/70 bg-surface/60 pl-9 text-sm placeholder:text-text-muted focus-visible:ring-accent"
                     value={search}
                     onChange={(e) => setSearch(e.target.value)}
                   />
@@ -318,7 +318,7 @@ const FAQ = () => {
                         key={chip}
                         type="button"
                         onClick={() => setSearch(chip)}
-                        className="rounded-full border border-border/70 bg-background/60 px-3 py-1 text-[11px] font-medium text-text-muted transition-colors hover:border-brand-900/60 hover:text-text"
+                        className="rounded-full border border-border/70 bg-background/60 px-3 py-1 text-[11px] font-medium text-text-muted transition-colors hover:border-accent hover:text-text"
                       >
                         {chip}
                       </button>
@@ -339,7 +339,7 @@ const FAQ = () => {
                   </div>
                   <Button
                     size="sm"
-                    className="mt-1 flex-1 bg-gradient-to-r from-brand-900 to-brand-700 text-xs sm:flex-none"
+                    className="mt-1 flex-1 btn-primary-gradient text-xs sm:flex-none"
                   >
                     <MessageSquare className="mr-1.5 h-3.5 w-3.5" />
                     Falar com especialista
@@ -372,34 +372,34 @@ const FAQ = () => {
                 onValueChange={setActiveCategory}
                 className="w-full"
               >
-                <TabsList className="no-scrollbar mb-6 flex h-auto gap-2 overflow-x-auto rounded-2xl bg-surface/70 p-1.5 text-xs shadow-sm sm:gap-3 sm:p-2">
+                <TabsList className="no-scrollbar mb-6 flex h-auto gap-2 overflow-x-auto rounded-2xl bg-surface/70 p-1.5 text-xs shadow-adaptive sm:gap-3 sm:p-2">
                   <TabsTrigger
                     value="geral"
-                    className="rounded-xl px-3 py-1.5 text-xs font-medium data-[state=active]:bg-gradient-to-r data-[state=active]:from-brand-900 data-[state=active]:to-brand-700 data-[state=active]:text-white sm:px-4"
+                    className="rounded-xl px-3 py-1.5 text-xs font-medium tab-active-gradient sm:px-4"
                   >
                     Geral
                   </TabsTrigger>
                   <TabsTrigger
                     value="planos"
-                    className="rounded-xl px-3 py-1.5 text-xs font-medium data-[state=active]:bg-gradient-to-r data-[state=active]:from-brand-900 data-[state=active]:to-brand-700 data-[state=active]:text-white sm:px-4"
+                    className="rounded-xl px-3 py-1.5 text-xs font-medium tab-active-gradient sm:px-4"
                   >
                     Planos & cobrança
                   </TabsTrigger>
                   <TabsTrigger
                     value="uso"
-                    className="rounded-xl px-3 py-1.5 text-xs font-medium data-[state=active]:bg-gradient-to-r data-[state=active]:from-brand-900 data-[state=active]:to-brand-700 data-[state=active]:text-white sm:px-4"
+                    className="rounded-xl px-3 py-1.5 text-xs font-medium tab-active-gradient sm:px-4"
                   >
                     Uso no dia a dia
                   </TabsTrigger>
                   <TabsTrigger
                     value="segurança"
-                    className="rounded-xl px-3 py-1.5 text-xs font-medium data-[state=active]:bg-gradient-to-r data-[state=active]:from-brand-900 data-[state=active]:to-brand-700 data-[state=active]:text-white sm:px-4"
+                    className="rounded-xl px-3 py-1.5 text-xs font-medium tab-active-gradient sm:px-4"
                   >
                     Segurança & LGPD
                   </TabsTrigger>
                   <TabsTrigger
                     value="técnico"
-                    className="rounded-xl px-3 py-1.5 text-xs font-medium data-[state=active]:bg-gradient-to-r data-[state=active]:from-brand-900 data-[state=active]:to-brand-700 data-[state=active]:text-white sm:px-4"
+                    className="rounded-xl px-3 py-1.5 text-xs font-medium tab-active-gradient sm:px-4"
                   >
                     Técnico & integrações
                   </TabsTrigger>
@@ -431,9 +431,9 @@ const FAQ = () => {
                             <AccordionItem
                               key={index}
                               value={`${category}-${index}`}
-                              className="overflow-hidden rounded-2xl border border-border/70 bg-background/90 px-4 py-1 shadow-sm transition-all duration-300 hover:border-brand-900/40 hover:shadow-md sm:px-6"
+                              className="overflow-hidden rounded-2xl border border-border/70 bg-background/90 px-4 py-1 shadow-adaptive transition-all duration-300 hover:border-accent hover:shadow-xl-adaptive sm:px-6"
                             >
-                              <AccordionTrigger className="text-left text-sm font-semibold text-text hover:text-brand-900">
+                              <AccordionTrigger className="text-left text-sm font-semibold text-text hover-accent">
                                 {faq.question}
                               </AccordionTrigger>
                               <AccordionContent className="pb-4 pt-1 text-sm leading-relaxed text-text-muted">
@@ -452,7 +452,7 @@ const FAQ = () => {
             {/* Coluna lateral: CTA e atalho de tópicos */}
             <div className="lg:w-[320px] lg:flex-none">
               <div className="space-y-6 lg:sticky lg:top-28">
-                <Card className="border-brand-900/40 bg-surface/90 p-6 shadow-lg shadow-black/5 backdrop-blur">
+                <Card className="border-accent bg-surface/90 p-6 shadow-adaptive backdrop-blur">
                   <div className="mb-4 flex items-start justify-between gap-3">
                     <div>
                       <p className="text-xs font-medium uppercase tracking-[0.2em] text-text-muted">
@@ -470,7 +470,7 @@ const FAQ = () => {
                   </p>
 
                   <div className="flex flex-col gap-3">
-                    <Button className="w-full bg-gradient-to-r from-brand-900 to-brand-700 text-sm">
+                    <Button className="w-full btn-primary-gradient text-sm">
                       <MessageSquare className="mr-2 h-4 w-4" />
                       Falar pelo WhatsApp
                     </Button>
@@ -500,7 +500,7 @@ const FAQ = () => {
                           key={item.label}
                           type="button"
                           onClick={() => setActiveCategory(item.value)}
-                          className="rounded-full border border-border/60 bg-background/70 px-3 py-1 text-[11px] font-medium text-text-muted transition-colors hover:border-brand-900/50 hover:text-text"
+                          className="rounded-full border border-border/60 bg-background/70 px-3 py-1 text-[11px] font-medium text-text-muted transition-colors hover:border-accent hover:text-text"
                         >
                           {item.label}
                         </button>

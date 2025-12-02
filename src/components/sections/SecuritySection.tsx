@@ -8,28 +8,28 @@ const SecuritySection = () => {
       title: "LGPD Compliant",
       description: "Conformidade total com a Lei Geral de Proteção de Dados. Canal do DPO disponível e direitos do titular garantidos.",
       color: "from-green-500/10 to-emerald-500/10",
-      iconColor: "text-green-600",
+      iconColor: "text-green-600 dark:text-green-400",
     },
     {
       icon: Lock,
       title: "Criptografia de Ponta a Ponta",
       description: "Todos os dados são protegidos com criptografia de nível empresarial, tanto em trânsito quanto em repouso.",
       color: "from-blue-500/10 to-cyan-500/10",
-      iconColor: "text-blue-600",
+      iconColor: "text-blue-600 dark:text-blue-400",
     },
     {
       icon: Database,
       title: "Backups Seguros",
       description: "Política 3-2-1 com testes periódicos de restauração. Backups diários off-site no plano Premium.",
       color: "from-purple-500/10 to-pink-500/10",
-      iconColor: "text-purple-600",
+      iconColor: "text-purple-600 dark:text-purple-400",
     },
     {
       icon: FileCheck,
       title: "Opt-out Fácil",
       description: "Palavra de parada \"SAIR\" ou \"pare\" para cancelar notificações a qualquer momento. Controle total sobre seus dados.",
       color: "from-orange-500/10 to-red-500/10",
-      iconColor: "text-orange-600",
+      iconColor: "text-orange-600 dark:text-orange-400",
     },
   ];
 
@@ -51,7 +51,7 @@ const SecuritySection = () => {
           {securityFeatures.map((feature, index) => (
             <Card
               key={index}
-              className={`group relative overflow-hidden p-8 bg-gradient-to-br ${feature.color} border-border/50 hover:border-brand-900/30 transition-all duration-300 hover:scale-105 hover:-translate-y-2 hover:shadow-xl`}
+              className={`group relative overflow-hidden p-8 bg-gradient-to-br ${feature.color} border-border/50 hover:border-accent transition-all duration-300 hover:scale-105 hover:-translate-y-2 hover:shadow-xl-adaptive`}
             >
               {/* Icon */}
               <div className="mb-6">

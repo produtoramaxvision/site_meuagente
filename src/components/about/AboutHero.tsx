@@ -53,7 +53,7 @@ export function AboutHero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
         >
-          <Button size="lg" className="h-12 px-8 text-base rounded-full bg-brand-600 hover:bg-brand-500 text-white shadow-lg shadow-brand-500/20 transition-all hover:scale-105">
+          <Button size="lg" className="h-12 px-8 text-base rounded-full btn-primary-gradient shadow-xl-adaptive transition-all hover:scale-105">
             Conheça a Plataforma
             <ArrowRight className="ml-2 h-4 w-4" />
           </Button>

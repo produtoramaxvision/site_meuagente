@@ -134,7 +134,7 @@ const Contato = () => {
     <div className="min-h-screen bg-gradient-to-b from-background via-surface/40 to-background relative overflow-hidden">
       {/* Background decorativo */}
       <div className="pointer-events-none absolute inset-0 opacity-60">
-        <div className="absolute -top-40 -left-40 h-80 w-80 rounded-full bg-brand-900/10 blur-3xl" />
+        <div className="absolute -top-40 -left-40 h-80 w-80 rounded-full bg-subtle-10 blur-3xl" />
         <div className="absolute top-1/3 -right-40 h-80 w-80 rounded-full bg-emerald-500/10 blur-3xl" />
         <div className="absolute bottom-0 left-1/4 h-72 w-72 rounded-full bg-brand-700/10 blur-3xl" />
       </div>
@@ -194,8 +194,8 @@ const Contato = () => {
 
             {/* Card de contato principal */}
             <div className="w-full max-w-xl lg:ml-auto">
-              <Card className="relative overflow-hidden border-border/70 bg-background/90 shadow-2xl backdrop-blur">
-                <div className="absolute inset-0 bg-gradient-to-br from-brand-500/5 via-transparent to-emerald-500/10 pointer-events-none" />
+              <Card className="relative overflow-hidden border-border/70 bg-background/90 shadow-2xl-adaptive backdrop-blur">
+                <div className="absolute inset-0 bg-gradient-subtle pointer-events-none" />
 
                 <div className="relative px-6 pt-6 pb-4 border-b border-border/60">
                   <p className="text-xs font-semibold uppercase tracking-wide text-text-muted/80 mb-1">
@@ -379,11 +379,11 @@ const Contato = () => {
                 {contactInfo.map((info, index) => (
                   <Card
                     key={index}
-                    className="p-5 bg-background/90 backdrop-blur-sm border-border/60 hover:border-brand-900/40 hover:-translate-y-1 transition-all duration-300"
+                    className="p-5 bg-background/90 backdrop-blur-sm border-border/60 hover:border-accent hover:-translate-y-1 transition-all duration-300"
                   >
                     <div className="flex items-start gap-3">
-                      <div className="h-10 w-10 rounded-xl bg-brand-900/10 flex items-center justify-center flex-shrink-0">
-                        <info.icon className="h-5 w-5 text-brand-900" />
+                      <div className="h-10 w-10 rounded-xl bg-subtle-10 flex items-center justify-center flex-shrink-0">
+                        <info.icon className="h-5 w-5 icon-accent" />
                       </div>
                       <div>
                         <p className="text-xs font-semibold uppercase tracking-wide text-text-muted/80">
@@ -439,7 +439,7 @@ const Contato = () => {
                       <Button
                         variant="outline"
                         size="icon"
-                        className="h-10 w-10 sm:h-11 sm:w-11 hover:scale-110 hover:border-brand-900/50 transition-all"
+                        className="h-10 w-10 sm:h-11 sm:w-11 hover:scale-110 hover:border-accent transition-all"
                         onClick={() => window.open("https://facebook.com/meuagente", "_blank")}
                       >
                         <Facebook className="w-4 h-4" />
@@ -447,7 +447,7 @@ const Contato = () => {
                       <Button
                         variant="outline"
                         size="icon"
-                        className="h-10 w-10 sm:h-11 sm:w-11 hover:scale-110 hover:border-brand-900/50 transition-all"
+                        className="h-10 w-10 sm:h-11 sm:w-11 hover:scale-110 hover:border-accent transition-all"
                         onClick={() => window.open("https://www.instagram.com/meu_agente", "_blank")}
                       >
                         <Instagram className="w-4 h-4" />
@@ -455,7 +455,7 @@ const Contato = () => {
                       <Button
                         variant="outline"
                         size="icon"
-                        className="h-10 w-10 sm:h-11 sm:w-11 hover:scale-110 hover:border-brand-900/50 transition-all"
+                        className="h-10 w-10 sm:h-11 sm:w-11 hover:scale-110 hover:border-accent transition-all"
                         onClick={() => window.open("https://linkedin.com/company/meuagente", "_blank")}
                       >
                         <Linkedin className="w-4 h-4" />
@@ -463,7 +463,7 @@ const Contato = () => {
                       <Button
                         variant="outline"
                         size="icon"
-                        className="h-10 w-10 sm:h-11 sm:w-11 hover:scale-110 hover:border-brand-900/50 transition-all"
+                        className="h-10 w-10 sm:h-11 sm:w-11 hover:scale-110 hover:border-accent transition-all"
                         onClick={() => window.open("https://youtube.com/@meuagente", "_blank")}
                       >
                         <Youtube className="w-4 h-4" />
@@ -496,7 +496,7 @@ const Contato = () => {
                   value={`faq-${index}`}
                   className="border border-border/60 rounded-xl bg-background/90 px-4 sm:px-5"
                 >
-                  <AccordionTrigger className="text-left text-sm sm:text-base font-semibold text-text hover:text-brand-900">
+                  <AccordionTrigger className="text-left text-sm sm:text-base font-semibold text-text hover-accent">
                     {faq.question}
                   </AccordionTrigger>
                   <AccordionContent className="text-sm text-text-muted leading-relaxed pt-1">

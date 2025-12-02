@@ -157,17 +157,17 @@ const Planos = () => {
       />
       <div className="min-h-screen bg-background">
         {/* Hero section */}
-        <section className="relative overflow-hidden py-20 sm:py-24 bg-gradient-to-br from-brand-900/15 via-background to-surface">
+        <section className="relative overflow-hidden py-20 sm:py-24 bg-gradient-hero">
           <div className="pointer-events-none absolute inset-0 z-0 bg-[linear-gradient(to_right,#8080800b_1px,transparent_1px),linear-gradient(to_bottom,#8080800b_1px,transparent_1px)] bg-[size:14px_24px]" />
           <div className="pointer-events-none absolute inset-0 opacity-60 mix-blend-soft-light">
-            <div className="absolute -left-40 top-0 h-80 w-80 rounded-full bg-brand-900/10 blur-3xl" />
-            <div className="absolute right-0 bottom-0 h-80 w-80 rounded-full bg-brand-700/10 blur-3xl" />
+            <div className="absolute -left-40 top-0 h-80 w-80 rounded-full bg-text/5 blur-3xl" />
+            <div className="absolute right-0 bottom-0 h-80 w-80 rounded-full bg-text/5 blur-3xl" />
           </div>
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid gap-12 lg:grid-cols-[minmax(0,1.2fr),minmax(0,1fr)] items-center lg:items-stretch">
               <div className="flex flex-col gap-8 lg:h-full lg:justify-between">
                 <div className="inline-flex items-center gap-2 rounded-full border border-border/50 bg-background/70 px-3 py-1 text-xs font-medium text-text-muted mb-4">
-                  <Sparkles className="h-3 w-3 text-brand-900" />
+                  <Sparkles className="h-3 w-3 icon-accent" />
                   <span>Planos pensados para operação em escala</span>
                 </div>
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gradient mb-6 pb-2 leading-normal">
@@ -177,23 +177,23 @@ const Planos = () => {
                   Compare recursos, calcule o ROI em tempo real e escolha o plano ideal para automatizar sua operação no WhatsApp com agentes de IA.
                 </p>
                 <div className="grid gap-4 sm:grid-cols-3 max-w-xl text-sm">
-                  <div className="rounded-xl border border-border/60 bg-background/70 px-4 py-3 shadow-lg hover:shadow-none transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02]">
+                  <div className="rounded-xl border border-border/60 bg-background/70 px-4 py-3 shadow-adaptive hover:shadow-none transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02]">
                     <p className="font-semibold text-text mb-1">Sem fidelidade</p>
                     <p className="text-text-muted">Planos mensais com possibilidade de upgrade a qualquer momento.</p>
                   </div>
-                  <div className="rounded-xl border border-border/60 bg-background/70 px-4 py-3 shadow-lg hover:shadow-none transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02]">
+                  <div className="rounded-xl border border-border/60 bg-background/70 px-4 py-3 shadow-adaptive hover:shadow-none transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02]">
                     <p className="font-semibold text-text mb-1">Onboarding guiado</p>
                     <p className="text-text-muted">Implantação assistida nos planos Business e Premium.</p>
                   </div>
-                  <div className="rounded-xl border border-border/60 bg-background/70 px-4 py-3 shadow-lg hover:shadow-none transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02]">
+                  <div className="rounded-xl border border-border/60 bg-background/70 px-4 py-3 shadow-adaptive hover:shadow-none transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02]">
                     <p className="font-semibold text-text mb-1">Foco em resultado</p>
                     <p className="text-text-muted">Agentes pensados para recuperar leads e aumentar receita.</p>
                   </div>
                 </div>
               </div>
 
-              <Card className="relative overflow-hidden border-brand-900/30 bg-background/80 backdrop-blur-xl p-8 shadow-2xl transition-all duration-300">
-                <div className="absolute inset-x-0 -top-32 h-40 bg-gradient-to-b from-brand-900/20 via-brand-900/5 to-transparent pointer-events-none" />
+              <Card className="relative overflow-hidden border-border bg-background/80 backdrop-blur-xl p-8 shadow-2xl-adaptive transition-all duration-300">
+                <div className="absolute inset-x-0 -top-32 h-40 bg-gradient-to-b from-text/10 via-text/3 to-transparent pointer-events-none" />
                 
                 <div className="relative flex flex-col gap-6">
                   {/* Seletor de Planos */}
@@ -206,8 +206,8 @@ const Planos = () => {
                           className={cn(
                             "px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-200",
                             heroPlanId === plan.id
-                              ? "bg-brand-900 text-white shadow-md"
-                              : "text-text-muted hover:text-text hover:bg-white/5"
+                              ? "btn-toggle-active"
+                              : "text-text-muted hover:text-text hover:bg-surface-2"
                           )}
                         >
                           {plan.name}
@@ -222,7 +222,7 @@ const Planos = () => {
                       <div className="flex flex-col gap-1 w-full">
                         {/* Label Recomendado (Business) - Absoluto ou ocupando espaço reservado */}
                         {heroPlan.id === "business" && (
-                          <span className="absolute -top-6 left-0 text-[10px] font-bold uppercase tracking-wider text-brand-900 bg-brand-100/80 px-2 py-0.5 rounded-sm backdrop-blur-sm border border-brand-200/50 animate-in fade-in slide-in-from-bottom-2">
+                          <span className="absolute -top-6 left-0 text-[10px] font-bold uppercase tracking-wider badge-highlight px-2 py-0.5 rounded-sm backdrop-blur-sm border animate-in fade-in slide-in-from-bottom-2">
                             Recomendado
                           </span>
                         )}
@@ -234,7 +234,7 @@ const Planos = () => {
                           {/* Badge flutuante à direita */}
                           <div className="h-6 flex items-center">
                             {heroPlan.badge && (
-                              <Badge className="bg-gradient-to-r from-brand-900 to-brand-700 text-white px-4 py-1 font-bold shadow-sm animate-in zoom-in-95 whitespace-nowrap">
+                              <Badge className="btn-primary-gradient px-4 py-1 font-bold shadow-sm animate-in zoom-in-95 whitespace-nowrap">
                                 {heroPlan.badge}
                               </Badge>
                             )}
@@ -301,7 +301,7 @@ const Planos = () => {
 
                   <Button
                     className={cn(
-                      "mt-2 w-full group relative overflow-hidden bg-gradient-to-r from-brand-900 to-brand-700 hover:from-brand-800 hover:to-brand-600 text-white shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105",
+                      "mt-2 w-full group relative overflow-hidden btn-primary-gradient shadow-xl-adaptive hover:shadow-2xl-adaptive",
                       heroPlan.popular ? "" : ""
                     )}
                     onClick={() => onPlanClick(heroPlan.id)}
@@ -338,7 +338,7 @@ const Planos = () => {
                 variant="outline"
                 className="inline-flex items-center gap-2 mb-3 rounded-full border border-border/50 bg-background/70 px-3 py-1 text-xs font-medium text-text-muted"
               >
-                <Sparkles className="h-3 w-3 text-brand-900" />
+                <Sparkles className="h-3 w-3 icon-accent" />
                 <span>Planos Meu Agente</span>
               </Badge>
               <h2 className="text-3xl sm:text-4xl font-bold text-text mb-3">
@@ -371,15 +371,15 @@ const Planos = () => {
                   {plans.map((plan, index) => (
                   <Card
                       key={index}
-                      className={`relative flex flex-col h-full p-8 bg-background border-border/60 shadow-lg backdrop-blur-sm transition-all duration-300 ${
+                      className={`relative flex flex-col h-full p-8 bg-background border-border/60 shadow-adaptive backdrop-blur-sm transition-all duration-300 ${
                       plan.popular
-                          ? "ring-2 ring-brand-900 shadow-2xl scale-105 hover:shadow-none hover:-translate-y-1 hover:scale-[1.08]"
+                          ? "ring-2 ring-text/20 dark:ring-text/30 shadow-xl-adaptive scale-105 hover:shadow-none hover:-translate-y-1 hover:scale-[1.08]"
                           : "hover:shadow-none hover:-translate-y-1 hover:scale-[1.02]"
                       }`}
                     >
                       {plan.badge && (
                         <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                          <Badge className="bg-gradient-to-r from-brand-900 to-brand-700 text-white px-4 py-1 font-bold">
+                          <Badge className="btn-primary-gradient px-4 py-1 font-bold">
                             {plan.badge}
                           </Badge>
                         </div>
@@ -412,7 +412,7 @@ const Planos = () => {
                       <Button
                         className={`mt-auto w-full group relative overflow-hidden ${
                           plan.popular
-                            ? "bg-gradient-to-r from-brand-900 to-brand-700 hover:from-brand-800 hover:to-brand-600 text-white shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
+                            ? "btn-primary-gradient shadow-xl-adaptive hover:shadow-2xl-adaptive"
                             : ""
                         }`}
                         variant={plan.popular ? "default" : "outline"}
@@ -435,7 +435,7 @@ const Planos = () => {
                   <p className="text-text-muted mb-4">Não sabe qual plano escolher?</p>
                   <Button
                     size="lg"
-                    className="gap-2 group relative overflow-hidden bg-gradient-to-r from-brand-900 to-brand-700 hover:from-brand-800 hover:to-brand-600 text-white shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
+                    className="gap-2 group relative overflow-hidden btn-primary-gradient shadow-xl-adaptive hover:shadow-2xl-adaptive"
                     onClick={() => window.open("https://app.meuagente.api.br", "_blank")}
                   >
                     Falar com Especialista
@@ -470,7 +470,7 @@ const Planos = () => {
                           <th className="px-4 sm:px-6 py-4 text-center text-xs sm:text-sm font-semibold text-text">
                             Básico
                           </th>
-                          <th className="px-4 sm:px-6 py-4 text-center text-xs sm:text-sm font-semibold text-text bg-brand-900/5">
+                          <th className="px-4 sm:px-6 py-4 text-center text-xs sm:text-sm font-semibold text-text bg-subtle-5">
                             Business
                           </th>
                           <th className="px-4 sm:px-6 py-4 text-center text-xs sm:text-sm font-semibold text-text">
@@ -488,7 +488,7 @@ const Planos = () => {
                           <td className="px-4 sm:px-6 py-4 text-center">
                             <Check className="w-5 h-5 text-success mx-auto" />
                           </td>
-                          <td className="px-4 sm:px-6 py-4 text-center bg-brand-900/5">
+                          <td className="px-4 sm:px-6 py-4 text-center bg-subtle-5">
                             <Check className="w-5 h-5 text-success mx-auto" />
                           </td>
                           <td className="px-4 sm:px-6 py-4 text-center">
@@ -499,7 +499,7 @@ const Planos = () => {
                           <td className="px-4 sm:px-6 py-4 text-sm text-text">Agente Web Search</td>
                           <td className="px-4 sm:px-6 py-4 text-center text-xs">Básico</td>
                           <td className="px-4 sm:px-6 py-4 text-center text-xs">Básico</td>
-                          <td className="px-4 sm:px-6 py-4 text-center bg-brand-900/5 text-xs">Básico</td>
+                          <td className="px-4 sm:px-6 py-4 text-center bg-subtle-5 text-xs">Básico</td>
                           <td className="px-4 sm:px-6 py-4 text-center text-xs font-semibold text-success">
                             Avançado
                           </td>
@@ -508,7 +508,7 @@ const Planos = () => {
                           <td className="px-4 sm:px-6 py-4 text-sm text-text">Agente de Scrape</td>
                           <td className="px-4 sm:px-6 py-4 text-center text-xs">Básico</td>
                           <td className="px-4 sm:px-6 py-4 text-center text-xs">Básico</td>
-                          <td className="px-4 sm:px-6 py-4 text-center bg-brand-900/5 text-xs">Intermediário</td>
+                          <td className="px-4 sm:px-6 py-4 text-center bg-subtle-5 text-xs">Intermediário</td>
                           <td className="px-4 sm:px-6 py-4 text-center text-xs font-semibold text-success">
                             Avançado
                           </td>
@@ -523,7 +523,7 @@ const Planos = () => {
                           <td className="px-4 sm:px-6 py-4 text-center">
                             <Check className="w-5 h-5 text-success mx-auto" />
                           </td>
-                          <td className="px-4 sm:px-6 py-4 text-center bg-brand-900/5">
+                          <td className="px-4 sm:px-6 py-4 text-center bg-subtle-5">
                             <Check className="w-5 h-5 text-success mx-auto" />
                           </td>
                           <td className="px-4 sm:px-6 py-4 text-center">
@@ -538,7 +538,7 @@ const Planos = () => {
                           <td className="px-4 sm:px-6 py-4 text-center">
                             <Check className="w-5 h-5 text-success mx-auto" />
                           </td>
-                          <td className="px-4 sm:px-6 py-4 text-center bg-brand-900/5">
+                          <td className="px-4 sm:px-6 py-4 text-center bg-subtle-5">
                             <Check className="w-5 h-5 text-success mx-auto" />
                           </td>
                           <td className="px-4 sm:px-6 py-4 text-center">
@@ -555,7 +555,7 @@ const Planos = () => {
                           <td className="px-4 sm:px-6 py-4 text-center">
                             <X className="w-5 h-5 text-text-muted mx-auto" />
                           </td>
-                          <td className="px-4 sm:px-6 py-4 text-center bg-brand-900/5">
+                          <td className="px-4 sm:px-6 py-4 text-center bg-subtle-5">
                             <Check className="w-5 h-5 text-success mx-auto" />
                           </td>
                           <td className="px-4 sm:px-6 py-4 text-center">
@@ -570,7 +570,7 @@ const Planos = () => {
                           <td className="px-4 sm:px-6 py-4 text-center">
                             <X className="w-5 h-5 text-text-muted mx-auto" />
                           </td>
-                          <td className="px-4 sm:px-6 py-4 text-center bg-brand-900/5">
+                          <td className="px-4 sm:px-6 py-4 text-center bg-subtle-5">
                             <Check className="w-5 h-5 text-success mx-auto" />
                           </td>
                           <td className="px-4 sm:px-6 py-4 text-center">
@@ -587,7 +587,7 @@ const Planos = () => {
                           <td className="px-4 sm:px-6 py-4 text-center">
                             <X className="w-5 h-5 text-text-muted mx-auto" />
                           </td>
-                          <td className="px-4 sm:px-6 py-4 text-center bg-brand-900/5">
+                          <td className="px-4 sm:px-6 py-4 text-center bg-subtle-5">
                             <Check className="w-5 h-5 text-success mx-auto" />
                           </td>
                           <td className="px-4 sm:px-6 py-4 text-center">
@@ -604,7 +604,7 @@ const Planos = () => {
                           <td className="px-4 sm:px-6 py-4 text-center">
                             <X className="w-5 h-5 text-text-muted mx-auto" />
                           </td>
-                          <td className="px-4 sm:px-6 py-4 text-center bg-brand-900/5">
+                          <td className="px-4 sm:px-6 py-4 text-center bg-subtle-5">
                             <Check className="w-5 h-5 text-success mx-auto" />
                           </td>
                           <td className="px-4 sm:px-6 py-4 text-center">
@@ -621,7 +621,7 @@ const Planos = () => {
                           <td className="px-4 sm:px-6 py-4 text-center">
                             <X className="w-5 h-5 text-text-muted mx-auto" />
                           </td>
-                          <td className="px-4 sm:px-6 py-4 text-center bg-brand-900/5">
+                          <td className="px-4 sm:px-6 py-4 text-center bg-subtle-5">
                             <Check className="w-5 h-5 text-success mx-auto" />
                           </td>
                           <td className="px-4 sm:px-6 py-4 text-center">
@@ -638,7 +638,7 @@ const Planos = () => {
                           <td className="px-4 sm:px-6 py-4 text-center">
                             <X className="w-5 h-5 text-text-muted mx-auto" />
                           </td>
-                          <td className="px-4 sm:px-6 py-4 text-center bg-brand-900/5">
+                          <td className="px-4 sm:px-6 py-4 text-center bg-subtle-5">
                             <Check className="w-5 h-5 text-success mx-auto" />
                           </td>
                           <td className="px-4 sm:px-6 py-4 text-center">
@@ -655,7 +655,7 @@ const Planos = () => {
                           <td className="px-4 sm:px-6 py-4 text-center">
                             <X className="w-5 h-5 text-text-muted mx-auto" />
                           </td>
-                          <td className="px-4 sm:px-6 py-4 text-center bg-brand-900/5">
+                          <td className="px-4 sm:px-6 py-4 text-center bg-subtle-5">
                             <Check className="w-5 h-5 text-success mx-auto" />
                           </td>
                           <td className="px-4 sm:px-6 py-4 text-center">
@@ -672,7 +672,7 @@ const Planos = () => {
                           <td className="px-4 sm:px-6 py-4 text-center">
                             <X className="w-5 h-5 text-text-muted mx-auto" />
                           </td>
-                          <td className="px-4 sm:px-6 py-4 text-center bg-brand-900/5">
+                          <td className="px-4 sm:px-6 py-4 text-center bg-subtle-5">
                             <Check className="w-5 h-5 text-success mx-auto" />
                           </td>
                           <td className="px-4 sm:px-6 py-4 text-center text-xs font-semibold text-success">
@@ -689,7 +689,7 @@ const Planos = () => {
                           <td className="px-4 sm:px-6 py-4 text-center">
                             <X className="w-5 h-5 text-text-muted mx-auto" />
                           </td>
-                          <td className="px-4 sm:px-6 py-4 text-center bg-brand-900/5">
+                          <td className="px-4 sm:px-6 py-4 text-center bg-subtle-5">
                             <X className="w-5 h-5 text-text-muted mx-auto" />
                           </td>
                           <td className="px-4 sm:px-6 py-4 text-center">
@@ -704,7 +704,7 @@ const Planos = () => {
                           <td className="px-4 sm:px-6 py-4 text-center">
                             <X className="w-5 h-5 text-text-muted mx-auto" />
                           </td>
-                          <td className="px-4 sm:px-6 py-4 text-center bg-brand-900/5">
+                          <td className="px-4 sm:px-6 py-4 text-center bg-subtle-5">
                             <X className="w-5 h-5 text-text-muted mx-auto" />
                           </td>
                           <td className="px-4 sm:px-6 py-4 text-center">
@@ -719,7 +719,7 @@ const Planos = () => {
                           <td className="px-4 sm:px-6 py-4 text-center">
                             <X className="w-5 h-5 text-text-muted mx-auto" />
                           </td>
-                          <td className="px-4 sm:px-6 py-4 text-center bg-brand-900/5">
+                          <td className="px-4 sm:px-6 py-4 text-center bg-subtle-5">
                             <X className="w-5 h-5 text-text-muted mx-auto" />
                           </td>
                           <td className="px-4 sm:px-6 py-4 text-center">
@@ -734,7 +734,7 @@ const Planos = () => {
                           <td className="px-4 sm:px-6 py-4 text-center">
                             <X className="w-5 h-5 text-text-muted mx-auto" />
                           </td>
-                          <td className="px-4 sm:px-6 py-4 text-center bg-brand-900/5">
+                          <td className="px-4 sm:px-6 py-4 text-center bg-subtle-5">
                             <X className="w-5 h-5 text-text-muted mx-auto" />
                           </td>
                           <td className="px-4 sm:px-6 py-4 text-center">
@@ -749,7 +749,7 @@ const Planos = () => {
                           <td className="px-4 sm:px-6 py-4 text-center">
                             <X className="w-5 h-5 text-text-muted mx-auto" />
                           </td>
-                          <td className="px-4 sm:px-6 py-4 text-center bg-brand-900/5">
+                          <td className="px-4 sm:px-6 py-4 text-center bg-subtle-5">
                             <X className="w-5 h-5 text-text-muted mx-auto" />
                           </td>
                           <td className="px-4 sm:px-6 py-4 text-center">
@@ -764,7 +764,7 @@ const Planos = () => {
                           <td className="px-4 sm:px-6 py-4 text-center">
                             <X className="w-5 h-5 text-text-muted mx-auto" />
                           </td>
-                          <td className="px-4 sm:px-6 py-4 text-center bg-brand-900/5">
+                          <td className="px-4 sm:px-6 py-4 text-center bg-subtle-5">
                             <X className="w-5 h-5 text-text-muted mx-auto" />
                           </td>
                           <td className="px-4 sm:px-6 py-4 text-center">
@@ -781,7 +781,7 @@ const Planos = () => {
                             <X className="w-5 h-5 text-text-muted mx-auto" />
                           </td>
                           <td className="px-4 sm:px-6 py-4 text-center text-xs">Básico</td>
-                          <td className="px-4 sm:px-6 py-4 text-center bg-brand-900/5 text-xs">
+                          <td className="px-4 sm:px-6 py-4 text-center bg-subtle-5 text-xs">
                             Intermediário
                           </td>
                           <td className="px-4 sm:px-6 py-4 text-center text-xs font-semibold text-success">
@@ -800,11 +800,11 @@ const Planos = () => {
       {/* ROI Calculator */}
       <section className="py-20 sm:py-24 bg-surface/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Card className="p-8 md:p-10 bg-gradient-to-br from-brand-900/5 to-brand-700/5 border-brand-900/25 shadow-2xl transition-all duration-300 hover:shadow-none">
+          <Card className="p-8 md:p-10 bg-card-gradient border shadow-2xl-adaptive transition-all duration-300 hover:shadow-none">
             <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-8">
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-xl bg-brand-900/10 flex items-center justify-center">
-                  <Calculator className="w-6 h-6 text-brand-900" />
+                <div className="w-12 h-12 rounded-xl bg-surface-2 flex items-center justify-center">
+                  <Calculator className="w-6 h-6 text-text" />
                 </div>
                 <div>
                   <h2 className="text-2xl font-bold text-text">Calculadora de ROI</h2>
@@ -921,7 +921,7 @@ const Planos = () => {
                     </div>
                     <div className="text-left sm:text-center">
                       <p className="text-xs text-text-muted mb-1">Economia total/mês</p>
-                      <p className="text-2xl font-bold text-brand-900">
+                      <p className="text-2xl font-bold text-accent">
                         R$ {roi.totalSavings.toLocaleString("pt-BR")}
                       </p>
                     </div>
@@ -953,7 +953,7 @@ const Planos = () => {
       <section className="py-24 bg-surface/30 relative overflow-hidden">
         {/* Elementos decorativos de fundo */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-full pointer-events-none opacity-40">
-            <div className="absolute top-20 right-0 w-96 h-96 bg-brand-900/10 rounded-full blur-[100px]" />
+            <div className="absolute top-20 right-0 w-96 h-96 bg-subtle-10 rounded-full blur-[100px]" />
             <div className="absolute bottom-20 left-0 w-72 h-72 bg-blue-500/10 rounded-full blur-[100px]" />
         </div>
 
@@ -964,7 +964,7 @@ const Planos = () => {
               <div className="flex flex-col gap-6 h-full lg:justify-between">
                 <div className="space-y-4">
                   <div className="inline-flex items-center gap-2 rounded-full border border-border/50 bg-background/70 px-3 py-1 text-xs font-medium text-text-muted">
-                    <Sparkles className="h-3 w-3 text-brand-900" />
+                    <Sparkles className="h-3 w-3 icon-accent" />
                     <span>Tira-dúvidas</span>
                   </div>
                   <h2 className="text-3xl sm:text-4xl font-bold text-text leading-tight">
@@ -976,10 +976,10 @@ const Planos = () => {
                 </div>
 
                 {/* Card de Suporte - Flexível para alinhar o fundo */}
-                <div className="flex-1 flex flex-col justify-between p-6 rounded-2xl border border-brand-900/10 bg-gradient-to-br from-brand-900/5 to-transparent backdrop-blur-sm mt-2 shadow-lg hover:shadow-none transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02]">
+                <div className="flex-1 flex flex-col justify-between p-6 rounded-2xl border border-subtle bg-gradient-subtle backdrop-blur-sm mt-2 shadow-adaptive hover:shadow-none transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02]">
                   <div>
                     <div className="flex items-center gap-3 mb-3">
-                      <div className="h-10 w-10 rounded-full bg-brand-900/10 flex items-center justify-center text-brand-900 shadow-sm">
+                      <div className="h-10 w-10 rounded-full bg-surface-2 flex items-center justify-center text-text shadow-sm">
                         <Sparkles className="h-5 w-5" />
                       </div>
                       <p className="font-semibold text-text">Ainda com dúvidas?</p>
@@ -989,7 +989,7 @@ const Planos = () => {
                     </p>
                   </div>
                   <Button 
-                    className="w-full mt-auto group relative overflow-hidden bg-gradient-to-r from-brand-900 to-brand-700 hover:from-brand-800 hover:to-brand-600 text-white shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
+                    className="w-full mt-auto group relative overflow-hidden btn-primary-gradient shadow-xl-adaptive hover:shadow-2xl-adaptive"
                     onClick={() => window.open("https://app.meuagente.api.br", "_blank")}
                   >
                     Falar com consultor
@@ -1010,8 +1010,8 @@ const Planos = () => {
                 collapsible
                 className="flex h-full flex-col justify-between space-y-2"
               >
-                <AccordionItem value="item-1" className="group border border-border/60 rounded-lg bg-background/60 px-1 hover:border-brand-900/30 hover:bg-background/80 transition-all duration-300 shadow-sm data-[state=open]:border-brand-900/30 data-[state=open]:bg-background/90 data-[state=open]:shadow-md">
-                  <AccordionTrigger className="px-3 text-left font-medium text-sm text-text group-hover:text-brand-900 transition-colors py-3">
+                <AccordionItem value="item-1" className="group border border-border/60 rounded-lg bg-background/60 px-1 hover:border-accent hover:bg-background/80 transition-all duration-300 shadow-sm data-[state=open]:border-accent data-[state=open]:bg-background/90 data-[state=open]:shadow-md">
+                  <AccordionTrigger className="px-3 text-left font-medium text-sm text-text group-hover-accent transition-colors py-3">
                     Posso usar o Meu Agente sem número próprio?
                   </AccordionTrigger>
                   <AccordionContent className="px-3 pb-3 text-sm text-text-muted leading-relaxed">
@@ -1019,8 +1019,8 @@ const Planos = () => {
                   </AccordionContent>
                 </AccordionItem>
 
-                <AccordionItem value="item-2" className="group border border-border/60 rounded-lg bg-background/60 px-1 hover:border-brand-900/30 hover:bg-background/80 transition-all duration-300 shadow-sm data-[state=open]:border-brand-900/30 data-[state=open]:bg-background/90 data-[state=open]:shadow-md">
-                  <AccordionTrigger className="px-3 text-left font-medium text-sm text-text group-hover:text-brand-900 transition-colors py-3">
+                <AccordionItem value="item-2" className="group border border-border/60 rounded-lg bg-background/60 px-1 hover:border-accent hover:bg-background/80 transition-all duration-300 shadow-sm data-[state=open]:border-accent data-[state=open]:bg-background/90 data-[state=open]:shadow-md">
+                  <AccordionTrigger className="px-3 text-left font-medium text-sm text-text group-hover-accent transition-colors py-3">
                     O que muda entre os planos Business e Premium?
                   </AccordionTrigger>
                   <AccordionContent className="px-3 pb-3 text-sm text-text-muted leading-relaxed">
@@ -1028,8 +1028,8 @@ const Planos = () => {
                   </AccordionContent>
                 </AccordionItem>
 
-                <AccordionItem value="item-3" className="group border border-border/60 rounded-lg bg-background/60 px-1 hover:border-brand-900/30 hover:bg-background/80 transition-all duration-300 shadow-sm data-[state=open]:border-brand-900/30 data-[state=open]:bg-background/90 data-[state=open]:shadow-md">
-                  <AccordionTrigger className="px-3 text-left font-medium text-sm text-text group-hover:text-brand-900 transition-colors py-3">
+                <AccordionItem value="item-3" className="group border border-border/60 rounded-lg bg-background/60 px-1 hover:border-accent hover:bg-background/80 transition-all duration-300 shadow-sm data-[state=open]:border-accent data-[state=open]:bg-background/90 data-[state=open]:shadow-md">
+                  <AccordionTrigger className="px-3 text-left font-medium text-sm text-text group-hover-accent transition-colors py-3">
                     Como funcionam as mensagens proativas?
                   </AccordionTrigger>
                   <AccordionContent className="px-3 pb-3 text-sm text-text-muted leading-relaxed">
@@ -1037,8 +1037,8 @@ const Planos = () => {
                   </AccordionContent>
                 </AccordionItem>
 
-                <AccordionItem value="item-4" className="group border border-border/60 rounded-lg bg-background/60 px-1 hover:border-brand-900/30 hover:bg-background/80 transition-all duration-300 shadow-sm data-[state=open]:border-brand-900/30 data-[state=open]:bg-background/90 data-[state=open]:shadow-md">
-                  <AccordionTrigger className="px-3 text-left font-medium text-sm text-text group-hover:text-brand-900 transition-colors py-3">
+                <AccordionItem value="item-4" className="group border border-border/60 rounded-lg bg-background/60 px-1 hover:border-accent hover:bg-background/80 transition-all duration-300 shadow-sm data-[state=open]:border-accent data-[state=open]:bg-background/90 data-[state=open]:shadow-md">
+                  <AccordionTrigger className="px-3 text-left font-medium text-sm text-text group-hover-accent transition-colors py-3">
                     Há taxa de manutenção adicional?
                   </AccordionTrigger>
                   <AccordionContent className="px-3 pb-3 text-sm text-text-muted leading-relaxed">
@@ -1046,8 +1046,8 @@ const Planos = () => {
                   </AccordionContent>
                 </AccordionItem>
 
-                <AccordionItem value="item-5" className="group border border-border/60 rounded-lg bg-background/60 px-1 hover:border-brand-900/30 hover:bg-background/80 transition-all duration-300 shadow-sm data-[state=open]:border-brand-900/30 data-[state=open]:bg-background/90 data-[state=open]:shadow-md">
-                  <AccordionTrigger className="px-3 text-left font-medium text-sm text-text group-hover:text-brand-900 transition-colors py-3">
+                <AccordionItem value="item-5" className="group border border-border/60 rounded-lg bg-background/60 px-1 hover:border-accent hover:bg-background/80 transition-all duration-300 shadow-sm data-[state=open]:border-accent data-[state=open]:bg-background/90 data-[state=open]:shadow-md">
+                  <AccordionTrigger className="px-3 text-left font-medium text-sm text-text group-hover-accent transition-colors py-3">
                     Vocês fazem scraping de sites que proíbem?
                   </AccordionTrigger>
                   <AccordionContent className="px-3 pb-3 text-sm text-text-muted leading-relaxed">
@@ -1055,8 +1055,8 @@ const Planos = () => {
                   </AccordionContent>
                 </AccordionItem>
 
-                <AccordionItem value="item-6" className="group border border-border/60 rounded-lg bg-background/60 px-1 hover:border-brand-900/30 hover:bg-background/80 transition-all duration-300 shadow-sm data-[state=open]:border-brand-900/30 data-[state=open]:bg-background/90 data-[state=open]:shadow-md">
-                  <AccordionTrigger className="px-3 text-left font-medium text-sm text-text group-hover:text-brand-900 transition-colors py-3">
+                <AccordionItem value="item-6" className="group border border-border/60 rounded-lg bg-background/60 px-1 hover:border-accent hover:bg-background/80 transition-all duration-300 shadow-sm data-[state=open]:border-accent data-[state=open]:bg-background/90 data-[state=open]:shadow-md">
+                  <AccordionTrigger className="px-3 text-left font-medium text-sm text-text group-hover-accent transition-colors py-3">
                     Posso mudar de plano depois?
                   </AccordionTrigger>
                   <AccordionContent className="px-3 pb-3 text-sm text-text-muted leading-relaxed">
@@ -1064,8 +1064,8 @@ const Planos = () => {
                   </AccordionContent>
                 </AccordionItem>
 
-                <AccordionItem value="item-7" className="group border border-border/60 rounded-lg bg-background/60 px-1 hover:border-brand-900/30 hover:bg-background/80 transition-all duration-300 shadow-sm data-[state=open]:border-brand-900/30 data-[state=open]:bg-background/90 data-[state=open]:shadow-md">
-                  <AccordionTrigger className="px-3 text-left font-medium text-sm text-text group-hover:text-brand-900 transition-colors py-3">
+                <AccordionItem value="item-7" className="group border border-border/60 rounded-lg bg-background/60 px-1 hover:border-accent hover:bg-background/80 transition-all duration-300 shadow-sm data-[state=open]:border-accent data-[state=open]:bg-background/90 data-[state=open]:shadow-md">
+                  <AccordionTrigger className="px-3 text-left font-medium text-sm text-text group-hover-accent transition-colors py-3">
                     O que está incluído na implantação?
                   </AccordionTrigger>
                   <AccordionContent className="px-3 pb-3 text-sm text-text-muted leading-relaxed">
@@ -1073,8 +1073,8 @@ const Planos = () => {
                   </AccordionContent>
                 </AccordionItem>
 
-                <AccordionItem value="item-8" className="group border border-border/60 rounded-lg bg-background/60 px-1 hover:border-brand-900/30 hover:bg-background/80 transition-all duration-300 shadow-sm data-[state=open]:border-brand-900/30 data-[state=open]:bg-background/90 data-[state=open]:shadow-md">
-                  <AccordionTrigger className="px-3 text-left font-medium text-sm text-text group-hover:text-brand-900 transition-colors py-3">
+                <AccordionItem value="item-8" className="group border border-border/60 rounded-lg bg-background/60 px-1 hover:border-accent hover:bg-background/80 transition-all duration-300 shadow-sm data-[state=open]:border-accent data-[state=open]:bg-background/90 data-[state=open]:shadow-md">
+                  <AccordionTrigger className="px-3 text-left font-medium text-sm text-text group-hover-accent transition-colors py-3">
                     Como funciona o suporte prioritário 24/7?
                   </AccordionTrigger>
                   <AccordionContent className="px-3 pb-3 text-sm text-text-muted leading-relaxed">

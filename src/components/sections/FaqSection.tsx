@@ -50,7 +50,7 @@ const FaqSection = () => {
     <section className="py-24 bg-surface/30 relative overflow-hidden">
       {/* Elementos decorativos de fundo (mesmo estilo da página de Planos) */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-full pointer-events-none opacity-40">
-        <div className="absolute top-20 right-0 w-96 h-96 bg-brand-900/10 rounded-full blur-[100px]" />
+        <div className="absolute top-20 right-0 w-96 h-96 bg-subtle-10 rounded-full blur-[100px]" />
         <div className="absolute bottom-20 left-0 w-72 h-72 bg-blue-500/10 rounded-full blur-[100px]" />
       </div>
 
@@ -60,7 +60,7 @@ const FaqSection = () => {
           <div className="flex flex-col gap-6 h-full lg:justify-between">
             <div className="space-y-4">
               <div className="inline-flex items-center gap-2 rounded-full border border-border/50 bg-background/70 px-3 py-1 text-xs font-medium text-text-muted">
-                <Sparkles className="h-3 w-3 text-brand-900" />
+                <Sparkles className="h-3 w-3 icon-accent" />
                 <span>Perguntas Frequentes</span>
               </div>
               <h2 className="text-3xl sm:text-4xl font-bold text-text leading-tight">
@@ -72,10 +72,10 @@ const FaqSection = () => {
             </div>
 
             {/* Card de Suporte - altura independente do acordeão */}
-            <div className="flex flex-col justify-between p-6 rounded-2xl border border-brand-900/10 bg-gradient-to-br from-brand-900/5 to-transparent backdrop-blur-sm mt-2">
+            <div className="flex flex-col justify-between p-6 rounded-2xl border border-subtle bg-gradient-subtle backdrop-blur-sm mt-2">
               <div>
                 <div className="flex items-center gap-3 mb-3">
-                  <div className="h-10 w-10 rounded-full bg-brand-900/10 flex items-center justify-center text-brand-900 shadow-sm">
+                  <div className="h-10 w-10 rounded-full bg-surface-2 flex items-center justify-center text-text shadow-sm">
                     <Sparkles className="h-5 w-5" />
                   </div>
                   <p className="font-semibold text-text">
@@ -87,7 +87,7 @@ const FaqSection = () => {
                 </p>
               </div>
               <Button
-                className="w-full mt-auto group relative overflow-hidden bg-gradient-to-r from-brand-900 to-brand-700 hover:from-brand-800 hover:to-brand-600 text-white shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
+                className="w-full mt-auto group relative overflow-hidden btn-primary-gradient shadow-xl-adaptive hover:shadow-2xl-adaptive"
                 onClick={() => window.open("https://app.meuagente.api.br", "_blank")}
               >
                 Falar com um especialista
@@ -108,9 +108,9 @@ const FaqSection = () => {
                 <AccordionItem
                   key={index}
                   value={`item-${index + 1}`}
-                  className="group border border-border/60 rounded-lg bg-background/60 px-1 hover:border-brand-900/30 hover:bg-background/80 transition-all duration-300 shadow-sm data-[state=open]:border-brand-900/30 data-[state=open]:bg-background/90 data-[state=open]:shadow-md"
+                  className="group border border-border/60 rounded-lg bg-background/60 px-1 hover:border-accent hover:bg-background/80 transition-all duration-300 shadow-sm data-[state=open]:border-border data-[state=open]:bg-background/90 data-[state=open]:shadow-md"
                 >
-                  <AccordionTrigger className="px-3 text-left font-medium text-sm text-text group-hover:text-brand-900 transition-colors py-3">
+                  <AccordionTrigger className="px-3 text-left font-medium text-sm text-text group-hover-accent transition-colors py-3">
                     {faq.question}
                   </AccordionTrigger>
                   <AccordionContent className="px-3 pb-3 text-sm text-text-muted leading-relaxed">
@@ -125,7 +125,7 @@ const FaqSection = () => {
               <span>Quer ver respostas mais detalhadas? </span>
               <a
                 href="/faq"
-                className="text-brand-900 font-semibold hover:underline transition-all"
+                className="text-accent font-semibold hover:underline transition-all"
               >
                 Acesse a central completa de dúvidas →
               </a>

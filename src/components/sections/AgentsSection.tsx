@@ -23,7 +23,7 @@ const AgentsSection = () => {
       description: "Controle total de receitas, despesas e exportações. Categorias inteligentes e alertas automáticos.",
       tier: "Todos os planos",
       color: "from-green-500/10 to-emerald-500/10",
-      iconColor: "text-green-600",
+      iconColor: "text-green-600 dark:text-green-400",
     },
     {
       icon: Search,
@@ -31,7 +31,7 @@ const AgentsSection = () => {
       description: "Pesquise informações na web, tendências e concorrentes em segundos.",
       tier: "Todos os planos",
       color: "from-blue-500/10 to-cyan-500/10",
-      iconColor: "text-blue-600",
+      iconColor: "text-blue-600 dark:text-blue-400",
     },
     {
       icon: Database,
@@ -39,7 +39,7 @@ const AgentsSection = () => {
       description: "Extraia dados de fontes permitidas, gere relatórios CSV/JSON estruturados.",
       tier: "Todos os planos",
       color: "from-purple-500/10 to-pink-500/10",
-      iconColor: "text-purple-600",
+      iconColor: "text-purple-600 dark:text-purple-400",
     },
     {
       icon: UserCheck,
@@ -47,7 +47,7 @@ const AgentsSection = () => {
       description: "Qualifique leads, agende reuniões no Google Calendar, envie confirmações automáticas.",
       tier: "Business/Premium",
       color: "from-orange-500/10 to-red-500/10",
-      iconColor: "text-orange-600",
+      iconColor: "text-orange-600 dark:text-orange-400",
     },
     {
       icon: TrendingUp,
@@ -55,7 +55,7 @@ const AgentsSection = () => {
       description: "Analise campanhas Google Ads, otimize termos, receba alertas de performance.",
       tier: "Business/Premium",
       color: "from-pink-500/10 to-rose-500/10",
-      iconColor: "text-pink-600",
+      iconColor: "text-pink-600 dark:text-pink-400",
     },
     {
       icon: Calendar,
@@ -63,7 +63,7 @@ const AgentsSection = () => {
       description: "Gerencie Google Calendar, Drive, Tasks e envie lembretes automáticos.",
       tier: "Business/Premium",
       color: "from-indigo-500/10 to-blue-500/10",
-      iconColor: "text-indigo-600",
+      iconColor: "text-indigo-600 dark:text-indigo-400",
     },
     {
       icon: Code,
@@ -71,7 +71,7 @@ const AgentsSection = () => {
       description: "Debugging, sugestões de código, suporte técnico em múltiplas linguagens.",
       tier: "Business/Premium",
       color: "from-gray-500/10 to-slate-500/10",
-      iconColor: "text-gray-600",
+      iconColor: "text-gray-600 dark:text-gray-400",
     },
     {
       icon: Video,
@@ -79,7 +79,7 @@ const AgentsSection = () => {
       description: "Gere vídeos profissionais a partir de roteiros, ideal para marketing.",
       tier: "Business/Premium",
       color: "from-violet-500/10 to-purple-500/10",
-      iconColor: "text-violet-600",
+      iconColor: "text-violet-600 dark:text-violet-400",
     },
   ];
 
@@ -124,7 +124,7 @@ const AgentsSection = () => {
           {agents.map((agent, index) => (
             <Card
               key={index}
-              className={`group relative overflow-hidden p-6 bg-gradient-to-br ${agent.color} border-border/50 hover:border-brand-900/30 transition-all duration-300 hover:scale-105 hover:-translate-y-2 hover:shadow-xl`}
+              className={`group relative overflow-hidden p-6 bg-gradient-to-br ${agent.color} border-border/50 hover:border-accent transition-all duration-300 hover:scale-105 hover:-translate-y-2 hover:shadow-xl-adaptive`}
             >
               {/* Icon */}
               <div className="mb-4">
@@ -152,9 +152,9 @@ const AgentsSection = () => {
         </div>
 
         {/* Premium exclusive agents */}
-        <div className="relative p-8 rounded-2xl bg-gradient-to-br from-brand-900/5 to-brand-700/5 border border-brand-900/20">
+        <div className="relative p-8 rounded-2xl bg-card-gradient border">
           <div className="absolute -top-4 left-8">
-            <Badge className="bg-gradient-to-r from-brand-900 to-brand-700 text-white px-4 py-1 text-sm font-bold">
+            <Badge className="btn-primary-gradient px-4 py-1 text-sm font-bold">
               EXCLUSIVO PREMIUM
             </Badge>
           </div>
@@ -167,10 +167,10 @@ const AgentsSection = () => {
             {premiumAgents.map((agent, index) => (
               <div
                 key={index}
-                className="flex items-start gap-3 rounded-xl border border-border/60 bg-background/70 px-4 py-3 shadow-lg hover:shadow-none transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02]"
+                className="flex items-start gap-3 rounded-xl border border-border/60 bg-background/70 px-4 py-3 shadow-adaptive hover:shadow-none transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02]"
               >
-                <div className="w-10 h-10 rounded-lg bg-brand-900/10 flex items-center justify-center flex-shrink-0">
-                  <agent.icon className="w-5 h-5 text-brand-900" />
+                <div className="w-10 h-10 rounded-lg bg-subtle-10 flex items-center justify-center flex-shrink-0">
+                  <agent.icon className="w-5 h-5 icon-accent" />
                 </div>
                 <div>
                   <p className="font-semibold text-text text-sm mb-1">{agent.name}</p>

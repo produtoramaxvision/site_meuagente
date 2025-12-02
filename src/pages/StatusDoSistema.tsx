@@ -141,7 +141,7 @@ const SERVICES: Service[] = [
 const statusTabTriggerClasses =
   "inline-flex items-center justify-center whitespace-nowrap rounded-full px-4 py-1.5 text-xs sm:text-sm font-medium " +
   "border border-transparent text-text-muted " +
-  "data-[state=active]:bg-brand-900 data-[state=active]:text-white data-[state=active]:border-brand-900/80 " +
+  "data-[state=active]:btn-toggle-active data-[state=active]:border-transparent " +
   "data-[state=active]:shadow-md data-[state=active]:scale-[1.02] " +
   "hover:bg-surface-2/60 hover:text-text transition-all";
 
@@ -245,10 +245,10 @@ const ServiceStatusBadge = ({ status }: { status: ServiceStatus }) => {
 };
 
 const scopeIconMap: Record<ServiceScope, JSX.Element> = {
-  app: <Smartphone className="w-4 h-4 text-brand-900" />,
-  site: <Globe2 className="w-4 h-4 text-brand-900" />,
-  agent: <Bot className="w-4 h-4 text-brand-900" />,
-  infra: <Activity className="w-4 h-4 text-brand-900" />,
+  app: <Smartphone className="w-4 h-4 icon-accent" />,
+  site: <Globe2 className="w-4 h-4 icon-accent" />,
+  agent: <Bot className="w-4 h-4 icon-accent" />,
+  infra: <Activity className="w-4 h-4 icon-accent" />,
 };
 
 const groupByScope = (scope: ServiceScope | "all") => {
@@ -298,11 +298,11 @@ const StatusDoSistema = () => {
           </div>
 
           <div className="grid gap-6 md:grid-cols-3 mb-10">
-            <Card className="md:col-span-2 bg-gradient-to-br from-brand-900/5 via-brand-700/5 to-transparent border-brand-900/20">
+            <Card className="md:col-span-2 card-highlight">
               <CardHeader className="flex flex-row items-center justify-between gap-4">
                 <div>
                   <CardTitle className="flex items-center gap-2 text-lg">
-                    <Activity className="w-5 h-5 text-brand-900" />
+                    <Activity className="w-5 h-5 icon-accent" />
                     Visão geral dos serviços
                   </CardTitle>
                   <CardDescription className="mt-1">
@@ -341,7 +341,7 @@ const StatusDoSistema = () => {
             <Card>
               <CardHeader>
                 <CardTitle className="text-base flex items-center gap-2">
-                  <Clock3 className="w-4 h-4 text-brand-900" />
+                  <Clock3 className="w-4 h-4 icon-accent" />
                   Últimos eventos relevantes
                 </CardTitle>
                 <CardDescription>
@@ -440,10 +440,10 @@ const ScopeGrid = ({ services, title, description }: ScopeGridProps) => {
         {services.map((service) => (
           <Card
             key={service.id}
-            className="relative overflow-hidden border-border/60 bg-surface/80 hover:border-brand-900/40 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+            className="relative overflow-hidden border-border/60 bg-surface/80 hover:border-accent hover:shadow-xl-adaptive hover:-translate-y-1 transition-all duration-300"
           >
             <div className="absolute inset-0 pointer-events-none opacity-40">
-              <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-gradient-to-br from-brand-900/10 to-brand-500/0 blur-3xl" />
+              <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full glow-decorative blur-3xl" />
             </div>
             <CardHeader className="relative flex flex-row items-start justify-between gap-3">
               <div className="flex items-start gap-2.5">

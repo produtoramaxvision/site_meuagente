@@ -1,9 +1,11 @@
 import { Button } from "@/components/ui/button";
-import { Menu } from "lucide-react";
+import { Menu, Sun, Moon } from "lucide-react";
 import { useState } from "react";
+import { useTheme } from "next-themes";
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { theme, setTheme } = useTheme();
 
   const navigation = [
     { name: "Início", href: "/" },
@@ -24,7 +26,12 @@ const Header = () => {
               <img 
                 src="/meuagente_logo_transparente-preto.png" 
                 alt="Meu Agente" 
-                className="h-16 sm:h-20 w-auto"
+                className="h-16 sm:h-20 w-auto dark:hidden"
+              />
+              <img 
+                src="/meuagente_logo_transparente-branco.png" 
+                alt="Meu Agente" 
+                className="h-16 sm:h-20 w-auto hidden dark:block"
               />
             </a>
           </div>
@@ -46,6 +53,16 @@ const Header = () => {
           <div className="hidden md:flex items-center gap-4">
             <Button
               variant="ghost"
+              size="icon"
+              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+              className="rounded-full"
+              aria-label="Alternar tema"
+            >
+              <Sun className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+              <Moon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+            </Button>
+            <Button
+              variant="ghost"
               size="sm"
               onClick={() => window.open("https://app.meuagente.api.br", "_blank")}
             >
@@ -53,7 +70,7 @@ const Header = () => {
             </Button>
             <Button
               size="sm"
-              className="group relative overflow-hidden bg-gradient-to-r from-brand-900 to-brand-700 hover:from-brand-800 hover:to-brand-600 text-white shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
+              className="group relative overflow-hidden btn-primary-gradient shadow-xl-adaptive hover:shadow-2xl-adaptive"
               onClick={() => window.open("https://app.meuagente.api.br", "_blank")}
             >
               <span>Começar Grátis</span>
@@ -86,6 +103,16 @@ const Header = () => {
               <Button
                 variant="outline"
                 size="sm"
+                className="w-full justify-start gap-2"
+                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+              >
+                <Sun className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+                <Moon className="absolute h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+                <span className="ml-4">{theme === "dark" ? "Modo Claro" : "Modo Escuro"}</span>
+              </Button>
+              <Button
+                variant="outline"
+                size="sm"
                 className="w-full"
                 onClick={() => window.open("https://app.meuagente.api.br", "_blank")}
               >
@@ -93,7 +120,7 @@ const Header = () => {
               </Button>
               <Button
                 size="sm"
-                className="group relative w-full overflow-hidden bg-gradient-to-r from-brand-900 to-brand-700 hover:from-brand-800 hover:to-brand-600 text-white shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.02]"
+                className="group relative w-full overflow-hidden btn-primary-gradient shadow-xl-adaptive hover:shadow-2xl-adaptive"
                 onClick={() => window.open("https://app.meuagente.api.br", "_blank")}
               >
                 <span>Começar Grátis</span>

@@ -80,7 +80,7 @@ export function TeamGrid() {
             Juntos, transformamos desafios complexos em soluções simples.
           </p>
           
-          <Button asChild variant="outline" className="mt-8 rounded-full border-brand-200 hover:bg-brand-50 hover:text-brand-700 transition-all duration-300">
+          <Button asChild variant="outline" className="mt-8 rounded-full border-subtle hover:bg-surface hover:text-text transition-all duration-300">
             <a href="/trabalhe-conosco" className="flex items-center gap-2">
               Junte-se a nós
               <ChevronRight className="h-4 w-4" />
@@ -93,16 +93,16 @@ export function TeamGrid() {
           {members.map((member, index) => (
             <div
               key={index}
-              className="group relative flex flex-col items-center overflow-hidden rounded-2xl bg-card p-8 text-center shadow-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-elegant border border-border/50"
+              className="group relative flex flex-col items-center overflow-hidden rounded-2xl bg-card p-8 text-center shadow-adaptive transition-all duration-500 hover:-translate-y-2 hover:shadow-xl-adaptive border border-border/50"
             >
               {/* Background Gradient Animation */}
-              <div className="absolute inset-0 bg-gradient-to-br from-brand-50/50 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+              <div className="absolute inset-0 bg-gradient-subtle opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
               
               {/* Decorative Circle Background */}
-              <div className="absolute -right-16 -top-16 h-64 w-64 rounded-full bg-brand-100/20 blur-3xl transition-all duration-500 group-hover:bg-brand-200/30" />
+              <div className="absolute -right-16 -top-16 h-64 w-64 rounded-full glow-blur blur-3xl transition-all duration-500 group-hover:opacity-150" />
 
               {/* Image Container */}
-              <div className="relative mb-6 h-40 w-40 overflow-hidden rounded-full border-4 border-background shadow-md ring-1 ring-border/50 transition-all duration-500 group-hover:scale-105 group-hover:ring-brand-200">
+              <div className="relative mb-6 h-40 w-40 overflow-hidden rounded-full border-4 border-background shadow-md ring-1 ring-border/50 transition-all duration-500 group-hover:scale-105 group-hover:ring-border">
                 {member.src ? (
                   <img
                     src={member.src}
@@ -110,7 +110,7 @@ export function TeamGrid() {
                     className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
                 ) : (
-                  <div className="flex h-full w-full items-center justify-center bg-brand-50 text-4xl font-bold text-brand-300">
+                  <div className="flex h-full w-full items-center justify-center avatar-fallback-neutral text-4xl font-bold">
                     {member.name.charAt(0)}
                   </div>
                 )}

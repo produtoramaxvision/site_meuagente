@@ -36,9 +36,9 @@ const LogosSection = () => {
             <Link
               key={index}
               to={badge.href}
-              className="flex items-center gap-3 px-6 py-3 rounded-full bg-background/80 backdrop-blur-sm border border-border/50 hover:border-brand-900/30 transition-all duration-300 hover:scale-105 cursor-pointer"
+              className="flex items-center gap-3 px-6 py-3 rounded-full bg-background/80 backdrop-blur-sm border border-border/50 hover:border-accent transition-all duration-300 hover:scale-105 cursor-pointer"
             >
-              <badge.icon className="w-5 h-5 text-brand-900" />
+              <badge.icon className="w-5 h-5 icon-accent" />
               <span className="text-sm font-semibold text-text">{badge.label}</span>
             </Link>
           ))}
@@ -55,9 +55,9 @@ const LogosSection = () => {
               return (
                 <div
                   key={index}
-                  className="group inline-flex items-center gap-3 rounded-full border border-border/60 bg-background/70 px-4 py-2 text-xs sm:text-sm text-text-muted shadow-sm transition-all duration-300 hover:border-brand-900/40 hover:bg-surface/80 hover:text-text"
+                  className="group inline-flex items-center gap-3 rounded-full border border-border/60 bg-background/70 px-4 py-2 text-xs sm:text-sm text-text-muted shadow-sm transition-all duration-300 hover:border-accent hover:bg-surface/80 hover:text-text"
                 >
-                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-surface/70 text-brand-900 group-hover:bg-brand-900 group-hover:text-background transition-colors duration-300">
+                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-surface/70 icon-accent group-hover:bg-text group-hover:text-background transition-colors duration-300">
                     <Icon className="h-4 w-4" />
                   </span>
                   <span className="font-medium">{sector.label}</span>

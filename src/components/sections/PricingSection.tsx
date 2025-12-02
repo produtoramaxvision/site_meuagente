@@ -118,16 +118,16 @@ const PricingSection = () => {
           {plans.map((plan, index) => (
             <Card
               key={index}
-              className={`relative flex flex-col h-full p-8 bg-background border-border/60 shadow-lg backdrop-blur-sm transition-all duration-300 ${
+              className={`relative flex flex-col h-full p-8 bg-background border-border/60 shadow-adaptive backdrop-blur-sm transition-all duration-300 ${
                 plan.popular
-                  ? "ring-2 ring-brand-900 shadow-2xl scale-105 hover:shadow-none hover:-translate-y-1 hover:scale-[1.08]"
+                  ? "ring-2 ring-text/20 dark:ring-text/30 shadow-xl-adaptive scale-105 hover:shadow-none hover:-translate-y-1 hover:scale-[1.08]"
                   : "hover:shadow-none hover:-translate-y-1 hover:scale-[1.02]"
               }`}
             >
               {/* Badge */}
               {plan.badge && (
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                  <Badge className="bg-gradient-to-r from-brand-900 to-brand-700 text-white px-4 py-1 font-bold">
+                  <Badge className="btn-primary-gradient px-4 py-1 font-bold">
                     {plan.badge}
                   </Badge>
                 </div>
@@ -163,8 +163,8 @@ const PricingSection = () => {
               <Button
                 className={`mt-auto w-full group relative overflow-hidden ${
                   plan.popular
-                    ? "bg-gradient-to-r from-brand-900 to-brand-700 hover:from-brand-800 hover:to-brand-600 text-white shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
-                    : ""
+                    ? "btn-primary-gradient shadow-xl-adaptive hover:shadow-2xl-adaptive"
+                    : "btn-secondary"
                 }`}
                 variant={plan.popular ? "default" : "outline"}
                 onClick={() => onPlanClick(plan.id)}
@@ -187,7 +187,7 @@ const PricingSection = () => {
           </p>
           <Button
             size="lg"
-            className="gap-2 group relative overflow-hidden bg-gradient-to-r from-brand-900 to-brand-700 hover:from-brand-800 hover:to-brand-600 text-white shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
+            className="gap-2 group relative overflow-hidden btn-primary-gradient shadow-xl-adaptive hover:shadow-2xl-adaptive"
             onClick={() => window.open("https://app.meuagente.api.br", "_blank")}
           >
             Falar com Especialista

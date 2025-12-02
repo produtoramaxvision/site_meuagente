@@ -27,7 +27,7 @@ const examples = [
   {
     label: "Financeiro",
     icon: DollarSign,
-    iconClass: "text-emerald-500",
+    iconClass: "text-emerald-500 dark:text-emerald-400",
     bubbleBg: "bg-emerald-500/10",
     badgeBorder: "border-emerald-500/60",
     badgeShadow: "shadow-[0_0_0_1px_rgba(16,185,129,0.9)]",
@@ -37,7 +37,7 @@ const examples = [
   {
     label: "Web Search",
     icon: Globe2,
-    iconClass: "text-sky-500",
+    iconClass: "text-sky-500 dark:text-sky-400",
     bubbleBg: "bg-sky-500/10",
     badgeBorder: "border-sky-500/60",
     badgeShadow: "shadow-[0_0_0_1px_rgba(56,189,248,0.9)]",
@@ -47,7 +47,7 @@ const examples = [
   {
     label: "Scrape",
     icon: Search,
-    iconClass: "text-purple-500",
+    iconClass: "text-purple-500 dark:text-purple-400",
     bubbleBg: "bg-purple-500/10",
     badgeBorder: "border-purple-500/60",
     badgeShadow: "shadow-[0_0_0_1px_rgba(168,85,247,0.9)]",
@@ -57,7 +57,7 @@ const examples = [
   {
     label: "SDR",
     icon: PhoneCall,
-    iconClass: "text-orange-500",
+    iconClass: "text-orange-500 dark:text-orange-400",
     bubbleBg: "bg-orange-500/10",
     badgeBorder: "border-orange-500/60",
     badgeShadow: "shadow-[0_0_0_1px_rgba(249,115,22,0.9)]",
@@ -67,7 +67,7 @@ const examples = [
   {
     label: "Marketing",
     icon: Megaphone,
-    iconClass: "text-rose-500",
+    iconClass: "text-rose-500 dark:text-rose-400",
     bubbleBg: "bg-rose-500/10",
     badgeBorder: "border-rose-500/60",
     badgeShadow: "shadow-[0_0_0_1px_rgba(244,63,94,0.9)]",
@@ -77,7 +77,7 @@ const examples = [
   {
     label: "Agendamento",
     icon: CalendarClock,
-    iconClass: "text-indigo-500",
+    iconClass: "text-indigo-500 dark:text-indigo-400",
     bubbleBg: "bg-indigo-500/10",
     badgeBorder: "border-indigo-500/60",
     badgeShadow: "shadow-[0_0_0_1px_rgba(79,70,229,0.9)]",
@@ -87,7 +87,7 @@ const examples = [
   {
     label: "Dev",
     icon: Code2,
-    iconClass: "text-slate-500",
+    iconClass: "text-slate-500 dark:text-slate-400",
     bubbleBg: "bg-slate-500/10",
     badgeBorder: "border-slate-500/60",
     badgeShadow: "shadow-[0_0_0_1px_rgba(100,116,139,0.9)]",
@@ -97,7 +97,7 @@ const examples = [
   {
     label: "Vídeo",
     icon: Video,
-    iconClass: "text-violet-500",
+    iconClass: "text-violet-500 dark:text-violet-400",
     bubbleBg: "bg-violet-500/10",
     badgeBorder: "border-violet-500/60",
     badgeShadow: "shadow-[0_0_0_1px_rgba(139,92,246,0.9)]",
@@ -152,7 +152,7 @@ export function WhatsappExamples() {
                   key={item.label}
                   className="pl-4 md:basis-1/2 xl:basis-1/3 2xl:basis-1/4"
                 >
-                  <Card className="group relative h-full overflow-hidden rounded-xl border border-border/60 bg-background/70 px-0 shadow-lg hover:shadow-[0_18px_40px_rgba(15,23,42,0.55)] transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02]">
+                  <Card className="group relative h-full overflow-hidden rounded-xl border border-border/60 bg-background/70 px-0 shadow-adaptive hover:shadow-xl-adaptive transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02]">
                     <CardContent className="relative z-10 pt-5 pb-6 px-5">
                       <div className="flex items-center gap-2 mb-4">
                         <div
@@ -182,8 +182,8 @@ export function WhatsappExamples() {
                     </CardContent>
 
                     {/* Camada de brilho/gradiente para feedback visual, alinhada ao padrão do site */}
-                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-brand-900/6 via-transparent to-emerald-500/8 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    <div className="pointer-events-none absolute inset-x-4 bottom-0 h-px bg-gradient-to-r from-transparent via-brand-500/70 to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-300" />
+                    <div className="pointer-events-none absolute inset-0 bg-gradient-subtle opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="pointer-events-none absolute inset-x-4 bottom-0 h-px line-via-accent opacity-60 group-hover:opacity-90 transition-opacity duration-300" />
                   </Card>
                 </CarouselItem>
               )

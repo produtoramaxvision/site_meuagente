@@ -27,7 +27,7 @@ export function ResponsibleAI() {
         </div>
 
         <div className="grid gap-6 md:grid-cols-3">
-          <Card className="group relative flex flex-col rounded-xl border border-border/60 bg-background/70 shadow-lg hover:shadow-none transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02]">
+          <Card className="group relative flex flex-col rounded-xl border border-border/60 bg-background/70 shadow-adaptive hover:shadow-none transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02]">
             <CardHeader className="flex items-start gap-3 px-4 pt-4 pb-3">
               <div className="h-10 w-10 rounded-xl bg-emerald-500/10 border border-emerald-500/40 flex items-center justify-center">
                 <ShieldCheck className="h-5 w-5 text-emerald-400" />
@@ -45,7 +45,7 @@ export function ResponsibleAI() {
             </CardContent>
           </Card>
 
-          <Card className="group relative flex flex-col rounded-xl border border-border/60 bg-background/70 shadow-lg hover:shadow-none transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02]">
+          <Card className="group relative flex flex-col rounded-xl border border-border/60 bg-background/70 shadow-adaptive hover:shadow-none transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02]">
             <CardHeader className="flex items-start gap-3 px-4 pt-4 pb-3">
               <div className="h-10 w-10 rounded-xl bg-sky-500/10 border border-sky-500/40 flex items-center justify-center">
                 <Database className="h-5 w-5 text-sky-400" />
@@ -63,7 +63,7 @@ export function ResponsibleAI() {
             </CardContent>
           </Card>
 
-          <Card className="group relative flex flex-col rounded-xl border border-border/60 bg-background/70 shadow-lg hover:shadow-none transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02]">
+          <Card className="group relative flex flex-col rounded-xl border border-border/60 bg-background/70 shadow-adaptive hover:shadow-none transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02]">
             <CardHeader className="flex items-start gap-3 px-4 pt-4 pb-3">
               <div className="h-10 w-10 rounded-xl bg-purple-500/10 border border-purple-500/40 flex items-center justify-center">
                 <Eye className="h-5 w-5 text-purple-400" />

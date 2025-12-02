@@ -25,7 +25,7 @@ export function ValuesBento() {
       description: "Respostas rápidas e soluções eficientes. O tempo do seu cliente é precioso.",
       content: (
         <div className="flex items-center justify-center h-full min-h-[120px] bg-amber-500/5 rounded-lg border border-amber-500/10">
-            <Zap className="h-12 w-12 text-amber-500" />
+            <Zap className="h-12 w-12 text-amber-500 dark:text-amber-400" />
         </div>
       ),
       className: "col-span-1 md:col-span-3 lg:col-span-2",
@@ -36,7 +36,7 @@ export function ValuesBento() {
       description: "Nossa tecnologia existe para servir pessoas. Humanização é prioridade.",
       content: (
         <div className="flex items-center justify-center h-full min-h-[120px] bg-rose-500/5 rounded-lg border border-rose-500/10">
-            <Heart className="h-12 w-12 text-rose-500" />
+            <Heart className="h-12 w-12 text-rose-500 dark:text-rose-400" />
         </div>
       ),
       className: "col-span-1 md:col-span-3 lg:col-span-2",
@@ -47,7 +47,7 @@ export function ValuesBento() {
       description: "Proteção de dados e privacidade em primeiro lugar, sempre.",
       content: (
         <div className="flex items-center justify-center h-full min-h-[120px] bg-emerald-500/5 rounded-lg border border-emerald-500/10">
-            <ShieldCheck className="h-12 w-12 text-emerald-500" />
+            <ShieldCheck className="h-12 w-12 text-emerald-500 dark:text-emerald-400" />
         </div>
       ),
       className: "col-span-1 md:col-span-3 lg:col-span-4",

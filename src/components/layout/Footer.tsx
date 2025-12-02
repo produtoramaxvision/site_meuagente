@@ -39,7 +39,7 @@ const Footer = () => {
   return (
     <footer className="bg-surface-2 border-t border-border/50">
       {/* Newsletter section */}
-      <div className="bg-gradient-to-br from-brand-900 to-brand-700 py-12">
+      <div className="bg-section-dark py-12">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-6">
             <h3 className="text-2xl font-bold text-white mb-2">
@@ -63,7 +63,12 @@ const Footer = () => {
             <img
               src="/logo-horizontal-preto.png"
               alt="Meu Agente"
-              className="h-16 sm:h-20 w-auto"
+              className="h-16 sm:h-20 w-auto dark:hidden"
+            />
+            <img
+              src="/logo-horizontal-branco.png"
+              alt="Meu Agente"
+              className="h-16 sm:h-20 w-auto hidden dark:block"
             />
           </div>
 
@@ -100,7 +105,7 @@ const Footer = () => {
                     key={social.label}
                     href={social.href}
                     aria-label={social.label}
-                    className="w-9 h-9 rounded-lg bg-background/50 backdrop-blur-sm border border-border/50 flex items-center justify-center hover:bg-surface hover:border-brand-900/30 transition-all duration-300 hover:scale-110"
+                    className="w-9 h-9 rounded-lg bg-background/50 backdrop-blur-sm border border-border/50 flex items-center justify-center hover:bg-surface hover:border-accent transition-all duration-300 hover:scale-110"
                   >
                     <social.icon className="w-4 h-4 text-text-muted" />
                   </a>

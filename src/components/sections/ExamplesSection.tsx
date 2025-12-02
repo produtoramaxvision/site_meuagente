@@ -139,7 +139,7 @@ const ExamplesSection = () => {
               <TabsTrigger 
                 key={index} 
                 value={item.category}
-                className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-brand-900 data-[state=active]:to-brand-700 data-[state=active]:text-white transition-all duration-300"
+                className="tab-active-gradient transition-all duration-300"
               >
                 {item.category}
               </TabsTrigger>
@@ -152,12 +152,12 @@ const ExamplesSection = () => {
                 {item.examples.map((example, exIdx) => (
                   <Card
                     key={exIdx}
-                    className={`p-6 bg-gradient-to-br ${item.color} border-border/50 hover:border-brand-900/30 transition-all duration-300 hover:scale-[1.02] hover:shadow-xl`}
+                    className={`p-6 bg-gradient-to-br ${item.color} border-border/50 hover:border-accent transition-all duration-300 hover:scale-[1.02] hover:shadow-xl-adaptive`}
                   >
                     <div className="space-y-4">
                       {/* User message (Right) */}
                       <div className="flex justify-end">
-                        <div className="max-w-[85%] bg-brand-900/10 rounded-2xl rounded-tr-none p-3">
+                        <div className="max-w-[85%] bg-subtle-10 rounded-2xl rounded-tr-none p-3">
                           <div className="flex items-center justify-end gap-2 mb-1">
                             <Badge variant="secondary" className="text-[10px] px-1.5 py-0 h-5">
                               Você

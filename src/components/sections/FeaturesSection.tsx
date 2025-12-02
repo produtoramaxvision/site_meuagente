@@ -22,56 +22,56 @@ const FeaturesSection = () => {
       title: "Dashboard",
       description: "Visão consolidada de receitas, despesas, saldo e gráficos de evolução diária.",
       color: "from-blue-500/10 to-cyan-500/10",
-      iconColor: "text-blue-600",
+      iconColor: "text-blue-600 dark:text-blue-400",
     },
     {
       icon: Wallet,
       title: "Gestão de Contas",
       description: "Registre receitas/despesas, categorize (12 categorias), valide duplicatas automaticamente.",
       color: "from-green-500/10 to-emerald-500/10",
-      iconColor: "text-green-600",
+      iconColor: "text-green-600 dark:text-green-400",
     },
     {
       icon: Target,
       title: "Metas Financeiras",
       description: "Crie metas de economia, compra, viagem ou educação com acompanhamento visual.",
       color: "from-purple-500/10 to-pink-500/10",
-      iconColor: "text-purple-600",
+      iconColor: "text-purple-600 dark:text-purple-400",
     },
     {
       icon: Calendar,
       title: "Agenda Completa",
       description: "6 visualizações (dia, semana, mês, lista, timeline, ano), drag-and-drop de eventos.",
       color: "from-orange-500/10 to-red-500/10",
-      iconColor: "text-orange-600",
+      iconColor: "text-orange-600 dark:text-orange-400",
     },
     {
       icon: CheckSquare,
       title: "Tarefas",
       description: "Organize tarefas com prioridades (alta, média, baixa), prazos e drag-and-drop.",
       color: "from-pink-500/10 to-rose-500/10",
-      iconColor: "text-pink-600",
+      iconColor: "text-pink-600 dark:text-pink-400",
     },
     {
       icon: BarChart3,
       title: "Relatórios Avançados",
       description: "Filtros por período/categoria, gráficos interativos, exportação CSV/PDF/JSON.",
       color: "from-indigo-500/10 to-blue-500/10",
-      iconColor: "text-indigo-600",
+      iconColor: "text-indigo-600 dark:text-indigo-400",
     },
     {
       icon: Bell,
       title: "Notificações Inteligentes",
       description: "Alertas de contas vencendo, metas próximas, saldo baixo, eventos e tarefas.",
       color: "from-yellow-500/10 to-amber-500/10",
-      iconColor: "text-yellow-600",
+      iconColor: "text-yellow-600 dark:text-yellow-400",
     },
     {
       icon: Settings,
       title: "Configurações Completas",
       description: "Dados pessoais, segurança, tema claro/escuro, notificações, backup e exportação.",
       color: "from-gray-500/10 to-slate-500/10",
-      iconColor: "text-gray-600",
+      iconColor: "text-gray-600 dark:text-gray-400",
     },
   ];
 
@@ -83,7 +83,7 @@ const FeaturesSection = () => {
     <section className="relative py-24 bg-surface/30 section-texture-soft">
       {/* Ambient glow inspired by premium SaaS dashboards */}
       <div className="pointer-events-none absolute inset-0 opacity-80">
-        <div className="absolute -top-40 -left-20 h-72 w-72 rounded-full bg-brand-900/10 blur-3xl" />
+        <div className="absolute -top-40 -left-20 h-72 w-72 rounded-full glow-blur-soft blur-3xl" />
         <div className="absolute -bottom-32 right-0 h-80 w-80 rounded-full bg-emerald-500/10 blur-3xl" />
         <div className="absolute top-1/3 left-1/2 h-64 w-64 -translate-x-1/2 rounded-full bg-purple-500/10 blur-3xl" />
       </div>
@@ -118,9 +118,9 @@ const FeaturesSection = () => {
         <div className="relative grid gap-12 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)] items-start">
           {/* Dashboard preview – inspired by modern finance SaaS UIs */}
           <div className="relative">
-            <div className="pointer-events-none absolute -inset-6 rounded-[32px] bg-gradient-to-br from-brand-900/15 via-emerald-500/8 to-purple-500/15 blur-2xl -z-10" />
+            <div className="pointer-events-none absolute -inset-6 rounded-[32px] glow-decorative blur-2xl -z-10" />
 
-            <Card className="relative overflow-hidden rounded-3xl border border-border/50 hover:border-brand-900/30 bg-surface/95 backdrop-blur-xl text-card-foreground shadow-2xl transition-all duration-300">
+            <Card className="relative overflow-hidden rounded-3xl border border-border/50 hover:border-accent bg-surface/95 backdrop-blur-xl text-card-foreground shadow-2xl-adaptive transition-all duration-300">
               {/* Top bar */}
               <div className="flex items-center justify-between px-6 pt-5 pb-4 border-b border-border/60 bg-gradient-to-r from-background/80 via-surface/80 to-background/80">
                 <div className="flex items-center gap-3">
@@ -360,8 +360,8 @@ const FeaturesSection = () => {
                     onFocus={() => setActiveFeature(feature)}
                     className={`group relative flex items-start gap-3 rounded-2xl border px-4 py-4 text-left transition-all overflow-hidden ${
                       isActive
-                        ? "border-border/50 hover:border-brand-900/30 bg-gradient-to-br from-background/98 via-surface/95 to-emerald-500/6 shadow-[0_18px_40px_rgba(15,23,42,0.55)] scale-[1.02]"
-                        : "border-border/50 bg-surface/80 hover:border-brand-900/30 hover:bg-surface/95"
+                        ? "border-border/50 hover:border-accent bg-gradient-to-br from-background/98 via-surface/95 to-emerald-500/6 shadow-[0_18px_40px_rgba(15,23,42,0.55)] scale-[1.02]"
+                        : "border-border/50 bg-surface/80 hover:border-accent hover:bg-surface/95"
                     }`}
                   >
                     <div
@@ -370,8 +370,8 @@ const FeaturesSection = () => {
                       <feature.icon
                         className={`w-5 h-5 ${
                           isActive
-                            ? "text-brand-900"
-                            : `${feature.iconColor} group-hover:text-brand-900`
+                            ? "icon-accent"
+                            : `${feature.iconColor} group-hover-accent`
                         }`}
                       />
                     </div>
@@ -397,7 +397,7 @@ const FeaturesSection = () => {
 
         {/* Integration callout – mais elegante e conectado à narrativa */}
         <div className="mt-16">
-          <Card className="relative overflow-hidden rounded-3xl border border-border/50 hover:border-brand-900/30 bg-gradient-to-r from-blue-500/8 via-background/90 to-purple-500/8 px-6 py-7 sm:px-8 sm:py-8 bg-surface text-card-foreground shadow-lg hover:shadow-xl transition-all duration-300 backdrop-blur-sm hover:-translate-y-1 hover:scale-[1.02]">
+          <Card className="relative overflow-hidden rounded-3xl border border-border/50 hover:border-accent bg-gradient-to-r from-blue-500/8 via-background/90 to-purple-500/8 px-6 py-7 sm:px-8 sm:py-8 bg-surface text-card-foreground shadow-adaptive hover:shadow-xl-adaptive transition-all duration-300 backdrop-blur-sm hover:-translate-y-1 hover:scale-[1.02]">
             <div className="pointer-events-none absolute -right-10 -top-16 h-40 w-40 rounded-full bg-blue-500/15 blur-3xl" />
             <div className="pointer-events-none absolute -left-16 bottom-0 h-40 w-40 rounded-full bg-purple-500/15 blur-3xl" />
 
@@ -429,7 +429,7 @@ const FeaturesSection = () => {
                 ].map(({ name, icon: Icon }) => (
                   <div
                     key={name}
-                    className="flex items-center gap-2 rounded-xl border border-border/60 bg-background/70 px-4 py-3 shadow-lg hover:shadow-none transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02]"
+                    className="flex items-center gap-2 rounded-xl border border-border/60 bg-background/70 px-4 py-3 shadow-adaptive hover:shadow-none transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02]"
                   >
                     <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-surface/80 border border-border/60">
                       <Icon className="w-3.5 h-3.5 text-emerald-500" />

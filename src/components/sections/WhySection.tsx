@@ -9,7 +9,7 @@ const WhySection = () => {
       problem: "Sua equipe gasta horas em lançamentos manuais, atualizações e processos mecânicos",
       solution: "Agentes de IA automatizam tudo via WhatsApp - envie uma mensagem e pronto",
       color: "from-red-500/10 to-orange-500/10",
-      iconColor: "text-red-600",
+      iconColor: "text-red-600 dark:text-red-400",
     },
     {
       icon: TrendingUp,
@@ -17,7 +17,7 @@ const WhySection = () => {
       problem: "Leads perdidos porque ninguém respondeu fora do horário comercial",
       solution: "Atendimento 24/7 sem perder nenhum lead - qualificação e agendamento automáticos",
       color: "from-blue-500/10 to-cyan-500/10",
-      iconColor: "text-blue-600",
+      iconColor: "text-blue-600 dark:text-blue-400",
     },
     {
       icon: Target,
@@ -25,7 +25,7 @@ const WhySection = () => {
       problem: "Informações espalhadas em planilhas, e-mails e aplicativos diferentes",
       solution: "Centralização total com relatórios automáticos e exportação estruturada",
       color: "from-green-500/10 to-emerald-500/10",
-      iconColor: "text-green-600",
+      iconColor: "text-green-600 dark:text-green-400",
     },
   ];
 
@@ -47,7 +47,7 @@ const WhySection = () => {
           {problems.map((item, index) => (
             <Card
               key={index}
-              className={`group relative overflow-hidden p-8 bg-gradient-to-br ${item.color} border-border/50 hover:border-brand-900/30 transition-all duration-300 hover:scale-105 hover:-translate-y-2 hover:shadow-xl`}
+              className={`group relative overflow-hidden p-8 bg-gradient-to-br ${item.color} border-border/50 hover:border-accent transition-all duration-300 hover:scale-105 hover:-translate-y-2 hover:shadow-xl-adaptive`}
             >
               {/* Icon */}
               <div className="mb-6">

@@ -32,7 +32,7 @@ const ComoFunciona = () => {
       tier: "Todos os planos",
       tierBadge: "FREE",
       color: "from-green-500/10 to-emerald-500/10",
-      iconColor: "text-green-600",
+      iconColor: "text-green-600 dark:text-green-400",
       description: `O Agente Financeiro é a espinha dorsal do controle financeiro empresarial dentro do Meu Agente. Com ele, você registra entradas e saídas, categoriza transações (marketing, operação, impostos, etc.) e recebe alertas automáticos sobre contas vencendo ou saldo negativo.
 
 Nos planos pagos, você pode exportar relatórios completos em CSV/PDF, aplicar filtros avançados por período e categoria, e ter validação automática de duplicatas para evitar lançamentos acidentais.
@@ -57,7 +57,7 @@ O agente processa linguagem natural, então você pode simplesmente enviar mensa
       tier: "Todos os planos (avançado no Premium)",
       tierBadge: "FREE",
       color: "from-blue-500/10 to-cyan-500/10",
-      iconColor: "text-blue-600",
+      iconColor: "text-blue-600 dark:text-blue-400",
       description: `O Agente Web Search realiza pesquisas avançadas na web com base em temas, fontes e localidades específicas. Ele não apenas busca informações, mas entrega resumos citados, links confiáveis e anexos quando apropriado.
 
 No plano Premium, o agente opera com recursos aprofundados, maior cobertura de fontes e capacidade de análise comparativa entre concorrentes, tendências de mercado e oportunidades comerciais.
@@ -82,7 +82,7 @@ Ideal para prospecção, pesquisa de mercado, monitoramento de concorrência e d
       tier: "Todos os planos (avançado no Premium)",
       tierBadge: "FREE",
       color: "from-purple-500/10 to-pink-500/10",
-      iconColor: "text-purple-600",
+      iconColor: "text-purple-600 dark:text-purple-400",
       description: `O Agente de Scrape extrai dados estruturados de fontes permitidas, APIs oficiais e portais de dados abertos. Ele gera relatórios em CSV/JSON com campos personalizados e filtros avançados.
 
 IMPORTANTE: Trabalhamos apenas com fontes que autorizam extração de dados nos termos de uso ou via APIs oficiais. Respeitamos totalmente a propriedade intelectual e políticas de privacidade.
@@ -107,7 +107,7 @@ No Premium, a capacidade de extração é ampliada com suporte a mais formatos, 
       tier: "Business/Premium",
       tierBadge: "BUSINESS",
       color: "from-orange-500/10 to-red-500/10",
-      iconColor: "text-orange-600",
+      iconColor: "text-orange-600 dark:text-orange-400",
       description: `O Agente SDR (Sales Development Representative) é o vendedor virtual da sua empresa. Ele qualifica leads automaticamente, conduz conversas humanizadas, coleta informações de perfil (nome, telefone, empresa, interesse, urgência, orçamento) e marca reuniões no Google Calendar com confirmação automática.
 
 O fluxo completo do SDR inclui: recepção do lead → qualificação (fit alto/médio/baixo) → oferta de reunião ou orçamento → agendamento → confirmação e lembrete via WhatsApp e email.
@@ -132,7 +132,7 @@ Com o SDR, sua equipe de vendas foca apenas em fechar negócios, enquanto o agen
       tier: "Business/Premium",
       tierBadge: "BUSINESS",
       color: "from-pink-500/10 to-rose-500/10",
-      iconColor: "text-pink-600",
+      iconColor: "text-pink-600 dark:text-pink-400",
       description: `O Agente de Marketing foca em análise e otimização de campanhas do Google Ads. Ele monitora performance, identifica termos negativos para adicionar, sugere ajustes de lance e orçamento, e envia alertas quando detecta quedas bruscas de CTR ou estouros de gasto diário.
 
 Receba relatórios comparativos entre períodos, insights acionáveis e recomendações baseadas em dados reais das suas campanhas, tudo via WhatsApp em linguagem simples e objetiva.
@@ -157,7 +157,7 @@ Elimine a necessidade de ficar entrando no painel do Google Ads diariamente — 
       tier: "Business/Premium",
       tierBadge: "BUSINESS",
       color: "from-indigo-500/10 to-blue-500/10",
-      iconColor: "text-indigo-600",
+      iconColor: "text-indigo-600 dark:text-indigo-400",
       description: `O Agente de Agendamento integra-se ao Google Calendar, Drive e Tasks para gerenciar compromissos, arquivos e tarefas direto do WhatsApp. Crie eventos, anexe documentos, configure lembretes e sincronize tudo com a equipe sem abrir nenhum app.
 
 Ele também cria tarefas no Google Tasks com prazos definidos e envia lembretes automáticos no WhatsApp. Perfeito para equipes remotas que vivem no WhatsApp e precisam centralizar agenda e documentos.
@@ -182,7 +182,7 @@ Todos os eventos e tarefas criados ficam sincronizados com o Google Workspace, m
       tier: "Business/Premium",
       tierBadge: "BUSINESS",
       color: "from-gray-500/10 to-slate-500/10",
-      iconColor: "text-gray-600",
+      iconColor: "text-gray-600 dark:text-gray-400",
       description: `O Agente de Dev é um assistente técnico especializado em múltiplas linguagens de programação. Ele faz debugging de código, sugere otimizações, cria testes unitários e oferece suporte técnico instantâneo via WhatsApp.
 
 Suporta JavaScript, TypeScript, Python, Go, PHP, Java e muitas outras linguagens. Respeita limites de confidencialidade e não armazena código sensível — apenas processa e responde com sugestões.
@@ -207,7 +207,7 @@ Ideal para desenvolvedores que precisam de um "pair programmer" disponível 24/7
       tier: "Business/Premium (cota maior no Premium)",
       tierBadge: "BUSINESS",
       color: "from-violet-500/10 to-purple-500/10",
-      iconColor: "text-violet-600",
+      iconColor: "text-violet-600 dark:text-violet-400",
       description: `O Agente de Vídeo usa a tecnologia Google Veo 3 para criar vídeos profissionais a partir de prompts e roteiros. Gere clipes curtos para stories, anúncios, apresentações de produtos ou conteúdo de marketing em minutos.
 
 Você define o roteiro, formato (1080x1920 para stories, 1920x1080 para YouTube), duração e estilo visual. O agente pode gerar múltiplas variações para você escolher a melhor.
@@ -232,7 +232,7 @@ No plano Premium, você tem cota maior de minutos de geração, permitindo escal
       tier: "Apenas Premium",
       tierBadge: "PREMIUM",
       color: "from-amber-500/10 to-yellow-500/10",
-      iconColor: "text-amber-600",
+      iconColor: "text-amber-600 dark:text-amber-400",
       description: `Os Agentes Premium são exclusivos do plano mais avançado e incluem 4 especializações adicionais:
 
 **Agente de Confirmação:** entra em contato diariamente com leads agendados para confirmar presença, reduzindo no-show. Também faz varredura diária no Google Tasks e lembra tarefas pendentes.
@@ -371,7 +371,7 @@ No plano Premium, você tem cota maior de minutos de geração, permitindo escal
         <div className="relative z-10 mx-auto flex max-w-7xl flex-col gap-12 px-4 pb-20 pt-24 sm:px-6 lg:flex-row lg:items-center lg:px-8 lg:pb-28 lg:pt-28">
           <div className="max-w-xl space-y-6">
             <div className="inline-flex items-center gap-2 rounded-full border border-border/50 bg-background/70 px-3 py-1 text-xs font-medium text-text-muted mb-4">
-              <Sparkles className="h-3 w-3 text-brand-900" />
+              <Sparkles className="h-3 w-3 icon-accent" />
               <span>Como Funciona na Prática</span>
             </div>
 
@@ -388,7 +388,7 @@ No plano Premium, você tem cota maior de minutos de geração, permitindo escal
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
               <Button
                 size="lg"
-                className="w-full group relative overflow-hidden bg-brand-900 text-white shadow-lg hover:bg-brand-800 transition-all sm:w-auto"
+                className="w-full group relative overflow-hidden btn-primary-gradient shadow-xl-adaptive hover:shadow-2xl-adaptive transition-all sm:w-auto"
                 onClick={() => (window.location.href = "/planos")}
               >
                 Ver planos e começar hoje
@@ -406,15 +406,15 @@ No plano Premium, você tem cota maior de minutos de geração, permitindo escal
             </div>
 
             <div className="grid gap-4 pt-4 text-sm sm:grid-cols-3">
-              <div className="rounded-xl border border-border/60 bg-background/70 px-4 py-3 shadow-lg hover:shadow-none transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02]">
+              <div className="rounded-xl border border-border/60 bg-background/70 px-4 py-3 shadow-adaptive hover:shadow-none transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02]">
                 <p className="font-semibold text-text mb-1">Tempo médio de ativação</p>
                 <p className="text-text-muted">Menos de 1 dia</p>
               </div>
-              <div className="rounded-xl border border-border/60 bg-background/70 px-4 py-3 shadow-lg hover:shadow-none transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02]">
+              <div className="rounded-xl border border-border/60 bg-background/70 px-4 py-3 shadow-adaptive hover:shadow-none transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02]">
                 <p className="font-semibold text-text mb-1">Canais</p>
                 <p className="text-text-muted">WhatsApp + Web</p>
               </div>
-              <div className="rounded-xl border border-border/60 bg-background/70 px-4 py-3 shadow-lg hover:shadow-none transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02]">
+              <div className="rounded-xl border border-border/60 bg-background/70 px-4 py-3 shadow-adaptive hover:shadow-none transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02]">
                 <p className="font-semibold text-text mb-1">Equipe de IA</p>
                 <p className="text-text-muted">8+ agentes prontos</p>
               </div>
@@ -422,8 +422,8 @@ No plano Premium, você tem cota maior de minutos de geração, permitindo escal
           </div>
 
           <div className="relative w-full max-w-xl self-stretch lg:self-auto">
-            <div className="pointer-events-none absolute inset-0 rounded-[2.5rem] border border-brand-500/20 bg-gradient-to-br from-brand-500/10 via-transparent to-brand-900/30 shadow-[0_0_60px_rgba(15,23,42,0.8)]" />
-            <Card className="relative h-full min-h-[320px] overflow-hidden rounded-[2.25rem] border-border/60 bg-background/80 shadow-2xl backdrop-blur">
+            <div className="pointer-events-none absolute inset-0 rounded-[2.5rem] border border-subtle glow-decorative" />
+            <Card className="relative h-full min-h-[320px] overflow-hidden rounded-[2.25rem] border-border/60 bg-background/80 shadow-2xl-adaptive backdrop-blur">
               <CardHeader className="border-b border-border/40 pb-4">
                 <div className="flex items-center justify-between">
                   <div>
@@ -500,7 +500,7 @@ No plano Premium, você tem cota maior de minutos de geração, permitindo escal
           </div>
 
           <div className="grid flex-1 gap-4 sm:grid-cols-2">
-            <Card className="relative overflow-hidden border-border/70 bg-gradient-to-br from-brand-500/10 via-background to-surface">
+            <Card className="relative overflow-hidden border-border/70 card-highlight">
               <CardHeader className="pb-3">
                 <Badge variant="secondary" className="mb-2 rounded-full bg-emerald-500/10 text-xs font-semibold text-emerald-500">
                   Camada 1
@@ -571,7 +571,7 @@ No plano Premium, você tem cota maior de minutos de geração, permitindo escal
               variant="outline"
               className="inline-flex items-center gap-2 rounded-full border border-border/50 bg-background/70 px-3 py-1 text-xs font-medium text-text-muted"
             >
-              <Zap className="h-3 w-3 text-brand-900" />
+              <Zap className="h-3 w-3 icon-accent" />
               <span>Orquestração de agentes</span>
             </Badge>
             <h2 className="text-balance text-3xl font-semibold tracking-tight text-text sm:text-4xl">
@@ -590,7 +590,7 @@ No plano Premium, você tem cota maior de minutos de geração, permitindo escal
                   <TabsTrigger
                     key={agent.id}
                     value={agent.id}
-                    className="group relative flex items-center gap-2 rounded-full border border-transparent px-4 py-2 text-xs sm:text-sm font-medium text-text-muted transition-colors data-[state=active]:border-border data-[state=active]:bg-background data-[state=active]:text-text data-[state=active]:shadow-sm hover:bg-surface-2 hover:text-text focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-900/40 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                    className="group relative flex items-center gap-2 rounded-full border border-transparent px-4 py-2 text-xs sm:text-sm font-medium text-text-muted transition-colors data-[state=active]:border-border data-[state=active]:bg-background data-[state=active]:text-text data-[state=active]:shadow-sm hover:bg-surface-2 hover:text-text focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                   >
                     <agent.icon className={`h-4 w-4 ${agent.iconColor}`} />
                     <span>{agent.name}</span>
@@ -707,7 +707,7 @@ No plano Premium, você tem cota maior de minutos de geração, permitindo escal
               variant="outline"
               className="inline-flex items-center gap-2 rounded-full border border-border/50 bg-background/70 px-3 py-1 text-xs font-medium text-text-muted"
             >
-              <UserCheck className="h-3 w-3 text-brand-900" />
+              <UserCheck className="h-3 w-3 icon-accent" />
               <span>Fluxo SDR automatizado</span>
             </Badge>
             <h2 className="mt-4 text-balance text-3xl font-semibold tracking-tight text-text sm:text-4xl">
@@ -723,13 +723,13 @@ No plano Premium, você tem cota maior de minutos de geração, permitindo escal
             {sdrFlow.map((item, index) => (
               <Card
                 key={item.step}
-                className="relative flex-1 border-border/70 bg-background/80 p-5 shadow-sm transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg"
+                className="relative flex-1 border-border/70 bg-background/80 p-5 shadow-sm transition-transform duration-300 hover:-translate-y-1 hover:shadow-adaptive"
               >
-                <div className="absolute -top-4 left-4 flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-brand-900 to-brand-700 text-xs font-semibold text-white shadow-lg">
+                <div className="absolute -top-4 left-4 flex h-9 w-9 items-center justify-center rounded-full btn-primary-gradient text-xs font-semibold shadow-adaptive">
                   {item.step}
                 </div>
                 {index < sdrFlow.length - 1 && (
-                  <div className="pointer-events-none absolute right-[-18px] top-1/2 hidden h-[1px] w-10 -translate-y-1/2 bg-gradient-to-r from-brand-900/40 to-transparent md:block" />
+                  <div className="pointer-events-none absolute right-[-18px] top-1/2 hidden h-[1px] w-10 -translate-y-1/2 bg-gradient-to-r from-text/20 to-transparent md:block" />
                 )}
                 <div className="mt-4 space-y-2">
                   <h3 className="text-sm font-semibold text-text">{item.title}</h3>
@@ -769,7 +769,7 @@ No plano Premium, você tem cota maior de minutos de geração, permitindo escal
                 variant="outline"
                 className="inline-flex items-center gap-2 rounded-full border border-border/50 bg-background/70 px-3 py-1 text-xs font-medium text-text-muted"
               >
-                <BarChart className="h-3 w-3 text-brand-900" />
+                <BarChart className="h-3 w-3 icon-accent" />
                 <span>App web do Meu Agente</span>
               </Badge>
               <h2 className="text-balance text-3xl font-semibold tracking-tight text-text sm:text-4xl">
@@ -800,7 +800,7 @@ No plano Premium, você tem cota maior de minutos de geração, permitindo escal
               </ul>
             </div>
 
-            <Card className="relative overflow-hidden rounded-3xl border-border/70 bg-gradient-to-b from-surface/80 to-background shadow-xl">
+            <Card className="relative overflow-hidden rounded-3xl border-border/70 bg-gradient-to-b from-surface/80 to-background shadow-xl-adaptive">
               <CardHeader className="flex flex-row items-center justify-between border-b border-border/60 pb-3">
                 <div>
                   <CardTitle className="text-sm">Visão do app web</CardTitle>
@@ -873,7 +873,7 @@ No plano Premium, você tem cota maior de minutos de geração, permitindo escal
       </section>
 
       {/* FINAL CTA */}
-      <section className="bg-gradient-to-br from-brand-900 via-brand-800 to-brand-700 py-20 sm:py-24">
+      <section className="bg-section-dark py-20 sm:py-24">
         <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
           <h2 className="text-balance text-3xl font-semibold tracking-tight text-white sm:text-4xl">
             Pronto para ver esses agentes trabalhando pelo seu negócio?
@@ -885,7 +885,7 @@ No plano Premium, você tem cota maior de minutos de geração, permitindo escal
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Button
               size="lg"
-              className="w-full bg-white text-brand-950 hover:bg-white/90 sm:w-auto"
+              className="w-full bg-white text-gray-900 hover:bg-white/90 sm:w-auto"
               onClick={() => (window.location.href = "/planos")}
             >
               Ver planos e preços

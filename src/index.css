@@ -19,6 +19,7 @@ All colors MUST be HSL.
     --color-brand-700: 0 0% 30%;
     --color-brand-800: 0 0% 15%;
     --color-brand-900: 0 0% 10%;
+    --color-brand-950: 0 0% 5%;
 
     /* Surface Colors */
     --color-bg: 0 0% 98%;
@@ -113,6 +114,19 @@ All colors MUST be HSL.
   }
 
   .dark {
+    /* Brand Colors invertidas para dark mode */
+    --color-brand-50: 0 0% 10%;
+    --color-brand-100: 0 0% 15%;
+    --color-brand-200: 0 0% 20%;
+    --color-brand-300: 0 0% 35%;
+    --color-brand-400: 0 0% 55%;
+    --color-brand-500: 0 0% 70%;
+    --color-brand-600: 0 0% 80%;
+    --color-brand-700: 0 0% 75%;
+    --color-brand-800: 0 0% 88%;
+    --color-brand-900: 0 0% 95%;
+    --color-brand-950: 0 0% 8%;
+
     --color-bg: 0 0% 5%;
     --color-surface: 0 0% 8%;
     --color-surface-2: 0 0% 12%;
@@ -122,6 +136,11 @@ All colors MUST be HSL.
     --color-text-subtle: 0 0% 40%;
     --color-border: 0 0% 18%;
     --color-input: 0 0% 18%;
+
+    /* Gradients invertidos para dark mode */
+    --gradient-primary: linear-gradient(135deg, hsl(0 0% 100%), hsl(0 0% 80%));
+    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 8%), hsl(0 0% 12%));
+    --gradient-hover: linear-gradient(135deg, hsl(0 0% 95%), hsl(0 0% 75%));
 
     --background: 0 0% 5%;
     --foreground: 0 0% 100%;
@@ -218,6 +237,412 @@ All colors MUST be HSL.
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+  }
+
+  /* Text gradient para dark mode - cores claras para bom contraste */
+  .dark .text-gradient {
+    background: linear-gradient(135deg, hsl(0 0% 100%), hsl(0 0% 75%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Botão primário com gradiente - mantém cores escuras em ambos os modos */
+  .btn-primary-gradient {
+    background: linear-gradient(135deg, hsl(0 0% 10%), hsl(0 0% 25%));
+    color: white;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .btn-primary-gradient:hover {
+    background: linear-gradient(135deg, hsl(0 0% 5%), hsl(0 0% 20%));
+    transform: scale(1.02);
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.15);
+  }
+
+  .dark .btn-primary-gradient {
+    background: linear-gradient(135deg, hsl(0 0% 100%), hsl(0 0% 85%));
+    color: hsl(0 0% 5%);
+  }
+
+  .dark .btn-primary-gradient:hover {
+    background: linear-gradient(135deg, hsl(0 0% 95%), hsl(0 0% 80%));
+    box-shadow: 0 20px 25px -5px rgb(255 255 255 / 0.1);
+  }
+
+  /* Botão de seleção/toggle - mantém contraste em ambos os modos */
+  .btn-toggle-active {
+    background: hsl(0 0% 10%);
+    color: white;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.15);
+  }
+
+  .dark .btn-toggle-active {
+    background: hsl(0 0% 100%);
+    color: hsl(0 0% 5%);
+    box-shadow: 0 4px 6px -1px rgb(255 255 255 / 0.1);
+  }
+
+  /* Botão branco com texto escuro - para uso em fundos escuros (footer, seções dark) */
+  .btn-white-contrast {
+    background: white;
+    color: hsl(0 0% 10%);
+  }
+
+  .btn-white-contrast:hover {
+    background: hsl(0 0% 95%);
+  }
+
+  /* Fundo de seção com gradiente - mantém cores escuras em ambos os modos */
+  .bg-section-dark {
+    background: linear-gradient(135deg, hsl(0 0% 10%), hsl(0 0% 25%));
+  }
+
+  .dark .bg-section-dark {
+    background: linear-gradient(135deg, hsl(0 0% 12%), hsl(0 0% 18%));
+  }
+
+  /* Card com gradiente sutil */
+  .bg-card-gradient {
+    background: linear-gradient(135deg, hsl(0 0% 10% / 0.05), hsl(0 0% 30% / 0.05));
+    border-color: hsl(0 0% 10% / 0.2);
+  }
+
+  .dark .bg-card-gradient {
+    background: linear-gradient(135deg, hsl(0 0% 100% / 0.05), hsl(0 0% 80% / 0.05));
+    border-color: hsl(0 0% 100% / 0.1);
+  }
+
+  /* Tab ativo com gradiente */
+  .tab-active-gradient[data-state="active"] {
+    background: linear-gradient(135deg, hsl(0 0% 10%), hsl(0 0% 25%)) !important;
+    color: white !important;
+  }
+
+  .dark .tab-active-gradient[data-state="active"] {
+    background: linear-gradient(135deg, hsl(0 0% 100%), hsl(0 0% 85%)) !important;
+    color: hsl(0 0% 5%) !important;
+  }
+
+  /* Gradiente sutil para cards e fundos - muito sutil */
+  .bg-gradient-subtle {
+    background: linear-gradient(135deg, hsl(0 0% 10% / 0.05), hsl(0 0% 30% / 0.05));
+  }
+
+  .dark .bg-gradient-subtle {
+    background: linear-gradient(135deg, hsl(0 0% 100% / 0.03), hsl(0 0% 80% / 0.03));
+  }
+
+  /* Gradiente de destaque para seções hero */
+  .bg-gradient-hero {
+    background: linear-gradient(135deg, hsl(0 0% 10% / 0.15), hsl(0 0% 98%));
+  }
+
+  .dark .bg-gradient-hero {
+    background: linear-gradient(135deg, hsl(0 0% 20% / 0.3), hsl(0 0% 5%));
+  }
+
+  /* Borda sutil */
+  .border-subtle {
+    border-color: hsl(0 0% 10% / 0.1);
+  }
+
+  .dark .border-subtle {
+    border-color: hsl(0 0% 100% / 0.1);
+  }
+
+  /* Linha decorativa */
+  .line-decorative {
+    background: linear-gradient(90deg, hsl(0 0% 10% / 0.2), hsl(0 0% 30% / 0.4), hsl(0 0% 10% / 0.2));
+  }
+
+  .dark .line-decorative {
+    background: linear-gradient(90deg, hsl(0 0% 100% / 0.1), hsl(0 0% 80% / 0.2), hsl(0 0% 100% / 0.1));
+  }
+
+  /* TOC link ativo */
+  .toc-link-active {
+    border-color: hsl(0 0% 10% / 0.6);
+    background: linear-gradient(90deg, hsl(0 0% 10% / 0.1), hsl(0 0% 30% / 0.1));
+    color: hsl(0 0% 10%);
+  }
+
+  .dark .toc-link-active {
+    border-color: hsl(0 0% 100% / 0.4);
+    background: linear-gradient(90deg, hsl(0 0% 100% / 0.08), hsl(0 0% 80% / 0.08));
+    color: hsl(0 0% 95%);
+  }
+
+  /* Card highlight com gradiente */
+  .card-highlight {
+    background: linear-gradient(135deg, hsl(0 0% 10% / 0.1), hsl(0 0% 25% / 0.08), transparent);
+    border-color: hsl(0 0% 10% / 0.2);
+  }
+
+  .dark .card-highlight {
+    background: linear-gradient(135deg, hsl(0 0% 100% / 0.08), hsl(0 0% 80% / 0.05), transparent);
+    border-color: hsl(0 0% 100% / 0.15);
+  }
+
+  /* Card destaque com cor complementar (emerald) */
+  .card-highlight-accent {
+    background: linear-gradient(135deg, hsl(0 0% 10% / 0.15), transparent, hsl(152 70% 45% / 0.1));
+    border-color: hsl(0 0% 10% / 0.4);
+  }
+
+  .dark .card-highlight-accent {
+    background: linear-gradient(135deg, hsl(0 0% 30% / 0.2), transparent, hsl(152 70% 45% / 0.08));
+    border-color: hsl(0 0% 100% / 0.2);
+  }
+
+  /* Glow decorativo sutil */
+  .glow-decorative {
+    background: radial-gradient(circle, hsl(0 0% 10% / 0.1) 0%, transparent 70%);
+  }
+
+  .dark .glow-decorative {
+    background: radial-gradient(circle, hsl(0 0% 100% / 0.08) 0%, transparent 70%);
+  }
+
+  /* Dot indicador ativo */
+  .dot-active {
+    background-color: hsl(0 0% 10%);
+  }
+
+  .dark .dot-active {
+    background-color: hsl(0 0% 95%);
+  }
+
+  /* Borda de hover para cards */
+  .hover\:border-accent:hover {
+    border-color: hsl(0 0% 10% / 0.3);
+  }
+
+  .dark .hover\:border-accent:hover {
+    border-color: hsl(0 0% 100% / 0.3);
+  }
+
+  /* Sweep de hover decorativo */
+  .sweep-hover {
+    background: linear-gradient(90deg, transparent, hsl(0 0% 10% / 0.05), transparent);
+  }
+
+  .dark .sweep-hover {
+    background: linear-gradient(90deg, transparent, hsl(0 0% 100% / 0.05), transparent);
+  }
+
+  /* Linha decorativa via */
+  .line-via-accent {
+    background: linear-gradient(90deg, transparent, hsl(0 0% 10% / 0.7), transparent);
+  }
+
+  .dark .line-via-accent {
+    background: linear-gradient(90deg, transparent, hsl(0 0% 100% / 0.5), transparent);
+  }
+
+  /* Badge destacado */
+  .badge-highlight {
+    background-color: hsl(0 0% 10% / 0.1);
+    border-color: hsl(0 0% 10% / 0.3);
+    color: hsl(0 0% 10%);
+  }
+
+  .dark .badge-highlight {
+    background-color: hsl(0 0% 100% / 0.1);
+    border-color: hsl(0 0% 100% / 0.2);
+    color: hsl(0 0% 95%);
+  }
+
+  /* Glow blur decorativo */
+  .glow-blur {
+    background-color: hsl(0 0% 10% / 0.2);
+  }
+
+  .dark .glow-blur {
+    background-color: hsl(0 0% 100% / 0.1);
+  }
+
+  /* Avatar fallback */
+  .avatar-fallback-neutral {
+    background: linear-gradient(135deg, hsl(0 0% 90%), hsl(0 0% 95%));
+    color: hsl(0 0% 30%);
+  }
+
+  .dark .avatar-fallback-neutral {
+    background: linear-gradient(135deg, hsl(0 0% 25%), hsl(0 0% 35%));
+    color: hsl(0 0% 85%);
+  }
+
+  /* Ícone accent - cor que funciona em ambos os modos */
+  .icon-accent {
+    color: hsl(0 0% 25%);
+  }
+
+  .dark .icon-accent {
+    color: hsl(0 0% 80%);
+  }
+
+  /* Fundo de ícone sutil */
+  .icon-bg-subtle {
+    background-color: hsl(0 0% 10% / 0.1);
+  }
+
+  .dark .icon-bg-subtle {
+    background-color: hsl(0 0% 100% / 0.1);
+  }
+
+  /* Fundo sutil adaptativo - 5% */
+  .bg-subtle-5 {
+    background-color: hsl(0 0% 10% / 0.05);
+  }
+
+  .dark .bg-subtle-5 {
+    background-color: hsl(0 0% 100% / 0.05);
+  }
+
+  /* Fundo sutil adaptativo - 10% */
+  .bg-subtle-10 {
+    background-color: hsl(0 0% 10% / 0.1);
+  }
+
+  .dark .bg-subtle-10 {
+    background-color: hsl(0 0% 100% / 0.1);
+  }
+
+  /* Fundo sutil adaptativo - 25% para blurs/glows */
+  .bg-subtle-25 {
+    background-color: hsl(0 0% 10% / 0.25);
+  }
+
+  .dark .bg-subtle-25 {
+    background-color: hsl(0 0% 100% / 0.1);
+  }
+
+  /* Borda hover adaptativa */
+  .hover\:border-accent:hover {
+    border-color: hsl(0 0% 20% / 0.4);
+  }
+
+  .dark .hover\:border-accent:hover {
+    border-color: hsl(0 0% 100% / 0.3);
+  }
+
+  /* Ring focus adaptativo */
+  .focus-visible\:ring-accent:focus-visible {
+    --tw-ring-color: hsl(0 0% 20% / 0.5);
+  }
+
+  .dark .focus-visible\:ring-accent:focus-visible {
+    --tw-ring-color: hsl(0 0% 100% / 0.4);
+  }
+
+  /* Sombra adaptativa */
+  .shadow-adaptive {
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  }
+
+  .dark .shadow-adaptive {
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.4), 0 4px 6px -4px rgb(0 0 0 / 0.3);
+  }
+
+  /* Sombra grande adaptativa */
+  .shadow-xl-adaptive {
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  }
+
+  .dark .shadow-xl-adaptive {
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.5), 0 8px 10px -6px rgb(0 0 0 / 0.4);
+  }
+
+  /* Sombra 2xl adaptativa */
+  .shadow-2xl-adaptive {
+    box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  }
+
+  .dark .shadow-2xl-adaptive {
+    box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.6);
+  }
+
+  /* Botão secundário - outline que funciona em ambos os modos */
+  .btn-secondary {
+    border: 2px solid hsl(0 0% 88%);
+    background: transparent;
+    color: hsl(0 0% 10%);
+  }
+
+  .btn-secondary:hover {
+    border-color: hsl(0 0% 50%);
+    background: hsl(0 0% 96%);
+  }
+
+  .dark .btn-secondary {
+    border-color: hsl(0 0% 25%);
+    color: hsl(0 0% 95%);
+  }
+
+  .dark .btn-secondary:hover {
+    border-color: hsl(0 0% 50%);
+    background: hsl(0 0% 15%);
+  }
+
+  /* Card com borda e fundo adaptativo */
+  .card-adaptive {
+    background: hsl(0 0% 100% / 0.8);
+    border-color: hsl(0 0% 88% / 0.6);
+  }
+
+  .dark .card-adaptive {
+    background: hsl(0 0% 8% / 0.8);
+    border-color: hsl(0 0% 25% / 0.6);
+  }
+
+  /* Glow blur sutil para decorações */
+  .glow-blur-soft {
+    background-color: hsl(0 0% 10% / 0.05);
+  }
+
+  .dark .glow-blur-soft {
+    background-color: hsl(0 0% 100% / 0.03);
+  }
+
+  /* Texto de destaque/link - mantém contraste em ambos os modos */
+  .text-accent {
+    color: hsl(0 0% 15%);
+  }
+
+  .dark .text-accent {
+    color: hsl(0 0% 90%);
+  }
+
+  /* Badge neutro */
+  .badge-neutral {
+    background-color: hsl(0 0% 96%);
+    color: hsl(0 0% 30%);
+    border-color: hsl(0 0% 88%);
+  }
+
+  .dark .badge-neutral {
+    background-color: hsl(0 0% 15%);
+    color: hsl(0 0% 80%);
+    border-color: hsl(0 0% 25%);
+  }
+
+  /* Hover accent - cor de hover que funciona em ambos os modos */
+  .hover-accent:hover {
+    color: hsl(0 0% 20%);
+  }
+
+  .dark .hover-accent:hover {
+    color: hsl(0 0% 95%);
+  }
+
+  /* Group hover accent */
+  .group:hover .group-hover-accent {
+    color: hsl(0 0% 20%);
+  }
+
+  .dark .group:hover .group-hover-accent {
+    color: hsl(0 0% 95%);
   }
 
   /* Custom scrollbars */

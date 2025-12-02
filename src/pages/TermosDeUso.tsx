@@ -91,11 +91,11 @@ const TermosDeUso = () => {
           <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             {/* Breadcrumb */}
             <nav className="mb-6 flex items-center gap-2 text-xs sm:text-sm text-text-muted">
-              <Link to="/" className="transition-colors hover:text-brand-900">
+              <Link to="/" className="transition-colors hover-accent">
                 <Home className="h-4 w-4" />
               </Link>
               <ChevronRight className="h-4 w-4" />
-              <span className="transition-colors hover:text-brand-900">
+              <span className="transition-colors hover-accent">
                 Legal
               </span>
               <ChevronRight className="h-4 w-4" />
@@ -122,20 +122,20 @@ const TermosDeUso = () => {
 
                 <div className="flex flex-wrap items-center gap-3 text-xs sm:text-sm text-text-muted">
                   <div className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-surface/80 px-3 py-1">
-                    <ShieldCheck className="h-4 w-4 text-brand-900" />
+                    <ShieldCheck className="h-4 w-4 icon-accent" />
                     <span>Documento vinculante entre Cliente e Meu Agente</span>
                   </div>
                   <div className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-surface/80 px-3 py-1">
-                    <Clock className="h-4 w-4 text-brand-900" />
+                    <Clock className="h-4 w-4 icon-accent" />
                     <span>Atualizado em {effectiveDate}</span>
                   </div>
                 </div>
               </div>
 
-              <Card className="border-border/70 bg-background/90 shadow-2xl shadow-black/10 backdrop-blur">
+              <Card className="border-border/70 bg-background/90 shadow-2xl-adaptive backdrop-blur">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2 text-base sm:text-lg">
-                    <FileText className="h-5 w-5 text-brand-900" />
+                    <FileText className="h-5 w-5 icon-accent" />
                     Antes de continuar
                   </CardTitle>
                 </CardHeader>
@@ -239,7 +239,7 @@ const TermosDeUso = () => {
                         ),
                         a: ({ children, ...props }) => (
                           <a
-                            className="font-medium text-brand-900 underline-offset-2 hover:underline"
+                            className="font-medium text-accent underline-offset-2 hover:underline"
                             {...props}
                           >
                             {children}
@@ -275,14 +275,14 @@ const TermosDeUso = () => {
                               href={`#${heading.id}`}
                               className={`group flex items-center justify-between rounded-lg border px-3 py-2 text-xs sm:text-sm transition-all ${
                                 isActive
-                                  ? "border-brand-900/60 bg-gradient-to-r from-brand-900/10 to-brand-700/10 text-brand-900 shadow-sm"
-                                  : "border-transparent text-text-muted hover:border-brand-900/40 hover:bg-surface/90 hover:text-text"
+                                  ? "toc-link-active shadow-sm"
+                                  : "border-transparent text-text-muted hover:border-subtle hover:bg-surface/90 hover:text-text"
                               }`}
                             >
                               <span className="flex items-center gap-2 min-w-0">
                                 <span
                                   className={`h-1.5 w-1.5 flex-shrink-0 rounded-full transition-colors ${
-                                    isActive ? "bg-brand-900" : "bg-border"
+                                    isActive ? "dot-active" : "bg-border"
                                   }`}
                                 />
                                 <span className="truncate">{heading.title}</span>
@@ -297,7 +297,7 @@ const TermosDeUso = () => {
                   <Card className="border-border/70 bg-surface/90">
                     <CardHeader>
                       <CardTitle className="flex items-center gap-2 text-base">
-                        <ShieldCheck className="h-4 w-4 text-brand-900" />
+                        <ShieldCheck className="h-4 w-4 icon-accent" />
                         Relacionado à privacidade
                       </CardTitle>
                     </CardHeader>

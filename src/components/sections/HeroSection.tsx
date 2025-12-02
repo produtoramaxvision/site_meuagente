@@ -8,8 +8,8 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800b_1px,transparent_1px),linear-gradient(to_bottom,#8080800b_1px,transparent_1px)] bg-[size:14px_24px]"></div>
       
       {/* Floating elements */}
-      <div className="absolute top-20 left-10 w-72 h-72 bg-brand-900/5 rounded-full blur-3xl animate-float"></div>
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-brand-700/5 rounded-full blur-3xl animate-float" style={{ animationDelay: "1s" }}></div>
+      <div className="absolute top-20 left-10 w-72 h-72 glow-blur-soft rounded-full blur-3xl animate-float"></div>
+      <div className="absolute bottom-20 right-10 w-96 h-96 glow-blur-soft rounded-full blur-3xl animate-float" style={{ animationDelay: "1s" }}></div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* Badge */}
@@ -29,7 +29,7 @@ const HeroSection = () => {
           <span className="relative inline-block pb-2">
             <span className="relative z-10 text-gradient">Agentes de IA</span>
             <svg className="absolute -bottom-2 left-0 w-full z-0" height="12" viewBox="0 0 300 12" fill="none">
-              <path d="M2 10C100 3 200 3 298 10" stroke="currentColor" strokeWidth="3" strokeLinecap="round" className="text-brand-900/30" />
+              <path d="M2 10C100 3 200 3 298 10" stroke="currentColor" strokeWidth="3" strokeLinecap="round" className="text-text/30" />
             </svg>
           </span>
           <span className="text-gradient">{" "}Trabalhando 24/7</span>
@@ -44,7 +44,7 @@ const HeroSection = () => {
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16 animate-fade-in" style={{ animationDelay: "0.3s" }}>
           <Button 
             size="lg" 
-            className="group relative overflow-hidden bg-gradient-to-r from-brand-900 to-brand-700 hover:from-brand-800 hover:to-brand-600 text-white shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 w-full sm:w-[240px]"
+            className="group relative overflow-hidden btn-primary-gradient shadow-xl-adaptive hover:shadow-2xl-adaptive w-full sm:w-[240px]"
             onClick={() => window.open("https://app.meuagente.api.br", "_blank")}
           >
             Começar Gratuitamente
@@ -55,7 +55,7 @@ const HeroSection = () => {
           <Button 
             size="lg" 
             variant="outline" 
-            className="group border-2 border-brand-900/20 hover:border-brand-900/40 hover:bg-surface-2 transition-all duration-300 w-full sm:w-[240px]"
+            className="group btn-secondary transition-all duration-300 w-full sm:w-[240px]"
           >
             <Play className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
             Ver Como Funciona
@@ -64,11 +64,11 @@ const HeroSection = () => {
 
         {/* Video/Demo placeholder */}
         <div className="max-w-5xl mx-auto animate-scale-in" style={{ animationDelay: "0.4s" }}>
-          <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-border/50 glass">
+          <div className="relative rounded-2xl overflow-hidden shadow-2xl-adaptive border border-border/50 glass">
             <div className="aspect-video bg-gradient-to-br from-surface-2 to-surface-3 flex items-center justify-center">
               <div className="text-center">
-                <div className="w-20 h-20 rounded-full bg-brand-900/10 flex items-center justify-center mx-auto mb-4">
-                  <Play className="w-10 h-10 text-brand-900" />
+                <div className="w-20 h-20 rounded-full icon-bg-subtle flex items-center justify-center mx-auto mb-4">
+                  <Play className="w-10 h-10 icon-accent" />
                 </div>
                 <p className="text-text-muted font-medium">Demo em Vídeo</p>
               </div>

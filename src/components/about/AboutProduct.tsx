@@ -32,9 +32,9 @@ export function AboutProduct() {
         </div>
 
         <div className="grid gap-4 sm:gap-5 md:grid-cols-2 md:auto-rows-fr">
-          <Card className="h-full flex flex-col bg-background/90 border-border/70 shadow-lg">
+          <Card className="h-full flex flex-col bg-background/90 border-border/70 shadow-adaptive">
             <CardHeader className="flex items-start gap-3 pb-3">
-              <div className="h-10 w-10 rounded-xl bg-brand-900/10 border border-brand-900/40 flex items-center justify-center">
+              <div className="h-10 w-10 rounded-xl bg-subtle-10 border border-border flex items-center justify-center">
                 <MessageCircle className="h-5 w-5 text-brand-500" />
               </div>
               <div>
@@ -50,10 +50,10 @@ export function AboutProduct() {
             </CardContent>
           </Card>
 
-          <Card className="h-full flex flex-col bg-background/90 border-border/70 shadow-lg">
+          <Card className="h-full flex flex-col bg-background/90 border-border/70 shadow-adaptive">
             <CardHeader className="flex items-start gap-3 pb-3">
               <div className="h-10 w-10 rounded-xl bg-emerald-500/10 border border-emerald-500/40 flex items-center justify-center">
-                <LineChart className="h-5 w-5 text-emerald-500" />
+                <LineChart className="h-5 w-5 text-emerald-500 dark:text-emerald-400" />
               </div>
               <div>
                 <CardTitle className="text-base sm:text-lg">Operações e finanças organizadas</CardTitle>
@@ -68,10 +68,10 @@ export function AboutProduct() {
             </CardContent>
           </Card>
 
-          <Card className="h-full flex flex-col bg-background/90 border-border/70 shadow-lg">
+          <Card className="h-full flex flex-col bg-background/90 border-border/70 shadow-adaptive">
             <CardHeader className="flex items-start gap-3 pb-3">
               <div className="h-10 w-10 rounded-xl bg-sky-500/10 border border-sky-500/40 flex items-center justify-center">
-                <CalendarClock className="h-5 w-5 text-sky-500" />
+                <CalendarClock className="h-5 w-5 text-sky-500 dark:text-sky-400" />
               </div>
               <div>
                 <CardTitle className="text-base sm:text-lg">Integrações com Google & rotina diária</CardTitle>
@@ -86,10 +86,10 @@ export function AboutProduct() {
             </CardContent>
           </Card>
 
-          <Card className="h-full flex flex-col bg-background/90 border-border/70 shadow-lg">
+          <Card className="h-full flex flex-col bg-background/90 border-border/70 shadow-adaptive">
             <CardHeader className="flex items-start gap-3 pb-3">
               <div className="h-10 w-10 rounded-xl bg-indigo-500/10 border border-indigo-500/40 flex items-center justify-center">
-                <Bot className="h-5 w-5 text-indigo-500" />
+                <Bot className="h-5 w-5 text-indigo-500 dark:text-indigo-400" />
               </div>
               <div>
                 <CardTitle className="text-base sm:text-lg">App web para controlar seus agentes</CardTitle>

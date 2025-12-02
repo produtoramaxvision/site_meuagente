@@ -71,7 +71,7 @@ const Index = () => {
       <main className="relative overflow-hidden bg-gradient-to-b from-background via-surface/40 to-background">
         {/* Background global sutil */}
         <div className="pointer-events-none absolute inset-0 opacity-60">
-          <div className="absolute -top-40 -left-40 h-80 w-80 rounded-full bg-brand-900/10 blur-3xl" />
+          <div className="absolute -top-40 -left-40 h-80 w-80 rounded-full bg-subtle-10 blur-3xl" />
           <div className="absolute top-1/3 -right-40 h-80 w-80 rounded-full bg-brand-700/10 blur-3xl" />
           <div className="absolute bottom-0 left-1/4 h-72 w-72 rounded-full bg-emerald-500/5 blur-3xl" />
         </div>
@@ -96,7 +96,7 @@ const Index = () => {
                     type="button"
                     size="sm"
                     variant="outline"
-                    className="whitespace-nowrap rounded-full border-border/60 bg-surface/80 text-xs sm:text-sm font-medium text-text-muted hover:text-text hover:border-brand-900/40 hover:bg-surface-2 transition-all"
+                    className="whitespace-nowrap rounded-full border-border/60 bg-surface/80 text-xs sm:text-sm font-medium text-text-muted hover:text-text hover:border-accent hover:bg-surface-2 transition-all"
                     onClick={() => scrollToSection(link.id)}
                   >
                     {link.label}

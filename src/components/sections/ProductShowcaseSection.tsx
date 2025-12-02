@@ -305,7 +305,7 @@ const ProductShowcaseSection = () => {
               <span>Configuração em minutos</span>
             </div>
             <div className="flex items-center gap-2">
-              <Clock3 className="w-4 h-4 text-brand-900" />
+              <Clock3 className="w-4 h-4 icon-accent" />
               <span>Atendimento 24/7</span>
             </div>
           </div>
@@ -323,10 +323,10 @@ const ProductShowcaseSection = () => {
                 <TabsTrigger
                   key={useCase.id}
                   value={useCase.id}
-                  className="group relative flex min-w-[120px] sm:min-w-[140px] flex-none items-center justify-start gap-2 sm:gap-3 rounded-full border border-transparent px-3.5 sm:px-4 py-2.5 text-xs sm:text-sm font-medium text-text-muted transition-colors data-[state=active]:border-border data-[state=active]:bg-surface-2 data-[state=active]:text-text data-[state=active]:shadow-sm lg:rounded-xl lg:py-3 hover:bg-surface-2 hover:text-text focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-900/40 focus-visible:ring-offset-2 focus-visible:ring-offset-background whitespace-nowrap"
+                  className="group relative flex min-w-[120px] sm:min-w-[140px] flex-none items-center justify-start gap-2 sm:gap-3 rounded-full border border-transparent px-3.5 sm:px-4 py-2.5 text-xs sm:text-sm font-medium text-text-muted transition-colors data-[state=active]:border-border data-[state=active]:bg-surface-2 data-[state=active]:text-text data-[state=active]:shadow-sm lg:rounded-xl lg:py-3 hover:bg-surface-2 hover:text-text focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background whitespace-nowrap"
                 >
                   <span className="inline-flex h-7 w-7 sm:h-8 sm:w-8 shrink-0 items-center justify-center rounded-full bg-surface-2">
-                    <useCase.icon className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-brand-900" />
+                    <useCase.icon className="w-3.5 h-3.5 sm:w-4 sm:h-4 icon-accent" />
                   </span>
                   <span>{useCase.label}</span>
                 </TabsTrigger>
@@ -335,7 +335,7 @@ const ProductShowcaseSection = () => {
 
             {/* Destaque do caso de uso ativo (texto genérico – continua coerente para todos) */}
             <Card className="relative overflow-hidden border-border/60 bg-background/80 backdrop-blur-sm">
-              <div className="absolute inset-0 bg-gradient-to-br from-brand-900/5 via-transparent to-emerald-500/5" />
+              <div className="absolute inset-0 bg-gradient-subtle" />
               <div className="relative p-5 space-y-3">
                 <p className="text-sm text-text-muted">
                   Cada agente segue regras de negócio, limites de
@@ -359,9 +359,9 @@ const ProductShowcaseSection = () => {
           <div className="lg:col-span-8 w-full min-w-0">
             {useCases.map((useCase) => (
               <TabsContent key={useCase.id} value={useCase.id} className="mt-0 w-full focus-visible:ring-0">
-                <Card className="relative overflow-hidden border-border/70 bg-gradient-to-br from-surface-2 via-surface to-surface-3 shadow-2xl md:mt-4 lg:mt-6 w-full max-w-full">
+                <Card className="relative overflow-hidden border-border/70 bg-gradient-to-br from-surface-2 via-surface to-surface-3 shadow-2xl-adaptive md:mt-4 lg:mt-6 w-full max-w-full">
                   {/* Glow de fundo */}
-                  <div className="pointer-events-none absolute -top-40 left-1/3 h-72 w-72 rounded-full bg-brand-900/25 blur-3xl" />
+                  <div className="pointer-events-none absolute -top-40 left-1/3 h-72 w-72 rounded-full bg-subtle-25 blur-3xl" />
 
                   <div className="relative flex flex-col gap-4 p-4 sm:p-6 lg:p-7 w-full max-w-full overflow-hidden">
                     {/* Topo do “app” */}
@@ -434,7 +434,7 @@ const ProductShowcaseSection = () => {
 
                       {/* Painel lateral com KPIs / destaques */}
                       <div className="flex h-full flex-col space-y-3 md:space-y-4">
-                        <Card className="rounded-xl border border-border/50 hover:border-brand-900/30 bg-background/80 p-4 sm:p-5 text-card-foreground shadow-lg hover:shadow-xl transition-all duration-300 backdrop-blur-sm hover:-translate-y-1 hover:scale-[1.02]">
+                        <Card className="rounded-xl border border-border/50 hover:border-accent bg-background/80 p-4 sm:p-5 text-card-foreground shadow-adaptive hover:shadow-xl-adaptive transition-all duration-300 backdrop-blur-sm hover:-translate-y-1 hover:scale-[1.02]">
                           <p className="mb-3 text-xs font-medium uppercase tracking-wide text-text-muted">
                             Destaque deste cenário
                           </p>
@@ -443,7 +443,7 @@ const ProductShowcaseSection = () => {
                           </p>
                         </Card>
 
-                        <Card className="rounded-xl border border-border/50 hover:border-brand-900/30 bg-background/80 p-4 sm:p-5 space-y-3 flex-1 text-card-foreground shadow-lg hover:shadow-xl transition-all duration-300 backdrop-blur-sm hover:-translate-y-1 hover:scale-[1.02]">
+                        <Card className="rounded-xl border border-border/50 hover:border-accent bg-background/80 p-4 sm:p-5 space-y-3 flex-1 text-card-foreground shadow-adaptive hover:shadow-xl-adaptive transition-all duration-300 backdrop-blur-sm hover:-translate-y-1 hover:scale-[1.02]">
                           <p className="text-xs font-medium uppercase tracking-wide text-text-muted">
                             Em números
                           </p>
@@ -508,7 +508,7 @@ const ProductShowcaseSection = () => {
                       </span>
                       <Button
                         size="sm"
-                        className="h-7 rounded-full px-3 text-[11px] bg-gradient-to-r from-brand-900 to-brand-700"
+                        className="h-7 rounded-full px-3 text-[11px] btn-primary-gradient"
                       >
                         Enviar
                       </Button>

@@ -74,7 +74,7 @@ const Blog = () => {
                 variant="outline"
                 className="inline-flex items-center gap-2 mb-3 rounded-full border border-border/50 bg-background/80 px-3 py-1 text-xs font-medium text-text-muted"
               >
-                <TrendingUp className="h-3 w-3 text-brand-900" />
+                <TrendingUp className="h-3 w-3 icon-accent" />
                 <span>Insights em agentes de IA</span>
               </Badge>
               <h1 className="text-balance text-4xl font-extrabold leading-normal pb-2 text-gradient sm:text-5xl lg:text-6xl">
@@ -95,7 +95,7 @@ const Blog = () => {
                   placeholder="Buscar por temas, palavras-chave ou tags..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="h-11 rounded-full bg-background/80 pl-10 text-sm shadow-sm backdrop-blur-sm"
+                  className="h-11 rounded-full bg-background/80 pl-10 text-sm shadow-adaptive backdrop-blur-sm"
                 />
               </div>
               <div className="flex flex-wrap items-center gap-3 text-xs text-text-muted">
@@ -121,7 +121,7 @@ const Blog = () => {
                 <Link
                   key={post.slug}
                   to={`/blog/${post.slug}`}
-                  className={`group relative flex flex-col overflow-hidden rounded-2xl border border-border/60 bg-surface/70 p-4 shadow-sm backdrop-blur-sm transition-all hover:-translate-y-1 hover:border-brand-900/60 hover:shadow-xl md:p-5 ${
+                  className={`group relative flex flex-col overflow-hidden rounded-2xl border border-border/60 bg-surface/70 p-4 shadow-adaptive backdrop-blur-sm transition-all hover:-translate-y-1 hover:border-accent hover:shadow-xl-adaptive md:p-5 ${
                     index === 0 ? "md:col-span-2" : ""
                   }`}
                 >
@@ -130,7 +130,7 @@ const Blog = () => {
                       index === 0
                         ? "aspect-[16/6] sm:aspect-[16/5]"
                         : "aspect-video"
-                    } bg-gradient-to-br from-brand-900/10 to-brand-700/10`}
+                    } bg-gradient-subtle`}
                   >
                     <img
                       src={post.coverImage}
@@ -171,7 +171,7 @@ const Blog = () => {
                       )}
                     </div>
                     <h2
-                      className={`text-balance font-semibold text-text transition-colors group-hover:text-brand-900 ${
+                      className={`text-balance font-semibold text-text transition-colors group-hover-accent ${
                         index === 0
                           ? "text-xl sm:text-2xl lg:text-3xl"
                           : "text-lg sm:text-xl"
@@ -209,7 +209,7 @@ const Blog = () => {
                 <TabsTrigger
                   key={category}
                   value={category}
-                  className="rounded-full px-3 py-1 text-xs sm:text-sm data-[state=active]:bg-gradient-to-r data-[state=active]:from-brand-900 data-[state=active]:to-brand-700 data-[state=active]:text-white"
+                  className="rounded-full px-3 py-1 text-xs sm:text-sm tab-active-gradient"
                 >
                   {category}
                 </TabsTrigger>
@@ -241,10 +241,10 @@ const Blog = () => {
                 {gridPosts.map((post, index) => (
                   <Link to={`/blog/${post.slug}`} key={post.slug}>
                     <Card
-                      className="group flex h-full flex-col overflow-hidden border-border/60 bg-surface/70 shadow-sm transition-all hover:-translate-y-1 hover:border-brand-900/60 hover:shadow-xl"
+                      className="group flex h-full flex-col overflow-hidden border-border/60 bg-surface/70 shadow-adaptive transition-all hover:-translate-y-1 hover:border-accent hover:shadow-xl-adaptive"
                       style={{ animationDelay: `${index * 0.04}s` }}
                     >
-                      <div className="relative overflow-hidden bg-gradient-to-br from-brand-900/10 to-brand-700/10">
+                      <div className="relative overflow-hidden bg-gradient-subtle">
                         <div className="aspect-[16/9]">
                           <img
                             src={post.coverImage}
@@ -269,7 +269,7 @@ const Blog = () => {
                       </div>
 
                       <CardHeader className="space-y-3">
-                        <CardTitle className="text-base font-semibold leading-snug text-text group-hover:text-brand-900 sm:text-lg">
+                        <CardTitle className="text-base font-semibold leading-snug text-text group-hover-accent sm:text-lg">
                           {post.title}
                         </CardTitle>
                         <CardDescription className="line-clamp-3 text-sm sm:text-[15px]">
@@ -320,10 +320,10 @@ const Blog = () => {
             {/* Sidebar refinada */}
             <div className="space-y-8">
               {/* Posts em destaque / mais lidos */}
-              <Card className="border-border/60 bg-surface shadow-lg">
+              <Card className="border-border/60 bg-surface shadow-adaptive">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2 text-base sm:text-lg">
-                    <TrendingUp className="h-5 w-5 text-brand-900" />
+                    <TrendingUp className="h-5 w-5 icon-accent" />
                     Leituras recomendadas
                   </CardTitle>
                   <CardDescription className="text-xs sm:text-sm">
@@ -336,9 +336,9 @@ const Blog = () => {
                     <Link
                       key={post.slug}
                       to={`/blog/${post.slug}`}
-                      className="block rounded-lg border border-transparent p-3 transition-colors hover:border-brand-900/40 hover:bg-surface"
+                      className="block rounded-lg border border-transparent p-3 transition-colors hover:border-accent hover:bg-surface"
                     >
-                      <h4 className="line-clamp-2 text-sm font-semibold text-text group-hover:text-brand-900">
+                      <h4 className="line-clamp-2 text-sm font-semibold text-text group-hover-accent">
                         {post.title}
                       </h4>
                       <div className="mt-1 flex items-center gap-3 text-[11px] text-text-muted">
@@ -352,7 +352,7 @@ const Blog = () => {
               </Card>
 
               {/* Newsletter */}
-              <Card className="border-brand-900/20 bg-gradient-to-br from-brand-900/5 to-brand-700/5">
+              <Card className="border bg-card-gradient">
                 <CardHeader>
                   <CardTitle className="text-base sm:text-lg">
                     📬 Newsletter Meu Agente
@@ -372,7 +372,7 @@ const Blog = () => {
               </Card>
 
               {/* CTA produto */}
-              <Card className="border-none bg-gradient-to-br from-brand-900 to-brand-700 text-white">
+              <Card className="border-none bg-section-dark text-white">
                 <CardHeader>
                   <CardTitle className="text-base sm:text-lg">
                     Pronto para tirar suas ideias do papel?
@@ -384,7 +384,7 @@ const Blog = () => {
                 </CardHeader>
                 <CardContent>
                   <Button
-                    className="w-full bg-white text-brand-900 hover:bg-white/90"
+                    className="w-full bg-white text-gray-900 hover:bg-white/90"
                     onClick={() =>
                       window.open("https://app.meuagente.api.br", "_blank")
                     }
@@ -420,7 +420,7 @@ const Blog = () => {
                               ? "default"
                               : "outline"
                           }
-                          className="cursor-pointer rounded-full px-3 py-1 text-[11px] hover:scale-105 hover:border-brand-900/60"
+                          className="cursor-pointer rounded-full px-3 py-1 text-[11px] hover:scale-105 hover:border-accent"
                           onClick={() => setSelectedCategory(category)}
                         >
                           {category} ({count})

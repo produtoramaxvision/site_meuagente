@@ -127,7 +127,7 @@ export function Timeline({ items, className }: TimelineProps) {
                       role="img"
                       aria-label={`Icon for ${item.title}`}
                     >
-                      <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full overflow-hidden border-2 border-background shadow-lg relative z-10 bg-background flex items-center justify-center">
+                      <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full overflow-hidden border-2 border-background shadow-adaptive relative z-10 bg-background flex items-center justify-center">
                         {item.image ? (
                           <img
                             src={item.image}

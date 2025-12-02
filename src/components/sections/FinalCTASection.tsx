@@ -3,7 +3,7 @@ import { ArrowRight, MessageSquare } from "lucide-react";
 
 const FinalCTASection = () => {
   return (
-    <section className="relative py-24 bg-gradient-to-br from-brand-900 to-brand-700 overflow-hidden">
+    <section className="relative py-24 bg-section-dark overflow-hidden">
       {/* Background pattern */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:14px_24px]"></div>
       
@@ -26,17 +26,17 @@ const FinalCTASection = () => {
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
           <Button 
             size="lg" 
-            className="group relative overflow-hidden bg-white text-brand-900 hover:bg-white/90 shadow-2xl hover:shadow-white/20 transition-all duration-300 hover:scale-105 text-lg px-8 py-6"
+            className="group relative overflow-hidden bg-white text-gray-900 hover:bg-white/90 shadow-2xl-adaptive hover:shadow-white/20 transition-all duration-300 hover:scale-105 text-lg px-8 py-6"
             onClick={() => window.open("https://app.meuagente.api.br", "_blank")}
           >
             Criar Conta Gratuita
             <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-brand-900/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-gray-900/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
           </Button>
           
           <Button 
             size="lg"
-            className="group relative overflow-hidden bg-gradient-to-r from-brand-900/80 to-brand-700/80 hover:from-brand-800 hover:to-brand-600 text-white shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 text-lg px-8 py-6 border border-white/30"
+            className="group relative overflow-hidden bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white shadow-xl-adaptive hover:shadow-2xl-adaptive transition-all duration-300 hover:scale-105 text-lg px-8 py-6 border border-white/30"
             onClick={() => window.open("https://app.meuagente.api.br", "_blank")}
           >
             <MessageSquare className="mr-2 h-5 w-5" />

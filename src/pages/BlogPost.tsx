@@ -98,11 +98,11 @@ const BlogPost = () => {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Breadcrumb */}
           <nav className="flex items-center gap-2 text-sm text-text-muted mb-6">
-            <Link to="/" className="hover:text-brand-900 transition-colors">
+            <Link to="/" className="hover-accent transition-colors">
               <Home className="w-4 h-4" />
             </Link>
             <ChevronRight className="w-4 h-4" />
-            <Link to="/blog" className="hover:text-brand-900 transition-colors">
+            <Link to="/blog" className="hover-accent transition-colors">
               Blog
             </Link>
             <ChevronRight className="w-4 h-4" />
@@ -149,7 +149,7 @@ const BlogPost = () => {
 
           {/* Cover image */}
           <div className="mt-8 max-w-5xl">
-            <div className="aspect-video rounded-2xl overflow-hidden bg-gradient-to-br from-brand-900/10 to-brand-700/10 border border-border/50">
+            <div className="aspect-video rounded-2xl overflow-hidden bg-gradient-subtle border border-subtle">
               <img 
                 src={post.coverImage} 
                 alt={post.title}
@@ -165,7 +165,7 @@ const BlogPost = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid gap-8 lg:grid-cols-4">
             {/* Main content */}
-            <article className="lg:col-span-3 prose prose-lg max-w-none prose-headings:text-text prose-p:text-text-muted prose-strong:text-text prose-a:text-brand-900 prose-code:text-brand-900 prose-code:bg-brand-50 prose-code:px-1 prose-code:py-0.5 prose-code:rounded prose-pre:bg-surface-2 prose-pre:border prose-pre:border-border/50">
+            <article className="lg:col-span-3 prose prose-lg max-w-none prose-headings:text-text prose-p:text-text-muted prose-strong:text-text prose-a:text-accent prose-code:text-text prose-code:bg-surface-2 prose-code:px-1 prose-code:py-0.5 prose-code:rounded prose-pre:bg-surface-2 prose-pre:border prose-pre:border-border/50">
               <ReactMarkdown
                 remarkPlugins={[remarkGfm]}
                 rehypePlugins={[rehypeHighlight]}
@@ -211,7 +211,7 @@ const BlogPost = () => {
             <aside className="space-y-6">
               {/* TOC */}
               {headings.length > 0 && (
-                <Card className="border-border/50 shadow-lg">
+                <Card className="border-border/50 shadow-adaptive">
                   <CardHeader>
                     <CardTitle className="text-base">Neste artigo</CardTitle>
                   </CardHeader>
@@ -222,8 +222,8 @@ const BlogPost = () => {
                         href={`#${heading.id}`}
                         className={`block text-sm py-1 pl-3 border-l-2 transition-all ${
                           activeHeading === heading.id
-                            ? "border-brand-900 text-brand-900 font-semibold"
-                            : "border-border text-text-muted hover:text-text hover:border-brand-900/50"
+                            ? "border-text text-accent font-semibold"
+                            : "border-border text-text-muted hover:text-text hover:border-text/50"
                         }`}
                       >
                         {heading.title}
@@ -234,7 +234,7 @@ const BlogPost = () => {
               )}
 
               {/* CTA */}
-              <Card className="bg-gradient-to-br from-brand-900 to-brand-700 text-white border-none">
+              <Card className="bg-section-dark text-white border-none">
                 <CardHeader>
                   <CardTitle className="text-base">Gostou do conteúdo?</CardTitle>
                 </CardHeader>
@@ -243,7 +243,7 @@ const BlogPost = () => {
                     Experimente Agentes de IA gratuitamente
                   </p>
                   <Button 
-                    className="w-full bg-white text-brand-900 hover:bg-white/90"
+                    className="w-full bg-white text-gray-900 hover:bg-white/90"
                     onClick={() => window.open("https://app.meuagente.api.br", "_blank")}
                   >
                     Criar Conta Grátis
@@ -253,7 +253,7 @@ const BlogPost = () => {
               </Card>
 
               {/* Newsletter */}
-              <Card className="bg-gradient-to-br from-brand-900/5 to-brand-700/5 border-brand-900/20">
+              <Card className="bg-card-gradient border">
                 <CardHeader>
                   <CardTitle className="text-base">📬 Newsletter</CardTitle>
                 </CardHeader>
@@ -280,7 +280,7 @@ const BlogPost = () => {
               {relatedPosts.map((relatedPost) => (
                 <Link key={relatedPost.slug} to={`/blog/${relatedPost.slug}`}>
                   <Card className="h-full group hover:scale-[1.02] hover:-translate-y-1 transition-all duration-300">
-                    <div className="aspect-video bg-gradient-to-br from-brand-900/10 to-brand-700/10 overflow-hidden">
+                    <div className="aspect-video bg-gradient-subtle overflow-hidden">
                       <img 
                         src={relatedPost.coverImage} 
                         alt={relatedPost.title}
@@ -291,7 +291,7 @@ const BlogPost = () => {
                       <Badge variant="secondary" className="text-xs w-fit mb-2">
                         {relatedPost.category}
                       </Badge>
-                      <CardTitle className="text-lg line-clamp-2 group-hover:text-brand-900 transition-colors">
+                      <CardTitle className="text-lg line-clamp-2 group-hover-accent transition-colors">
                         {relatedPost.title}
                       </CardTitle>
                     </CardHeader>
@@ -313,7 +313,7 @@ const BlogPost = () => {
 
       {/* Related posts */}
       {/* Final CTA */}
-      <section className="py-16 bg-gradient-to-br from-brand-900 to-brand-700">
+      <section className="py-16 bg-section-dark">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold text-white mb-4 pb-2 leading-normal">
             Pronto para Implementar Agentes de IA?
@@ -324,7 +324,7 @@ const BlogPost = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
               size="lg"
-              className="bg-white text-brand-900 hover:bg-white/90 shadow-2xl"
+              className="bg-white text-gray-900 hover:bg-white/90 shadow-2xl-adaptive"
               onClick={() => window.open("https://app.meuagente.api.br", "_blank")}
             >
               Criar Conta Gratuita
