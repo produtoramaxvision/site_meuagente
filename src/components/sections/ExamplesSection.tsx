@@ -29,7 +29,7 @@ const ExamplesSection = () => {
         },
         {
           message: '"Pesquise tendências de \'roupas fitness\' na região de SP e me entregue 5 insights com 3 links confiáveis."',
-          response: "📈 Análise de tendências pronta!"
+          response: "📈 5 insights sobre tendências fitness em SP:\n\n1. Crescimento de 47% em buscas por leggings com bolso\n2. Tops com suporte estão em alta (↑32%)\n3. Cores neutras dominando o mercado\n4. Tecidos sustentáveis ganhando espaço\n5. Conjuntos matching em crescimento\n\n🔗 3 links confiáveis anexados!"
         }
       ]
     },

@@ -137,8 +137,13 @@ const messagesByUseCase: Record<
       time: "11:19",
     },
     {
-      from: "agent",
+      from: "user",
       text: '"Pesquise tendências de \'roupas fitness\' na região de SP e me entregue 5 insights com 3 links confiáveis."',
+      time: "11:21",
+    },
+    {
+      from: "agent",
+      text: "📈 Análise de tendências concluída! 5 insights sobre roupas fitness em SP com 3 fontes confiáveis anexadas.",
       time: "11:21",
     },
   ],
