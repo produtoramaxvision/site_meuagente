@@ -61,7 +61,7 @@ const AgentsSection = () => {
       icon: Calendar,
       name: "Agente de Agendamento",
       description: "Gerencie Google Calendar, Drive, Tasks e envie lembretes automáticos.",
-      tier: "Business/Premium",
+      tier: "Básico/Business/Premium",
       color: "from-indigo-500/10 to-blue-500/10",
       iconColor: "text-indigo-600 dark:text-indigo-400",
     },

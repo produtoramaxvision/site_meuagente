@@ -76,7 +76,7 @@ export function AboutProduct() {
               <div>
                 <CardTitle className="text-base sm:text-lg">Integrações com Google & rotina diária</CardTitle>
                 <CardDescription className="text-xs sm:text-sm">
-                  Agendamento, tarefas e arquivos integrados a Google Calendar, Drive e Tasks nos planos Business/Premium.
+                  Agendamento, tarefas e arquivos integrados a Google Calendar, Drive e Tasks a partir do plano Básico.
                 </CardDescription>
               </div>
             </CardHeader>

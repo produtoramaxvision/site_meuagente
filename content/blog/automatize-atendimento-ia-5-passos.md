@@ -106,7 +106,7 @@ Selecione quais agentes fazem sentido para seu negócio:
 
 - **Agente Financeiro** → controle de receitas/despesas
 - **Agente SDR** → qualificação de leads (Business/Premium)
-- **Agente de Agendamento** → gestão de Google Calendar (Business/Premium)
+- **Agente de Agendamento** → gestão de Google Calendar (Básico/Business/Premium)
 - **Agente Web Search** → pesquisas automáticas
 - **Agente de Marketing** → análise de Google Ads (Business/Premium)
 

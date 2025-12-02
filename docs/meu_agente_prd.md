@@ -35,7 +35,7 @@
 - Integração com Google (Calendar, Drive, Tasks e Gmail) **não nativa**, disponível mediante implantação opcional **com custo adicional** nos planos **Business/Premium**.
 - Operações financeiras simples (entradas/saídas) com exportação *(disponível nos planos pagos)*.
 - Pesquisa na web, extração de dados de fontes permitidas e relatórios prontos.
-- Sub‑agentes especializados (SDR, Marketing, Agendamento, Dev e Vídeo) no plano Business e Premium.
+- Sub‑agentes especializados (SDR, Marketing, Dev e Vídeo) no plano Business e Premium.
 
 ---
 
@@ -58,11 +58,11 @@ Para quem quer explorar o Meu Agente sem custo. **Sem automações automáticas 
 
 Para profissionais e pequenas equipes que desejam começar com agentes de IA no WhatsApp usando infraestrutura em nuvem do Meu Agente.
 
-**Observações do Básico:** acesso ao app e a diversas funcionalidades, porém com **lançamentos e interações manuais**, **sem automações automáticas** do Meu Agente, **sem suporte**, e **não inclui funcionalidades que são exclusivas dos planos Business e Premium** (ex.: **número WhatsApp dedicado**, **suporte prioritário 24/7**, **sub‑agentes SDR/Marketing/Agendamento/Dev/Vídeo** e **camadas avançadas de Web Search/Scrape**).
+**Observações do Básico:** acesso ao app e a diversas funcionalidades, incluindo o **Agente de Agendamento**, porém com **lançamentos e interações manuais**, **sem automações automáticas** do Meu Agente, **sem suporte**, e **não inclui funcionalidades que são exclusivas dos planos Business e Premium** (ex.: **número WhatsApp dedicado**, **suporte prioritário 24/7**, **sub‑agentes SDR/Marketing/Dev/Vídeo** e **camadas avançadas de Web Search/Scrape**).
 
 ### Plano **Business** — **R\$ 997,00/mês**
 
-Para empresas que precisam de \*\*número WhatsApp próprio \*\* suporte prioritário 24/7 e sub‑agentes adicionais (SDR-Recepcionista, Marketing, Agendamento, Dev e Vídeo), com maior capacidade de personalização.
+Para empresas que precisam de \*\*número WhatsApp próprio \*\* suporte prioritário 24/7 e sub‑agentes adicionais (SDR-Recepcionista, Marketing, Dev e Vídeo), com maior capacidade de personalização.
 
 - **Implantação (setup inicial) inclusa**.
 - **Taxa de manutenção/treinamento/atualização:** **R\$ 149,00/h** (quando necessária), cobrindo ajustes de modelos, reconfigurações e treinamentos pontuais.
@@ -94,7 +94,7 @@ Tudo do Business, com **camada avançada adicional** nos agentes de **Web Search
 | **Suporte prioritário**                          | –           | –           | ✔︎ (24/7)          | ✔︎ (24/7)       |
 | Agente SDR (qualificação de leads)               | –           | –           | ✔︎                 | ✔︎              |
 | Agente de Marketing (Google Ads)                 | –           | –           | ✔︎                 | ✔︎              |
-| Agente de Agendamento (Calendar/Drive/Tasks)     | –           | –           | ✔︎                 | ✔︎              |
+| Agente de Agendamento (Calendar/Drive/Tasks)     | –           | ✔︎           | ✔︎                 | ✔︎              |
 | Agente de Dev (programação e debugging)          | –           | –           | ✔︎                 | ✔︎              |
 | Agente de Vídeo (Google Veo 3)                   | –           | –           | ✔︎                 | ✔︎ (cota maior) |
 | **Agente de Confirmação (Premium)**              | –           | –           | –                  | ✔︎              |
@@ -193,7 +193,7 @@ Confirmação e lembrete (WhatsApp + e‑mail)
 
 ---
 
-### 4.6 Agente de Agendamento (Business/Premium)
+### 4.6 Agente de Agendamento (Básico/Business/Premium)
 
 - Cria e gerencia compromissos no **Google Calendar e/ou app Meu Agente**, manuseia arquivos no **Google Drive**, cria tarefas no **Google Tasks** e envia lembretes no WhatsApp.
 

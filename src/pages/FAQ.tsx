@@ -115,7 +115,7 @@ const FAQ = () => {
       {
         question: "Posso agendar compromissos recorrentes?",
         answer:
-          "Sim! Com o Agente de Agendamento (Business/Premium), você pode criar eventos recorrentes (diários, semanais, mensais) integrados ao Google Calendar.",
+          "Sim! Com o Agente de Agendamento (Básico/Business/Premium), você pode criar eventos recorrentes (diários, semanais, mensais) integrados ao Google Calendar.",
       },
     ],
     segurança: [

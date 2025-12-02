@@ -154,8 +154,8 @@ Elimine a necessidade de ficar entrando no painel do Google Ads diariamente — 
       id: "agendamento",
       icon: Calendar,
       name: "Agente de Agendamento",
-      tier: "Business/Premium",
-      tierBadge: "BUSINESS",
+      tier: "Básico/Business/Premium",
+      tierBadge: "BÁSICO",
       color: "from-indigo-500/10 to-blue-500/10",
       iconColor: "text-indigo-600 dark:text-indigo-400",
       description: `O Agente de Agendamento integra-se ao Google Calendar, Drive e Tasks para gerenciar compromissos, arquivos e tarefas direto do WhatsApp. Crie eventos, anexe documentos, configure lembretes e sincronize tudo com a equipe sem abrir nenhum app.

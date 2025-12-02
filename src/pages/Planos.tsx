@@ -70,14 +70,15 @@ const Planos = () => {
       features: [
         { text: "Tudo do Free + Automações via WhatsApp", included: true },
         { text: "Exportação CSV/PDF", included: true },
+        { text: "Agente Web Search intermediário", included: true },
         { text: "Agente Scrape intermediário", included: true },
         { text: "Infraestrutura em nuvem Meu Agente", included: true },
+        { text: "Agente Agendamento (Calendar/Drive/Tasks)", included: true },
         { text: "Número de WhatsApp próprio", included: false },
         { text: "Implantação inclusa", included: false },
         { text: "Suporte prioritário", included: false },
         { text: "Sub-agentes Business", included: false },
         { text: "Backups automáticos", included: false },
-        { text: "Agentes de IA avançados", included: false },
       ],
       cta: "Contratar Básico",
       popular: false,
@@ -96,7 +97,6 @@ const Planos = () => {
         { text: "Suporte prioritário 24/7 (SLA 2h)", included: true },
         { text: "Agente SDR (qualificação + agendamento)", included: true },
         { text: "Agente Marketing (Google Ads)", included: true },
-        { text: "Agente Agendamento (Calendar/Drive/Tasks)", included: true },
         { text: "Agente Dev (debugging + sugestões)", included: true },
         { text: "Agente Vídeo (Veo 3)", included: true },
         { text: "Integrações Google (opcional, custo adicional)", included: true },
@@ -499,7 +499,7 @@ const Planos = () => {
                           <td className="px-4 sm:px-6 py-4 text-sm text-text">Agente Web Search</td>
                           <td className="px-4 sm:px-6 py-4 text-center text-xs">Básico</td>
                           <td className="px-4 sm:px-6 py-4 text-center text-xs">Básico</td>
-                          <td className="px-4 sm:px-6 py-4 text-center bg-subtle-5 text-xs">Básico</td>
+                          <td className="px-4 sm:px-6 py-4 text-center bg-subtle-5 text-xs">Intermediário</td>
                           <td className="px-4 sm:px-6 py-4 text-center text-xs font-semibold text-success">
                             Avançado
                           </td>
@@ -511,6 +511,23 @@ const Planos = () => {
                           <td className="px-4 sm:px-6 py-4 text-center bg-subtle-5 text-xs">Intermediário</td>
                           <td className="px-4 sm:px-6 py-4 text-center text-xs font-semibold text-success">
                             Avançado
+                          </td>
+                        </tr>
+                        <tr>
+                          <td className="px-4 sm:px-6 py-4 text-sm text-text">
+                            Agente de Agendamento (Calendar/Drive/Tasks)
+                          </td>
+                          <td className="px-4 sm:px-6 py-4 text-center">
+                            <X className="w-5 h-5 text-text-muted mx-auto" />
+                          </td>
+                          <td className="px-4 sm:px-6 py-4 text-center">
+                            <Check className="w-5 h-5 text-success mx-auto" />
+                          </td>
+                          <td className="px-4 sm:px-6 py-4 text-center bg-subtle-5">
+                            <Check className="w-5 h-5 text-success mx-auto" />
+                          </td>
+                          <td className="px-4 sm:px-6 py-4 text-center">
+                            <Check className="w-5 h-5 text-success mx-auto" />
                           </td>
                         </tr>
 
@@ -614,23 +631,6 @@ const Planos = () => {
                         <tr>
                           <td className="px-4 sm:px-6 py-4 text-sm text-text">
                             Agente de Marketing (Google Ads)
-                          </td>
-                          <td className="px-4 sm:px-6 py-4 text-center">
-                            <X className="w-5 h-5 text-text-muted mx-auto" />
-                          </td>
-                          <td className="px-4 sm:px-6 py-4 text-center">
-                            <X className="w-5 h-5 text-text-muted mx-auto" />
-                          </td>
-                          <td className="px-4 sm:px-6 py-4 text-center bg-subtle-5">
-                            <Check className="w-5 h-5 text-success mx-auto" />
-                          </td>
-                          <td className="px-4 sm:px-6 py-4 text-center">
-                            <Check className="w-5 h-5 text-success mx-auto" />
-                          </td>
-                        </tr>
-                        <tr>
-                          <td className="px-4 sm:px-6 py-4 text-sm text-text">
-                            Agente de Agendamento (Calendar/Drive/Tasks)
                           </td>
                           <td className="px-4 sm:px-6 py-4 text-center">
                             <X className="w-5 h-5 text-text-muted mx-auto" />
