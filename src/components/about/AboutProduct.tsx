@@ -1,10 +1,105 @@
 "use client"
 
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
+import { useState } from "react"
 import { Badge } from "@/components/ui/badge"
+import { AnimatedJobCard } from "@/components/ui/animated-job-card"
+import { cn } from "@/lib/utils"
 import { MessageCircle, Bot, LineChart, CalendarClock } from "lucide-react"
 
 export function AboutProduct() {
+  // Cards do deck (4 cards, nenhum removido)
+  const deckCards = [
+    {
+      id: "atendimento",
+      companyLogo: <MessageCircle className="h-5 w-5 text-brand-500" />,
+      companyName: "Agente de Atendimento Meu Agente",
+      jobTitle: "Atendimento 24/7 no WhatsApp",
+      salary:
+        "Recepção, triagem e acompanhamento de leads e clientes, seguindo as regras do WhatsApp Business.",
+      tags: [
+        "Sub-agentes SDR, Confirmação e Follow-up",
+        "Redução de no-show e recuperação de oportunidades",
+        "Relacionamento sempre ativo com seus contatos",
+      ],
+      postedDate: "Sempre online, sem folga ou férias.",
+      variant: "blue" as const,
+    },
+    {
+      id: "financeiro",
+      companyLogo: <LineChart className="h-5 w-5 text-emerald-500 dark:text-emerald-400" />,
+      companyName: "Agente Financeiro Meu Agente",
+      jobTitle: "Operações e finanças organizadas",
+      salary:
+        "Registros de entradas e saídas, categorias e exportações em CSV/PDF nos planos pagos.",
+      tags: [
+        "Centralização do fluxo financeiro",
+        "Relatórios facilitados para seu contador",
+        "Menos planilhas manuais espalhadas",
+      ],
+      postedDate: "Disponível nos planos pagos.",
+      variant: "yellow" as const,
+    },
+    {
+      id: "rotina",
+      companyLogo: <CalendarClock className="h-5 w-5 text-sky-500 dark:text-sky-400" />,
+      companyName: "Agente de Rotina & Agenda",
+      jobTitle: "Integrações com Google & rotina diária",
+      salary:
+        "Agendamento, tarefas e arquivos integrados a Google Calendar, Drive e Tasks a partir do plano Básico.",
+      tags: [
+        "Rotina conectada ao seu calendário",
+        "Organização de tarefas e arquivos",
+        "Governança e automações sob medida",
+      ],
+      postedDate: "Incluso a partir do plano Básico.",
+      variant: "pink" as const,
+    },
+    {
+      id: "painel",
+      companyLogo: <Bot className="h-5 w-5 text-indigo-500 dark:text-indigo-400" />,
+      companyName: "Painel Web Meu Agente",
+      jobTitle: "App web para controlar seus agentes",
+      salary:
+        "Painel completo para acompanhar conversas, fluxos, relatórios e sua operação em tempo real.",
+      tags: [
+        "Métricas dos agentes em um só lugar",
+        "Configuração de campanhas e mensagens",
+        "Integração com o restante do seu stack",
+      ],
+      postedDate: "Gestão em tempo real via navegador.",
+      variant: "purple" as const,
+    },
+  ]
+
+  const [activeIndex, setActiveIndex] = useState(0)
+
+  // Calcula a posição visual de cada card no deck (esquerda, centro, direita, fundo)
+  // A ideia aqui é ficar bem próximo do layout de referência: três cards sobrepostos,
+  // com o central em destaque e os laterais levemente rotacionados.
+  const getDeckPositionClasses = (index: number) => {
+    if (index === activeIndex) {
+      // Card em destaque (centro)
+      return "z-30 -translate-y-2"
+    }
+
+    const total = deckCards.length
+    const prevIndex = (activeIndex - 1 + total) % total
+    const nextIndex = (activeIndex + 1) % total
+
+    if (index === prevIndex) {
+      // Card à esquerda (levemente rotacionado e deslocado)
+      return "-rotate-8 -translate-x-24 sm:-translate-x-32 translate-y-2 z-20 opacity-80"
+    }
+
+    if (index === nextIndex) {
+      // Card à direita (levemente rotacionado e deslocado)
+      return "rotate-8 translate-x-24 sm:translate-x-32 translate-y-2 z-20 opacity-80"
+    }
+
+    // Cards que não estão imediatamente na esquerda/direita ficam discretos no fundo
+    return "scale-95 opacity-0 pointer-events-none"
+  }
+
   return (
     <section className="py-20 sm:py-24 bg-surface/40 border-y border-border/60">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-10 lg:space-y-12">
@@ -31,82 +126,30 @@ export function AboutProduct() {
           </p>
         </div>
 
-        <div className="grid gap-4 sm:gap-5 md:grid-cols-2 md:auto-rows-fr">
-          <Card className="h-full flex flex-col bg-background/90 border-border/70 shadow-adaptive">
-            <CardHeader className="flex items-start gap-3 pb-3">
-              <div className="h-10 w-10 rounded-xl bg-subtle-10 border border-border flex items-center justify-center">
-                <MessageCircle className="h-5 w-5 text-brand-500" />
-              </div>
-              <div>
-                <CardTitle className="text-base sm:text-lg">Atendimento 24/7 no WhatsApp</CardTitle>
-                <CardDescription className="text-xs sm:text-sm">
-                  Recepção, triagem e acompanhamento de leads e clientes, seguindo as regras do WhatsApp Business.
-                </CardDescription>
-              </div>
-            </CardHeader>
-            <CardContent className="pt-0 text-xs sm:text-sm text-text-muted leading-relaxed">
-              Sub-agentes como SDR, Confirmação e Follow-up ajudam a diminuir no-show, recuperar oportunidades
-              e manter o relacionamento sempre ativo.
-            </CardContent>
-          </Card>
-
-          <Card className="h-full flex flex-col bg-background/90 border-border/70 shadow-adaptive">
-            <CardHeader className="flex items-start gap-3 pb-3">
-              <div className="h-10 w-10 rounded-xl bg-emerald-500/10 border border-emerald-500/40 flex items-center justify-center">
-                <LineChart className="h-5 w-5 text-emerald-500 dark:text-emerald-400" />
-              </div>
-              <div>
-                <CardTitle className="text-base sm:text-lg">Operações e finanças organizadas</CardTitle>
-                <CardDescription className="text-xs sm:text-sm">
-                  Registros de entradas e saídas, categorias e exportações em CSV/PDF nos planos pagos.
-                </CardDescription>
-              </div>
-            </CardHeader>
-            <CardContent className="pt-0 text-xs sm:text-sm text-text-muted leading-relaxed">
-              O Agente Financeiro centraliza o fluxo financeiro e facilita relatórios, sem depender de planilhas
-              manuais espalhadas.
-            </CardContent>
-          </Card>
-
-          <Card className="h-full flex flex-col bg-background/90 border-border/70 shadow-adaptive">
-            <CardHeader className="flex items-start gap-3 pb-3">
-              <div className="h-10 w-10 rounded-xl bg-sky-500/10 border border-sky-500/40 flex items-center justify-center">
-                <CalendarClock className="h-5 w-5 text-sky-500 dark:text-sky-400" />
-              </div>
-              <div>
-                <CardTitle className="text-base sm:text-lg">Integrações com Google & rotina diária</CardTitle>
-                <CardDescription className="text-xs sm:text-sm">
-                  Agendamento, tarefas e arquivos integrados a Google Calendar, Drive e Tasks a partir do plano Básico.
-                </CardDescription>
-              </div>
-            </CardHeader>
-            <CardContent className="pt-0 text-xs sm:text-sm text-text-muted leading-relaxed">
-              Agentes de Agendamento e de Marketing conectam sua rotina diária aos seus canais digitais, com governança
-              e automações sob medida.
-            </CardContent>
-          </Card>
-
-          <Card className="h-full flex flex-col bg-background/90 border-border/70 shadow-adaptive">
-            <CardHeader className="flex items-start gap-3 pb-3">
-              <div className="h-10 w-10 rounded-xl bg-indigo-500/10 border border-indigo-500/40 flex items-center justify-center">
-                <Bot className="h-5 w-5 text-indigo-500 dark:text-indigo-400" />
-              </div>
-              <div>
-                <CardTitle className="text-base sm:text-lg">App web para controlar seus agentes</CardTitle>
-                <CardDescription className="text-xs sm:text-sm">
-                  Painel completo para acompanhar conversas, configurar fluxos, ver relatórios e gerenciar sua operação em tempo real.
-                </CardDescription>
-              </div>
-            </CardHeader>
-            <CardContent className="pt-0 text-xs sm:text-sm text-text-muted leading-relaxed">
-              Pelo app você visualiza métricas dos agentes, ajusta mensagens, cria campanhas, organiza permissões da equipe
-              e integra o Meu Agente com outras ferramentas do seu stack — tudo em uma interface única e simples de usar.
-            </CardContent>
-          </Card>
+        {/* Deck interativo de cards sobrepostos (4 cards) */}
+        <div className="relative flex justify-center items-center py-4 sm:py-8">
+          <div className="relative w-full max-w-5xl h-[260px] sm:h-[280px] md:h-[320px]">
+            {deckCards.map((card, index) => (
+              <AnimatedJobCard
+                key={card.id}
+                companyLogo={card.companyLogo}
+                companyName={card.companyName}
+                jobTitle={card.jobTitle}
+                salary={card.salary}
+                tags={card.tags}
+                postedDate={card.postedDate}
+                variant={card.variant}
+                onClick={() => setActiveIndex(index)}
+                className={cn(
+                  "absolute inset-0 max-w-xl mx-auto cursor-pointer transition-transform duration-300",
+                  getDeckPositionClasses(index),
+                )}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>
   )
 }
-
 
