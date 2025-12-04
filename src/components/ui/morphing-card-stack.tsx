@@ -46,6 +46,29 @@ export function MorphingCardStack({
     return null
   }
 
+  const getTierBadgeClasses = (cardId?: string) => {
+    switch (cardId) {
+      case "financeiro":
+        return "bg-emerald-500/15 text-emerald-300 border border-emerald-500/40"
+      case "websearch":
+        return "bg-sky-500/15 text-sky-300 border border-sky-500/40"
+      case "scrape":
+        return "bg-purple-500/15 text-purple-300 border border-purple-500/40"
+      case "sdr":
+        return "bg-orange-500/15 text-orange-300 border border-orange-500/40"
+      case "marketing":
+        return "bg-pink-500/15 text-pink-300 border border-pink-500/40"
+      case "agendamento":
+        return "bg-indigo-500/15 text-indigo-300 border border-indigo-500/40"
+      case "dev":
+        return "bg-slate-500/20 text-slate-200 border border-slate-500/40"
+      case "video":
+        return "bg-violet-500/15 text-violet-300 border border-violet-500/40"
+      default:
+        return "bg-accent/10 text-accent"
+    }
+  }
+
   const handleDragEnd = (event: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
     const { offset, velocity } = info
     const swipe = Math.abs(offset.x) * velocity.x
@@ -149,9 +172,10 @@ export function MorphingCardStack({
                   }}
                   exit={{ opacity: 0, scale: 0.8, x: -200 }}
                   transition={{
+                    // Transição mais rápida entre layouts (aprox. 2x da velocidade original)
                     type: "spring",
-                    stiffness: 300,
-                    damping: 25,
+                    stiffness: 600,
+                    damping: 28,
                   }}
                   drag={isTopCard ? "x" : false}
                   dragConstraints={{ left: 0, right: 0 }}
@@ -159,15 +183,27 @@ export function MorphingCardStack({
                   onDragStart={() => setIsDragging(true)}
                   onDragEnd={handleDragEnd}
                   whileDrag={{ scale: 1.02, cursor: "grabbing" }}
+                  whileHover={
+                    layout === "grid"
+                      ? { y: -4, scale: 1.02, transition: { duration: 0.08, ease: "easeOut" } }
+                      : layout === "list"
+                        ? { y: -2, scale: 1.01, transition: { duration: 0.08, ease: "easeOut" } }
+                        : { y: -2, transition: { duration: 0.08, ease: "easeOut" } }
+                  }
                   onClick={() => {
                     if (isDragging) return
                     setExpandedCard(isExpanded ? null : card.id)
                     onCardClick?.(card)
                   }}
                   className={cn(
-                    "cursor-pointer rounded-xl border border-border/70 p-5",
-                    "bg-background/95 dark:bg-card/95 backdrop-blur-sm",
-                    "hover:border-accent/50 transition-colors shadow-lg",
+                    // Base
+                    "cursor-pointer rounded-xl border p-5 transition-all duration-300",
+                    // Stack / list – cards com blur leve e sombra forte
+                    (layout === "stack" || layout === "list") &&
+                      "border-border/70 bg-background/95 dark:bg-card/95 backdrop-blur-sm shadow-lg hover:border-accent/50",
+                    // Grid – usa só sombra/cores via CSS; o "pulo" fica 100% a cargo do Framer Motion
+                    layout === "grid" &&
+                      "border-border/60 bg-background/70 shadow-adaptive hover:shadow-none",
                     layout === "stack" && "absolute w-64 h-56 sm:w-72 sm:h-64",
                     layout === "stack" && isTopCard && "cursor-grab active:cursor-grabbing",
                     layout === "grid" && "w-full",
@@ -199,7 +235,12 @@ export function MorphingCardStack({
                         {card.description}
                       </p>
                       {card.tier && (
-                        <span className="inline-block mt-2 text-xs px-2 py-1 rounded-full bg-accent/10 text-accent font-medium">
+                        <span
+                          className={cn(
+                            "inline-block mt-2 text-xs px-2 py-1 rounded-full font-medium",
+                            getTierBadgeClasses(card.id),
+                          )}
+                        >
                           {card.tier}
                         </span>
                       )}

@@ -125,7 +125,7 @@ const AgentsSection = () => {
         {/* Morphing Card Stack */}
         <MorphingCardStack 
           cards={agentCards} 
-          defaultLayout="grid"
+          defaultLayout="stack"
           className="mb-16"
         />
 
