@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Menu, Sun, Moon } from "lucide-react";
 import { useState } from "react";
 import { useTheme } from "next-themes";
+import { AnimatedThemeToggler } from "@/components/AnimatedThemeToggler";
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -51,16 +52,7 @@ const Header = () => {
 
           {/* CTA buttons */}
           <div className="hidden md:flex items-center gap-4">
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              className="rounded-full"
-              aria-label="Alternar tema"
-            >
-              <Sun className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-              <Moon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-            </Button>
+            <AnimatedThemeToggler className="h-9 w-9" />
             <Button
               variant="ghost"
               size="sm"

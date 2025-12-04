@@ -150,7 +150,7 @@ export function WhatsappExamples() {
               return (
                 <CarouselItem
                   key={item.label}
-                  className="pl-4 md:basis-1/2 xl:basis-1/3 2xl:basis-1/4"
+                  className="pl-4 py-4 md:basis-1/2 xl:basis-1/3 2xl:basis-1/4"
                 >
                   <Card className="group relative h-full overflow-hidden rounded-xl border border-border/60 bg-background/70 px-0 shadow-adaptive hover:shadow-xl-adaptive transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02]">
                     <CardContent className="relative z-10 pt-5 pb-6 px-5">

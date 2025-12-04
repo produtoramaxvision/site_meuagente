@@ -146,7 +146,7 @@ export function AboutProduct() {
                 )}
               />
             ))}
-          </div>
+              </div>
         </div>
       </div>
     </section>
