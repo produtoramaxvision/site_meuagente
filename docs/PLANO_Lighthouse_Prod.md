@@ -108,11 +108,15 @@ Ordem sugerida, cada etapa deve ser implementada, testada (Lighthouse mobile+des
    - Config WebP/AVIF lossy moderado; incluir `public` se identificarmos imagens LCP maiores.  
    - Status: **implementado** (plugin adicionado com includePublic e qualidades moderadas; deps `sharp`/`svgo` instaladas).  
    - Build local: ok (05/12/2025) com savings ~54% nos PNGs principais do hero/logo.  
-   - Validação: precisa de deploy para surtir efeito em produção; repetir Lighthouse após publicação.
+   - Validação (pós-deploy 05/12/2025 21:23-21:24 UTC):  
+     - Mobile: Perf 0.90, LCP 2.9s, FCP 2.9s, TBT 0ms, CLS 0.  
+     - Desktop: Perf 0.67, LCP 2.9s, FCP 2.9s, TBT 0ms, CLS 0.007.  
+   - Conclusão: otimização de imagens reduziu LCP de ~4.2s para ~2.9s; mobile atingiu meta de Performance ≥ 0.9; desktop ainda abaixo de 0.9, mas LCP caiu significativamente.
 
 5) **Auditoria final**  
    - Rodar Lighthouse mobile+desktop, registrar métricas no plano (antes/depois).  
    - Conferir A11y (contraste e `aria-label` em botões icônicos).  
-   - Status: **pendente de deploy** (retestar após publicar otimizações).  
-   - Aprovação final antes de publicar.
+   - Status: **executada** com otimizações publicadas (ver métrica acima).  
+   - A11y permanece 0.85; foco futuro: contraste e `aria-label` em botões icônicos.  
+   - Pronto para aprovação final.
 

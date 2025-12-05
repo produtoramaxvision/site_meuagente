@@ -74,6 +74,10 @@ const Header = () => {
           <div className="flex items-center gap-2 md:hidden">
             <AnimatedThemeToggler className="h-9 w-9" />
             <button
+              type="button"
+              aria-label={mobileMenuOpen ? "Fechar menu" : "Abrir menu"}
+              aria-expanded={mobileMenuOpen}
+              aria-controls="mobile-menu"
               className="p-2 rounded-lg hover:bg-surface-2 transition-colors"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
@@ -84,7 +88,10 @@ const Header = () => {
 
         {/* Mobile menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden border-t border-border/50 py-4 space-y-2 animate-fade-in">
+          <div
+            id="mobile-menu"
+            className="md:hidden border-t border-border/50 py-4 space-y-2 animate-fade-in"
+          >
             {navigation.map((item) => (
               <a
                 key={item.name}

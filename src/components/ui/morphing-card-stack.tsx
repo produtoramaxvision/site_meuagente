@@ -265,11 +265,20 @@ export function MorphingCardStack({
               key={index}
               onClick={() => setActiveIndex(index)}
               className={cn(
-                "h-2 rounded-full transition-all",
-                index === activeIndex ? "w-6 bg-accent" : "w-2 bg-muted-foreground/30 hover:bg-muted-foreground/50",
+                "flex items-center justify-center rounded-full min-w-[40px] min-h-[40px] focus-visible:ring-2 focus-visible:ring-accent/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background transition-colors",
+                "bg-transparent hover:bg-muted/40"
               )}
               aria-label={`Ir para card ${index + 1}`}
-            />
+            >
+              <span
+                className={cn(
+                  "h-2 w-2 rounded-full transition-all",
+                  index === activeIndex
+                    ? "w-6 bg-accent"
+                    : "bg-muted-foreground/50 hover:bg-muted-foreground/70"
+                )}
+              />
+            </button>
           ))}
         </div>
       )}

@@ -84,14 +84,14 @@ const Footer = () => {
               <div className="space-y-2 mb-6">
                 <a
                   href="mailto:contato@meuagente.api.br"
-                  className="flex items-center gap-2 text-sm text-text-muted hover:text-text transition-colors"
+                  className="flex items-center gap-2 text-sm text-text transition-colors hover:opacity-90"
                 >
                   <Mail className="w-4 h-4" />
                   contato@meuagente.api.br
                 </a>
                 <a
                   href="tel:+5511951182561"
-                  className="flex items-center gap-2 text-sm text-text-muted hover:text-text transition-colors"
+                  className="flex items-center gap-2 text-sm text-text transition-colors hover:opacity-90"
                 >
                   <Phone className="w-4 h-4" />
                   (11) 95118-2561
@@ -122,7 +122,7 @@ const Footer = () => {
                     <li key={link.name}>
                       <a
                         href={link.href}
-                        className="text-sm text-text-muted hover:text-text transition-colors"
+                        className="text-sm text-text hover:opacity-90 transition-colors"
                       >
                         {link.name}
                       </a>
@@ -138,7 +138,7 @@ const Footer = () => {
                     <li key={link.name}>
                       <a
                         href={link.href}
-                        className="text-sm text-text-muted hover:text-text transition-colors"
+                        className="text-sm text-text hover:opacity-90 transition-colors"
                       >
                         {link.name}
                       </a>
@@ -154,7 +154,7 @@ const Footer = () => {
                     <li key={link.name}>
                       <a
                         href={link.href}
-                        className="text-sm text-text-muted hover:text-text transition-colors"
+                        className="text-sm text-text hover:opacity-90 transition-colors"
                       >
                         {link.name}
                       </a>
@@ -170,7 +170,7 @@ const Footer = () => {
                     <li key={link.name}>
                       <a
                         href={link.href}
-                        className="text-sm text-text-muted hover:text-text transition-colors"
+                        className="text-sm text-text hover:opacity-90 transition-colors"
                       >
                         {link.name}
                       </a>
@@ -186,13 +186,13 @@ const Footer = () => {
       {/* Bottom bar – full width */}
       <div className="border-t border-border/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-center items-center text-center">
-          <span className="text-sm text-text-muted">
+          <span className="text-sm text-text">
             Desenvolvido por ©{" "}
             <a
               href="https://www.produtoramaxvision.com.br/inteligencia-artificial"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#A93838]"
+              className="font-semibold text-[#A93838] hover:text-[#d85a5a]"
             >
               Produtora MaxVision
             </a>{" "}
