@@ -242,7 +242,9 @@ export function MorphingCardStack({
                       <p
                         className={cn(
                           "text-muted-foreground dark:text-gray-300 mt-1 leading-relaxed",
-                          layout === "stack" ? "text-sm line-clamp-3" : "text-xs",
+                          layout === "stack"
+                            ? "text-sm max-h-24 overflow-y-auto pr-1"
+                            : "text-xs",
                         )}
                       >
                         {card.description}
