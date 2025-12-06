@@ -176,7 +176,7 @@ const FeaturesSection = () => {
                   <div className="space-y-4">
                     {/* KPI cards */}
                     <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                      <div className="rounded-2xl border border-emerald-500/30 bg-gradient-to-br from-emerald-500/10 via-emerald-500/5 to-background/80 px-4 py-3">
+                      <div className="rounded-2xl border border-emerald-500/35 bg-gradient-to-b from-emerald-500/12 via-surface/92 to-background/85 px-4 py-3">
                         <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-emerald-300/90">
                           Saldo em caixa
                         </p>
@@ -187,7 +187,7 @@ const FeaturesSection = () => {
                           +18% vs. último mês
                         </p>
                       </div>
-                      <div className="rounded-2xl border border-border/70 bg-background/90 px-4 py-3">
+                      <div className="rounded-2xl border border-border/70 bg-gradient-to-b from-surface/95 via-surface/90 to-background/85 px-4 py-3">
                         <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-text-muted">
                           Receitas hoje
                         </p>
@@ -198,7 +198,7 @@ const FeaturesSection = () => {
                           +32 novos pedidos
                         </p>
                       </div>
-                      <div className="hidden sm:block rounded-2xl border border-border/70 bg-background/90 px-4 py-3">
+                      <div className="hidden sm:block rounded-2xl border border-border/70 bg-gradient-to-b from-surface/95 via-surface/90 to-background/85 px-4 py-3">
                         <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-text-muted">
                           Despesas hoje
                         </p>
@@ -212,17 +212,15 @@ const FeaturesSection = () => {
                     </div>
 
                     {/* Chart */}
-                    <div className="mt-3 rounded-2xl border border-border/60 bg-gradient-to-b from-surface/90 to-background/80 px-4 py-4">
-                      <div className="flex items-center justify-between mb-3">
-                        <div className="flex flex-col">
-                          <span className="text-xs font-medium text-text-muted uppercase tracking-[0.2em]">
-                            Evolução diária
-                          </span>
-                          <span className="text-sm font-semibold text-text">
-                            Receita x Despesa (últimos 14 dias)
-                          </span>
-                        </div>
-                        <div className="hidden sm:flex items-center gap-2 text-[11px] text-text-muted">
+                    <div className="mt-3 rounded-2xl border border-border/60 bg-gradient-to-b from-surface/95 via-surface/90 to-background/85 px-4 py-4">
+                      <div className="flex flex-col gap-2 mb-3">
+                        <span className="text-xs font-medium text-text-muted uppercase tracking-[0.2em]">
+                          Evolução diária
+                        </span>
+                        <span className="text-sm font-semibold text-text">
+                          Receita x Despesa (últimos 7 dias)
+                        </span>
+                        <div className="flex items-center gap-2 text-[11px] text-text-muted">
                           <span className="inline-flex items-center gap-1">
                             <span className="h-1.5 w-4 rounded-full bg-emerald-400/80" />
                             Receita
@@ -244,13 +242,6 @@ const FeaturesSection = () => {
                           { revenue: 82, expense: 18 },
                           { revenue: 88, expense: 12 },
                           { revenue: 76, expense: 24 },
-                          { revenue: 92, expense: 8 },
-                          { revenue: 85, expense: 15 },
-                          { revenue: 70, expense: 30 },
-                          { revenue: 64, expense: 36 },
-                          { revenue: 80, expense: 20 },
-                          { revenue: 90, expense: 10 },
-                          { revenue: 75, expense: 25 },
                         ].map((data, index) => (
                           <div key={index} className="flex flex-col items-center gap-1 flex-1 min-w-0">
                             {/* Bar container */}
@@ -292,7 +283,7 @@ const FeaturesSection = () => {
                     </div>
 
                     {/* Gestão Unificada Card - moved from right column */}
-                    <div className="flex items-center justify-between gap-3 rounded-2xl border border-dashed border-border/80 bg-surface/80 px-4 py-3">
+                    <div className="flex items-center justify-between gap-3 rounded-2xl border border-dashed border-border/80 bg-gradient-to-b from-surface/95 via-surface/90 to-background/85 px-4 py-3">
                       <div className="flex flex-col">
                         <span className="text-[11px] font-medium uppercase tracking-[0.22em] text-text-muted">
                           Gestão unificada
@@ -312,7 +303,7 @@ const FeaturesSection = () => {
                   {/* Right – agenda, tarefas & alertas ligados às features */}
                   <div className="h-full flex flex-col justify-between space-y-4">
                     {/* Category Breakdown Card */}
-                    <div className="rounded-2xl border border-border/60 bg-gradient-to-b from-surface/90 to-background/80 px-4 py-4">
+                    <div className="rounded-2xl border border-border/60 bg-gradient-to-b from-surface/95 via-surface/90 to-background/85 px-4 py-4">
                       <div className="flex items-center justify-between mb-3">
                         <div className="flex flex-col">
                           <span className="text-xs font-medium text-text-muted uppercase tracking-[0.2em]">
@@ -354,7 +345,7 @@ const FeaturesSection = () => {
                       </div>
                     </div>
 
-                    <div className="rounded-2xl border border-border/60 bg-background/90 px-4 py-3">
+                    <div className="rounded-2xl border border-border/60 bg-gradient-to-b from-surface/95 via-surface/90 to-background/85 px-4 py-3">
                       <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-text-muted mb-2">
                         Agenda & tarefas do dia
                       </p>
@@ -395,7 +386,7 @@ const FeaturesSection = () => {
                       </div>
                     </div>
 
-                    <div className="rounded-2xl border border-border/60 bg-gradient-to-br from-surface/95 via-surface/90 to-background/90 px-4 py-3">
+                    <div className="rounded-2xl border border-border/60 bg-gradient-to-b from-surface/95 via-surface/90 to-background/85 px-4 py-3">
                       <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-text-muted mb-2">
                         Notificações inteligentes em tempo real
                       </p>
