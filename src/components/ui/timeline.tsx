@@ -97,12 +97,12 @@ export function Timeline({ items, className }: TimelineProps) {
           whileInView={{ 
             scaleY: 1,
             transition: {
-              duration: 1.2,
+              duration: 0.8,
               ease: "easeOut",
-              delay: 0.2
             }
           }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "-50px" }}
+          style={{ willChange: 'transform' }}
           aria-hidden="true"
         />
 
@@ -115,18 +115,17 @@ export function Timeline({ items, className }: TimelineProps) {
               <motion.div
                 key={index}
                 className="relative group"
-                initial={{ opacity: 0, y: 40, scale: 0.98 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ 
                   opacity: 1, 
-                  y: 0, 
-                  scale: 1,
+                  y: 0,
                   transition: {
-                    duration: 0.5,
-                    delay: index * 0.1,
-                    ease: [0.25, 0.46, 0.45, 0.94]
+                    duration: 0.4,
+                    ease: "easeOut"
                   }
                 }}
-                viewport={{ once: true, margin: "-30px" }}
+                viewport={{ once: true, margin: "-80px" }}
+                style={{ willChange: 'transform, opacity' }}
                 role="listitem"
                 aria-label={`Timeline item ${index + 1}: ${item.title}`}
               >
@@ -158,11 +157,7 @@ export function Timeline({ items, className }: TimelineProps) {
                     </motion.div>
                   </div>
 
-                  <motion.div
-                    className="flex-1 min-w-0"
-                    whileHover={{ y: -2 }}
-                    transition={{ duration: 0.2 }}
-                  >
+                  <div className="flex-1 min-w-0">
                     <Card className={cn(
                       "border transition-all duration-300 hover:shadow-md relative",
                       "bg-card/50 backdrop-blur-sm",
@@ -172,12 +167,9 @@ export function Timeline({ items, className }: TimelineProps) {
                       <CardContent className="p-4 sm:p-6">
                         <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-4 mb-3">
                           <div className="flex-1 min-w-0">
-                            <motion.h3 
-                              className="text-lg sm:text-xl font-semibold text-foreground mb-1 group-hover:text-primary transition-colors duration-300"
-                              layoutId={`title-${index}`}
-                            >
+                            <h3 className="text-lg sm:text-xl font-semibold text-foreground mb-1 group-hover:text-primary transition-colors duration-300">
                               {item.title}
-                            </motion.h3>
+                            </h3>
                             
                             <div className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
                               {item.category && (
@@ -205,13 +197,11 @@ export function Timeline({ items, className }: TimelineProps) {
                           </Badge>
                         </div>
 
-                        <motion.p 
-                          className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4"
-                          initial={{ opacity: 0.8 }}
-                          whileHover={{ opacity: 1 }}
+                        <p 
+                          className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4 transition-opacity hover:opacity-100 opacity-80"
                         >
                           {item.description}
-                        </motion.p>
+                        </p>
 
                         <div 
                           className="h-1 bg-muted rounded-full overflow-hidden"
@@ -237,7 +227,7 @@ export function Timeline({ items, className }: TimelineProps) {
                         </div>
                       </CardContent>
                     </Card>
-                  </motion.div>
+                  </div>
                 </div>
               </motion.div>
             )
@@ -251,13 +241,12 @@ export function Timeline({ items, className }: TimelineProps) {
             opacity: 1, 
             scale: 1,
             transition: {
-              duration: 0.4,
-              delay: items.length * 0.1 + 0.3,
-              type: "spring",
-              stiffness: 400
+              duration: 0.3,
+              ease: "easeOut"
             }
           }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "-50px" }}
+          style={{ willChange: 'transform, opacity' }}
           aria-hidden="true"
         >
           <div className="w-3 h-3 bg-primary rounded-full shadow-sm" />

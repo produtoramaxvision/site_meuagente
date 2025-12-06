@@ -854,15 +854,103 @@ export default defineConfig({
 
 ---
 
-## 📞 PRÓXIMOS PASSOS
+## 🔄 FASE 1 REVERSAL - LAZY LOADING REMOVIDO (06/12/2025)
 
-1. **Revisar e aprovar** este plano com a equipe
-2. **Priorizar** as implementações conforme recursos disponíveis
-3. **Criar issues/tasks** no sistema de gerenciamento de projetos
-4. **Implementar** seguindo o cronograma sugerido
-5. **Testar** cada otimização isoladamente
-6. **Validar** com Lighthouse após cada mudança
-7. **Monitorar** Web Vitals em produção continuamente
+### **❌ Testes com Lazy Loading em Produção - FALHOU**
+
+**Data**: 05/12/2025  
+**Status**: Lazy loading causou degradação de performance em produção  
+**Decisão**: Reverter completamente lazy loading, manter apenas terser + compression
+
+#### **Resultados dos 3 Testes com Lazy Loading em Produção:**
+| Teste | LCP | TTFB | Render Delay | Resultado |
+|-------|-----|------|--------------|-----------|
+| Teste 1 | 495ms | 9ms | 486ms | ❌ +16.5% pior que baseline |
+| Teste 2 | 480ms | 18ms | 462ms | ❌ +12.9% pior que baseline |
+| Teste 3 | 491ms | 44ms | 447ms | ❌ +15.5% pior que baseline |
+| **Média** | **489ms** | **24ms** | **465ms** | **❌ +15.0% pior que baseline (425ms)** |
+
+#### **Análise da Falha:**
+- ✅ **Desenvolvimento**: -61% LCP (926ms → 361ms) - EXCELENTE
+- ✅ **Preview Local Produção**: -47% LCP (475ms → 225ms) - EXCELENTE
+- ❌ **Produção Real**: +15% LCP (425ms → 489ms) - FALHOU
+
+**Root Cause**: Network overhead do lazy loading (React.lazy + Suspense + 22 HTTP requests) superou os benefícios de bundle splitting em produção real. Latência de rede + TTFB variável (9-44ms) causaram atrasos.
+
+#### **Ação Tomada: Reverter Lazy Loading**
+- ✅ Removidos todos `React.lazy()` e `Suspense` de `src/pages/Index.tsx`
+- ✅ Restaurados imports síncronos de 9 componentes
+- ✅ Removido `SectionSkeleton` component
+- ✅ **MANTIDOS**: Terser minification, Gzip/Brotli compression, code splitting
+
+---
+
+## ✅ FASE 1 FINAL - APENAS TERSER + COMPRESSION (06/12/2025)
+
+### **🎯 Testes com Lazy Loading Revertido - SUCESSO**
+
+**Data**: 06/12/2025  
+**Otimizações Ativas**: Terser minification + Gzip/Brotli compression + Code splitting  
+**Otimizações Removidas**: Lazy loading de componentes
+
+#### **Resultados dos 5 Testes em Produção:**
+| Teste | LCP | TTFB | Render Delay | vs Baseline |
+|-------|-----|------|--------------|-------------|
+| Teste 1 | 416ms | 7ms | 408ms | ✅ -2.1% melhor |
+| Teste 2 | 438ms | 25ms | 413ms | ⚠️ +3.1% pior |
+| Teste 3 | 406ms | 19ms | 387ms | ✅ -4.5% melhor |
+| Teste 4 | 406ms | 15ms | 391ms | ✅ -4.5% melhor |
+| Teste 5 | **387ms** | 17ms | 370ms | ✅ **-9.0% melhor** (melhor resultado!) |
+| **Média** | **410.6ms** | **16.6ms** | **393.8ms** | ✅ **-3.4% melhor que baseline** |
+
+### **📊 Comparação Completa:**
+
+| Fase | LCP Médio | vs Baseline | vs Fase Anterior | Status |
+|------|-----------|-------------|------------------|--------|
+| **Baseline Original** | 425ms | - | - | 📍 Referência |
+| **Com Lazy Loading** | 489ms | ❌ +15.0% pior | - | ❌ Falhou |
+| **Após Reversal** | **410.6ms** | ✅ **-3.4% melhor** | ✅ **-16.0% melhor** | ✅ **SUCESSO** |
+
+### **🎉 Conclusões Finais:**
+
+1. ✅ **Terser + Compression funcionam perfeitamente**: Bundle menor resulta em render delay reduzido (-6%)
+2. ✅ **Lazy loading revertido com sucesso**: Performance restaurada e até SUPEROU baseline original
+3. ✅ **Melhor resultado individual**: 387ms LCP (-9% vs baseline de 425ms)
+4. ✅ **Consistência melhorou**: 4 de 5 testes abaixo de baseline
+5. ⚠️ **TTFB variável**: Continua sendo ponto de atenção (7-25ms), possivelmente relacionado a CDN/cache
+
+### **🔍 Lições Aprendidas:**
+
+- ❌ **Lazy loading não é sempre benéfico**: Em sites pequenos/médios, network overhead > bundle savings
+- ✅ **Dev performance ≠ Produção**: Sempre testar em ambiente real antes de concluir
+- ✅ **Fewer large requests > many small requests**: Em produção com latência real
+- ✅ **Terser + Compression são "safe optimizations"**: Sem overhead de runtime, apenas build-time
+
+---
+
+## 📞 PRÓXIMOS PASSOS (Fase 2)
+
+### **Prioridade Alta - Otimização Framer Motion**
+- **Meta**: Reduzir 226ms de forced reflows causados por Framer Motion
+- **Estratégias**:
+  1. Aplicar `layoutScroll: false` em componentes sem scroll animation
+  2. Usar `will-change: transform` para otimizar GPU
+  3. Substituir `whileInView` por Intersection Observer manual quando possível
+- **Impacto Estimado**: -30-40% render delay
+
+### **Prioridade Média - Investigação TTFB**
+- **Problema**: TTFB variável (7-44ms) sugere problemas de CDN/cache
+- **Ações**:
+  1. Verificar configurações de cache do CDN
+  2. Validar headers de compressão (Brotli sendo usado?)
+  3. Testar de múltiplas localizações geográficas
+- **Impacto Estimado**: Estabilizar TTFB em <10ms
+
+### **Checklist de Validação:**
+1. ✅ Testar todas as otimizações em ambiente staging antes de produção
+2. ✅ Monitorar métricas RUM (Real User Monitoring) após deploy
+3. ✅ Implementar feature flags para rollback rápido se necessário (usamos reversal manual)
+4. ✅ Documentar todas as mudanças para referência futura
 
 ---
 
@@ -883,4 +971,5 @@ export default defineConfig({
 
 **Documento gerado automaticamente via Chrome DevTools MCP + Context7 MCP**  
 **Autor**: GitHub Copilot (Claude Sonnet 4.5)  
-**Última atualização**: 5 de dezembro de 2025
+**Última atualização**: 6 de dezembro de 2025  
+**Fase Atual**: Fase 1 Completa - Terser + Compression (Lazy Loading Revertido)

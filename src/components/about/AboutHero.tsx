@@ -19,9 +19,10 @@ export function AboutHero() {
 
       <div className="relative z-10 mx-auto max-w-7xl px-6 text-center lg:px-8">
         <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
+            style={{ willChange: 'transform, opacity' }}
         >
           <Badge className="inline-flex items-center gap-2 mb-3 rounded-full border border-brand-500/40 bg-brand-500/10 px-3 py-1 text-xs font-semibold text-brand-500">
             <Sparkles className="h-4 w-4" />
@@ -31,27 +32,30 @@ export function AboutHero() {
 
         <motion.h1 
             className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-balance text-gradient"
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
+            transition={{ duration: 0.4, delay: 0.05, ease: "easeOut" }}
+            style={{ willChange: 'transform, opacity' }}
         >
           Revolucionando o atendimento com <span className="text-brand-400">Inteligência Artificial</span>
         </motion.h1>
         
         <motion.p 
             className="mt-6 text-lg leading-8 text-muted-foreground max-w-2xl mx-auto"
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            transition={{ duration: 0.4, delay: 0.1, ease: "easeOut" }}
+            style={{ willChange: 'transform, opacity' }}
         >
           Nascemos com o propósito de tornar a tecnologia de ponta acessível para empresas de todos os tamanhos. Conectamos negócios aos seus clientes de forma inteligente, rápida e humana.
         </motion.p>
         
         <motion.div 
             className="mt-10 flex items-center justify-center gap-x-6"
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
+            transition={{ duration: 0.4, delay: 0.15, ease: "easeOut" }}
+            style={{ willChange: 'transform, opacity' }}
         >
           <Button size="lg" className="h-12 px-8 text-base rounded-full btn-primary-gradient shadow-xl-adaptive transition-all hover:scale-105">
             Conheça a Plataforma
