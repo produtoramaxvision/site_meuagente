@@ -37,9 +37,21 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-surface-2 border-t border-border/50">
+    <footer
+      className="relative overflow-hidden border-t border-border/50 bg-neutral-900"
+    >
+      {/* Grid backdrop to diferenciar da seção superior/rodapé */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 opacity-60"
+        style={{
+          backgroundImage:
+            "radial-gradient(circle at 1px 1px, rgba(255,255,255,0.06) 1px, transparent 0)",
+          backgroundSize: "32px 32px",
+        }}
+      />
       {/* Newsletter section */}
-      <div className="bg-section-dark py-6">
+      <div className="relative z-10 bg-section-dark py-6">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-6">
             <h3 className="text-2xl font-bold text-white mb-2">
@@ -55,7 +67,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
         {/* Main footer content */}
         <div className="mb-12">
           {/* Logo centralizado em tablet/desktop e mobile */}
@@ -184,7 +196,7 @@ const Footer = () => {
       </div>
 
       {/* Bottom bar – full width */}
-      <div className="border-t border-border/50">
+      <div className="relative z-10 border-t border-border/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-center items-center text-center">
           <span className="text-sm text-text">
             Desenvolvido por ©{" "}
