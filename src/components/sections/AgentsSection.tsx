@@ -25,6 +25,9 @@ const AgentsSection = () => {
       tier: "Todos os planos",
       color: "rgba(34, 197, 94, 0.1), rgba(16, 185, 129, 0.1)",
       titleColor: "text-green-600 dark:text-green-400",
+      backgroundClass: "bg-gradient-to-br from-emerald-500/12 via-background to-surface",
+      borderClass: "border border-emerald-500/30",
+      iconBgClass: "bg-emerald-500/10 ring-1 ring-emerald-500/25",
     },
     {
       id: "websearch",
@@ -34,6 +37,9 @@ const AgentsSection = () => {
       tier: "Todos os planos",
       color: "rgba(59, 130, 246, 0.1), rgba(6, 182, 212, 0.1)",
       titleColor: "text-blue-600 dark:text-blue-400",
+      backgroundClass: "bg-gradient-to-br from-sky-500/12 via-background to-surface",
+      borderClass: "border border-sky-500/30",
+      iconBgClass: "bg-sky-500/10 ring-1 ring-sky-500/25",
     },
     {
       id: "scrape",
@@ -43,6 +49,9 @@ const AgentsSection = () => {
       tier: "Todos os planos",
       color: "rgba(168, 85, 247, 0.1), rgba(236, 72, 153, 0.1)",
       titleColor: "text-purple-600 dark:text-purple-400",
+      backgroundClass: "bg-gradient-to-br from-purple-500/12 via-background to-surface",
+      borderClass: "border border-purple-500/30",
+      iconBgClass: "bg-purple-500/10 ring-1 ring-purple-500/25",
     },
     {
       id: "sdr",
@@ -52,6 +61,9 @@ const AgentsSection = () => {
       tier: "Business/Premium",
       color: "rgba(249, 115, 22, 0.1), rgba(239, 68, 68, 0.1)",
       titleColor: "text-orange-600 dark:text-orange-400",
+      backgroundClass: "bg-gradient-to-br from-orange-500/12 via-background to-surface",
+      borderClass: "border border-orange-500/30",
+      iconBgClass: "bg-orange-500/10 ring-1 ring-orange-500/25",
     },
     {
       id: "marketing",
@@ -61,6 +73,9 @@ const AgentsSection = () => {
       tier: "Business/Premium",
       color: "rgba(236, 72, 153, 0.1), rgba(244, 63, 94, 0.1)",
       titleColor: "text-pink-600 dark:text-pink-400",
+      backgroundClass: "bg-gradient-to-br from-rose-500/12 via-background to-surface",
+      borderClass: "border border-rose-500/30",
+      iconBgClass: "bg-rose-500/10 ring-1 ring-rose-500/25",
     },
     {
       id: "agendamento",
@@ -70,6 +85,9 @@ const AgentsSection = () => {
       tier: "Básico/Business/Premium",
       color: "rgba(99, 102, 241, 0.1), rgba(59, 130, 246, 0.1)",
       titleColor: "text-indigo-600 dark:text-indigo-400",
+      backgroundClass: "bg-gradient-to-br from-indigo-500/12 via-background to-surface",
+      borderClass: "border border-indigo-500/30",
+      iconBgClass: "bg-indigo-500/10 ring-1 ring-indigo-500/25",
     },
     {
       id: "dev",
@@ -79,6 +97,9 @@ const AgentsSection = () => {
       tier: "Business/Premium",
       color: "rgba(107, 114, 128, 0.1), rgba(100, 116, 139, 0.1)",
       titleColor: "text-gray-600 dark:text-gray-400",
+      backgroundClass: "bg-gradient-to-br from-slate-500/12 via-background to-surface",
+      borderClass: "border border-slate-500/30",
+      iconBgClass: "bg-slate-500/10 ring-1 ring-slate-500/25",
     },
     {
       id: "video",
@@ -88,6 +109,9 @@ const AgentsSection = () => {
       tier: "Business/Premium",
       color: "rgba(139, 92, 246, 0.1), rgba(168, 85, 247, 0.1)",
       titleColor: "text-violet-600 dark:text-violet-400",
+      backgroundClass: "bg-gradient-to-br from-violet-500/12 via-background to-surface",
+      borderClass: "border border-violet-500/30",
+      iconBgClass: "bg-violet-500/10 ring-1 ring-violet-500/25",
     },
   ];
 

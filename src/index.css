@@ -581,21 +581,28 @@ All colors MUST be HSL.
     border: 2px solid hsl(0 0% 88%);
     background: transparent;
     color: hsl(0 0% 10%);
+    box-shadow: 0 10px 15px -6px rgb(0 0 0 / 0.15), 0 6px 10px -8px rgb(0 0 0 / 0.12);
+    transition: box-shadow 200ms ease, transform 200ms ease, border-color 200ms ease, background 200ms ease;
   }
 
   .btn-secondary:hover {
     border-color: hsl(0 0% 50%);
     background: hsl(0 0% 96%);
+    box-shadow: 0 18px 28px -12px rgb(0 0 0 / 0.18), 0 10px 18px -14px rgb(0 0 0 / 0.16);
+    transform: translateY(-1px);
   }
 
   .dark .btn-secondary {
     border-color: hsl(0 0% 25%);
     color: hsl(0 0% 95%);
+    box-shadow: 0 10px 15px -6px rgb(0 0 0 / 0.35), 0 6px 10px -8px rgb(0 0 0 / 0.3);
   }
 
   .dark .btn-secondary:hover {
     border-color: hsl(0 0% 50%);
     background: hsl(0 0% 15%);
+    box-shadow: 0 18px 28px -12px rgb(0 0 0 / 0.55), 0 10px 18px -14px rgb(0 0 0 / 0.45);
+    transform: translateY(-1px);
   }
 
   /* Card com borda e fundo adaptativo */

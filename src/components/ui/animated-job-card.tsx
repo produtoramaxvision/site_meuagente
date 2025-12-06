@@ -20,12 +20,51 @@ export interface JobCardProps {
 }
 
 // --- BORDER VARIANT STYLES ---
-
-const variantClasses: Record<NonNullable<JobCardProps["variant"]>, string> = {
-  pink: "border-t-pink-500",
-  yellow: "border-t-yellow-500",
-  blue: "border-t-blue-500",
-  purple: "border-t-purple-500",
+const variantStyles: Record<NonNullable<JobCardProps["variant"]>, {
+  cardBg: string
+  border: string
+  iconBg: string
+  tagBg: string
+  tagText: string
+  accentText: string
+  topBorder: string
+}> = {
+  pink: {
+    cardBg: "bg-gradient-to-br from-rose-500/12 via-background to-surface",
+    border: "border border-rose-500/30",
+    iconBg: "bg-rose-500/12 ring-1 ring-rose-500/25",
+    tagBg: "bg-rose-500/10",
+    tagText: "text-rose-600 dark:text-rose-400",
+    accentText: "text-rose-600 dark:text-rose-400",
+    topBorder: "border-t-4 border-t-rose-500/70",
+  },
+  yellow: {
+    cardBg: "bg-gradient-to-br from-amber-500/12 via-background to-surface",
+    border: "border border-amber-500/30",
+    iconBg: "bg-amber-500/12 ring-1 ring-amber-500/25",
+    tagBg: "bg-amber-500/10",
+    tagText: "text-amber-700 dark:text-amber-400",
+    accentText: "text-amber-700 dark:text-amber-400",
+    topBorder: "border-t-4 border-t-amber-500/70",
+  },
+  blue: {
+    cardBg: "bg-gradient-to-br from-sky-500/12 via-background to-surface",
+    border: "border border-sky-500/30",
+    iconBg: "bg-sky-500/12 ring-1 ring-sky-500/25",
+    tagBg: "bg-sky-500/10",
+    tagText: "text-sky-700 dark:text-sky-400",
+    accentText: "text-sky-700 dark:text-sky-400",
+    topBorder: "border-t-4 border-t-sky-500/70",
+  },
+  purple: {
+    cardBg: "bg-gradient-to-br from-violet-500/12 via-background to-surface",
+    border: "border border-violet-500/30",
+    iconBg: "bg-violet-500/12 ring-1 ring-violet-500/25",
+    tagBg: "bg-violet-500/10",
+    tagText: "text-violet-600 dark:text-violet-400",
+    accentText: "text-violet-600 dark:text-violet-400",
+    topBorder: "border-t-4 border-t-violet-500/70",
+  },
 }
 
 /**
@@ -103,6 +142,7 @@ export const AnimatedJobCard = ({
   const springRotateY = useSpring(rotateY, springConfig)
 
   return (
+    // Wrapper com perspectiva 3D
     <div
       className={cn(
         // Wrapper com perspectiva 3D e respiro lateral em telas menores
@@ -128,9 +168,10 @@ export const AnimatedJobCard = ({
           // garantindo que mesmo com o tilt 3D ele não ultrapasse as bordas.
           // Usamos h-full para ocupar o container, que agora tem min-h adequado em mobile.
           "relative h-full w-full max-w-[90vw] sm:max-w-none mx-auto",
-          "transform-gpu cursor-pointer overflow-hidden rounded-xl bg-card border border-border/70 shadow-adaptive p-6 transition-shadow duration-300 hover:shadow-xl-adaptive",
-          "border-t-4",
-          variantClasses[variant],
+          "transform-gpu cursor-pointer overflow-hidden rounded-xl shadow-adaptive p-6 transition-shadow duration-300 hover:shadow-xl-adaptive",
+          variantStyles[variant].cardBg,
+          variantStyles[variant].border,
+          variantStyles[variant].topBorder,
         )}
         aria-label={`Job opening: ${jobTitle} at ${companyName}`}
         tabIndex={0}
@@ -138,16 +179,21 @@ export const AnimatedJobCard = ({
         <div style={{ transform: "translateZ(20px)" }} className="space-y-4">
           {/* Header */}
           <div className="flex items-center space-x-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-muted">
+            <div
+              className={cn(
+                "flex h-10 w-10 items-center justify-center rounded-full",
+                variantStyles[variant].iconBg,
+              )}
+            >
               {companyLogo}
             </div>
-            <span className="font-semibold text-muted-foreground">{companyName}</span>
+            <span className={cn("font-semibold", variantStyles[variant].accentText)}>{companyName}</span>
           </div>
 
           {/* Job Details */}
           <div>
-            <h3 className="text-lg font-bold text-card-foreground">{jobTitle}</h3>
-            <p className="text-sm text-primary">{salary}</p>
+            <h3 className="text-lg font-bold text-white">{jobTitle}</h3>
+            <p className="text-sm font-medium text-muted-foreground">{salary}</p>
           </div>
 
           {/* Tags */}
@@ -155,7 +201,11 @@ export const AnimatedJobCard = ({
             {tags.map((tag, index) => (
               <span
                 key={index}
-                className="rounded-full bg-muted px-2.5 py-0.5 text-xs font-medium text-muted-foreground"
+                className={cn(
+                  "rounded-full px-2.5 py-0.5 text-xs font-medium",
+                  variantStyles[variant].tagBg,
+                  variantStyles[variant].tagText,
+                )}
               >
                 {tag}
               </span>

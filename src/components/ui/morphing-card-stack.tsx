@@ -15,6 +15,9 @@ export interface CardData {
   color?: string
   tier?: string
   titleColor?: string
+  backgroundClass?: string
+  borderClass?: string
+  iconBgClass?: string
 }
 
 // Mapeamento de cores para diferentes tiers
@@ -204,8 +207,9 @@ export function MorphingCardStack({
                     onCardClick?.(card)
                   }}
                   className={cn(
-                    "group cursor-pointer rounded-xl border border-border/70 p-5",
-                    "bg-background/95 dark:bg-card/95 backdrop-blur-sm",
+                    "group cursor-pointer rounded-xl p-5",
+                    card.borderClass || "border border-border/70",
+                    card.backgroundClass || "bg-background/95 dark:bg-card/95 backdrop-blur-sm",
                     "hover:border-accent/50 transition-colors shadow-lg",
                     "flex h-full overflow-hidden",
                     layout === "list" ? "flex-row items-center gap-4" : "flex-col",
@@ -219,8 +223,11 @@ export function MorphingCardStack({
                   <div className="flex items-start gap-3 flex-1 min-w-0">
                     {card.icon && (
                       <div 
-                        className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl opacity-80 group-hover:opacity-100 transition-opacity duration-300 ease-out"
-                        style={{
+                        className={cn(
+                          "flex h-12 w-12 shrink-0 items-center justify-center rounded-xl opacity-80 group-hover:opacity-100 transition-opacity duration-300 ease-out",
+                          card.iconBgClass
+                        )}
+                        style={card.iconBgClass ? undefined : {
                           background: card.color ? `linear-gradient(135deg, ${card.color})` : undefined,
                         }}
                       >
